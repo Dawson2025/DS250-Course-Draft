@@ -49,7 +49,7 @@ latest_year = int(names_year["year"].max())
 earliest_year = int(names_year["year"].min())
 
 Markdown(
-    f"The annual data now span **{earliest_year}** through **{latest_year}**."
+    f"The annual data now spans from **{earliest_year}** to **{latest_year}**."
 )
 ```
 
