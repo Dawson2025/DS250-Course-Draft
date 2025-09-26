@@ -1,4 +1,4 @@
----
+﻿---
 title: "Client Report - Exploring Names"
 subtitle: "Unit 1 Task 1"
 author: "[STUDENT NAME]"
@@ -17,93 +17,167 @@ format:
     code-overflow: wrap
     code-copy: hover
     code-tools:
-        source: false
-        toggle: true
-        caption: See code
-execute: 
+      source: false
+      toggle: true
+      caption: See code
+execute:
   warning: false
-    
 ---
 
 ```{python}
 import pandas as pd
-import numpy as np
-from lets_plot import *
+from IPython.display import Markdown
 
-LetsPlot.setup_html(isolated_frame=True)
+pd.options.display.float_format = "{:,.0f}".format
+
+state_focus = "UT"         # Utah is referenced in multiple questions
+preferred_name = "Dawson"   # My name
 ```
+
+## Data Preparation
 
 ```{python}
-# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+# Load the SSA aggregates used in all unit 1 tasks directly from their GitHub source.
+names_year_url = "https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv"
+names_prob_url = "https://github.com/byuidatascience/data4names/raw/master/data-raw/names_prob/names_prob.csv"
 
-# Include and execute your code here
-df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
+names_year = pd.read_csv(names_year_url)
+names_prob = pd.read_csv(names_prob_url)
+
+
+latest_year = int(names_year["year"].max())
+earliest_year = int(names_year["year"].min())
+
+Markdown(
+    f"The annual data now span **{earliest_year}** through **{latest_year}**."
+)
 ```
+
 
 ## QUESTION 1
 
-__What was the earliest year that the name ‘Felisha’ was used?__
-
-_type your results and analysis here_
+**What was the earliest year that the name Felisha was used?**
 
 ```{python}
-# Q1
+felisha_history = (
+    names_year.query("name == 'Felisha' and Total > 0")
+    .sort_values("year")
+    .loc[:, ["year", "Total", state_focus]]
+)
 
+if felisha_history.empty:
+    response_q1 = "Felisha does not appear in the dataset, so no qualifying births were recorded."
+else:
+    first_row = felisha_history.iloc[0]
+    response_q1 = (
+        f"Felisha first appears in {int(first_row['year'])} with "
+        f"{int(first_row['Total']):,} babies nationwide."
+    )
 
+felisha_history.head()
 ```
 
+```{python}
+Markdown(response_q1)
+```
 
 ## QUESTION 2
 
-__What year had the most babies named 'David'? How many babies were named 'David' that year?__
-
-_type your results and analysis here_
+**What year had the most babies named "David"? How many babies were named "David" that year?**
 
 ```{python}
-# Q2
+david_counts = (
+    names_year.query("name == 'David' and Total > 0")
+    .loc[:, ["year", "Total", state_focus]]
+)
 
+peak_idx = david_counts["Total"].idxmax()
+david_peak_year = int(david_counts.loc[peak_idx, "year"])
+david_peak_total = int(david_counts.loc[peak_idx, "Total"])
 
+david_counts.sort_values("Total", ascending=False).head()
 ```
 
+```{python}
+Markdown(
+    f"David reached its national peak in {david_peak_year} with {david_peak_total:,} births."
+)
+```
 
 ## QUESTION 3
 
-__What year did your name hit its peak? How many babies were named your name in that year?__
-
-_type your results and analysis here_
+**What year did your name hit its peak? How many babies were named your name in that year?**
 
 ```{python}
-# Q3
+my_name_history = (
+    names_year.query("name == @preferred_name and Total > 0")
+    .loc[:, ["year", "Total", state_focus]]
+    .sort_values("year")
+)
 
+if my_name_history.empty:
+    response_q3 = (
+        "Update the `preferred_name` variable above; the placeholder does not appear in the dataset."
+    )
+else:
+    peak_row = my_name_history.loc[my_name_history["Total"].idxmax()]
+    response_q3 = (
+        f"{preferred_name} peaked nationwide in {int(peak_row['year'])} with "
+        f"{int(peak_row['Total']):,} recorded births."
+    )
+
+my_name_history.tail()
 ```
 
-
+```{python}
+Markdown(response_q3)
+```
 
 ## QUESTION 4
 
-__How many babies are named ‘Oliver’ in the state of Utah for all years?__  
-
-_type your results and analysis here_
+**How many babies are named "Oliver" in the state of Utah for all years?**
 
 ```{python}
-# Q4
+oliver_ut_total = int(
+    names_year.query("name == 'Oliver'")[state_focus].sum()
+)
 
-
+oliver_ut_by_year = (
+    names_year.query("name == 'Oliver'")
+    .loc[:, ["year", state_focus, "Total"]]
+    .rename(columns={state_focus: "ut_births"})
+    .sort_values("year")
+)
+oliver_ut_by_year.head()
 ```
 
----
+```{python}
+Markdown(
+    f"Across the full record, Utah welcomed {oliver_ut_total:,} babies named Oliver."
+)
+```
 
 ## QUESTION 5
 
-__In the most recent year, what was the most common female name in Utah?__ 
-
-_type your results and analysis here_
+**In the most recent year, what was the most common female name in Utah?**
 
 ```{python}
-# Q5
+female_names = names_prob.loc[names_prob["prob_female"] >= 0.5, ["name", "prob_female"]]
 
+latest_ut = names_year.loc[names_year["year"] == latest_year, ["name", state_focus, "Total"]]
+latest_ut_female = (
+    latest_ut.merge(female_names, on="name", how="inner")
+    .rename(columns={state_focus: "ut_births"})
+)
 
+most_common_female = latest_ut_female.loc[latest_ut_female["ut_births"].idxmax()]
+
+latest_ut_female.sort_values("ut_births", ascending=False).head(10)
 ```
 
-
----
+```{python}
+Markdown(
+    f"In {latest_year}, the most common female name in Utah was {most_common_female['name']} with "
+    f"{int(most_common_female['ut_births']):,} recorded births."
+)
+```
