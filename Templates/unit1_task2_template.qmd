@@ -25,24 +25,24 @@ execute:
 ---
 
 ```{python}
-# Import the tools we need for both questions
+# Bring in pandas to read the spreadsheet-like data
 import pandas as pd
+# Bring in Markdown so I can print a short written answer
 from IPython.display import Markdown
-from lets_plot import ggplot, aes, geom_line, geom_vline, labs, theme_minimal, scale_x_continuous
-from lets_plot import LetsPlot
-
-# Let lets_plot show charts inside the notebook
+# Bring in the plotting pieces I need from lets_plot
+from lets_plot import ggplot, aes, geom_line, geom_vline, labs, theme_minimal, scale_x_continuous, LetsPlot
+# Turn on lets_plot visuals inside this report
 LetsPlot.setup_html(isolated_frame=True)
-
-# Store my name and birth year so I can personalise Question 1
-preferred_name = "Taylor"
-birth_year = 1998
+# Store my own name so I can use it in Question 1
+preferred_name = "Dawson"
+# Store my birth year so I can mark it on the chart
+birth_year = 2003
 ```
 
 ## Data Preparation
 
 ```{python}
-# Read the yearly SSA name counts provided in the assignment
+# Read the SSA name counts straight from the class GitHub file
 names_year = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
 
@@ -51,43 +51,35 @@ names_year = pd.read_csv("https://github.com/byuidatascience/data4names/raw/mast
 **How does your name at your birth year compare to its use historically?**
 
 ```{python}
-# Keep only the rows for my name that have recorded totals
-my_history = names_year.loc[(names_year["name"] == preferred_name) & (names_year["Total"] > 0), ["year", "Total"]].sort_values("year")
+# Filter the table to just my name and sort the years so the line looks right
+my_history = names_year.loc[names_year["name"] == preferred_name, ["year", "Total"]].sort_values("year")
+# Build a simple line chart with a dashed line at my birth year
+plot_q1 = (
+    ggplot(my_history, aes("year", "Total"))
+    + geom_line(color="#1f77b4")
+    + geom_vline(xintercept=birth_year, linetype="dashed", color="#d62728")
+    + scale_x_continuous(format='d')
+    + labs(title=f"{preferred_name} births in the United States", x="Year", y="Total births")
+    + theme_minimal()
+)
+# Pull the total for my birth year so I can mention it
+birth_total = int(my_history.loc[my_history["year"] == birth_year, "Total"].iloc[0])
+# Pull the year where the name hit its national peak
+peak_row = my_history.loc[my_history["Total"].idxmax()]
+# Write a one-sentence takeaway comparing my year with the peak
+note_q1 = (
+    f"In {birth_year}, {birth_total:,} babies were named {preferred_name}. "
+    f"The peak year was {int(peak_row['year'])} with {int(peak_row['Total']):,} births."
+)
 ```
 
 ```{python}
-# If the name never appears, show a reminder to pick a different one
-if my_history.empty:
-    plot_q1 = ggplot() + labs(title="Update preferred_name to a recorded SSA name")
-    note_q1 = "The dataset does not include this name; please update `preferred_name`."
-else:
-    # Draw the national totals over time with a dashed line at my birth year
-    plot_q1 = (
-        ggplot(my_history, aes("year", "Total"))
-        + geom_line(color="#1f77b4")
-        + geom_vline(xintercept=birth_year, linetype="dashed", color="#d62728")
-        + scale_x_continuous(format='d')
-        + labs(title=f"{preferred_name} births in the United States", x="Year", y="Total births")
-        + theme_minimal()
-    )
-    # Compare my birth year with the all-time peak
-    peak_row = my_history.loc[my_history["Total"].idxmax()]
-    birth_row = my_history.loc[my_history["year"] == birth_year]
-    if birth_row.empty:
-        note_q1 = f"No SSA counts for {preferred_name} were recorded in {birth_year}."
-    else:
-        note_q1 = (
-            f"In {birth_year}, {int(birth_row.iloc[0]['Total']):,} babies were named {preferred_name}. "
-            f"The peak was {int(peak_row['year'])} with {int(peak_row['Total']):,} births."
-        )
-```
-
-```{python}
-# Show the Question 1 chart and explanation
+# Show the Question 1 chart
 plot_q1
 ```
 
 ```{python}
+# Share the quick explanation for Question 1
 Markdown(note_q1)
 ```
 
@@ -96,12 +88,9 @@ Markdown(note_q1)
 **If you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?**
 
 ```{python}
-# Filter to Brittany so we can see when the name was popular
-brittany_history = names_year.loc[(names_year["name"] == "Brittany") & (names_year["Total"] > 0), ["year", "Total"]].sort_values("year")
-```
-
-```{python}
-# Plot Brittany's totals with a dashed line at the peak year
+# Filter the table to Brittany and sort the years so the line reads left to right
+brittany_history = names_year.loc[names_year["name"] == "Brittany", ["year", "Total"]].sort_values("year")
+# Draw Brittany's national totals with a dashed line at the peak year
 peak_year = int(brittany_history.loc[brittany_history["Total"].idxmax(), "year"])
 plot_q2 = (
     ggplot(brittany_history, aes("year", "Total"))
@@ -111,24 +100,26 @@ plot_q2 = (
     + labs(title="Brittany births in the United States", x="Year", y="Total births")
     + theme_minimal()
 )
-```
-
-```{python}
-# Use a weighted average birth year and the latest data year for a quick age guess
+# Take a weighted average birth year so I can turn it into an age guess
 guess_year = int(round((brittany_history["year"] * brittany_history["Total"]).sum() / brittany_history["Total"].sum()))
-latest_year = int(brittany_history["year"].max())
-guess_age = latest_year - guess_year
+# Convert to an age range using the current year (2025)
+age_low, age_high = 2025 - peak_year, 2025 - guess_year
+# Mention the years with the lowest usage so we can say which ages we would avoid
+early_year = int(brittany_history.loc[brittany_history["Total"] == brittany_history["Total"].min(), "year"].iloc[0])
+late_year = int(brittany_history.loc[brittany_history["Total"] == brittany_history["Total"].tail(1).values[0], "year"].iloc[0])
+# Write a plain sentence explaining the guess and the ages to avoid
 note_q2 = (
-    f"Brittany peaked in {peak_year}, and the weighted average birth year is {guess_year}. "
-    f"Because the latest data year is {latest_year}, I would guess someone named Brittany is about {guess_age} years old and avoid ages much younger or older."
+    f"Brittany peaked in {peak_year} and averages around {guess_year}, so I would guess she is {age_high} or {age_high + 1}. "
+    f"I would avoid guessing ages tied to the very early years like {early_year} or the late-year dip in {late_year} because almost no babies were named Brittany then."
 )
 ```
 
 ```{python}
-# Show the Brittany chart and explanation
+# Show the Brittany chart
 plot_q2
 ```
 
 ```{python}
+# Share the Brittany age estimate
 Markdown(note_q2)
 ```
