@@ -1,7 +1,7 @@
 ﻿---
 title: "Client Report - Exploring Names"
 subtitle: "Unit 1 Task 1"
-author: "[STUDENT NAME]"
+author: "Dawson Packer"
 format:
   html:
     self-contained: true

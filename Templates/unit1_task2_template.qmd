@@ -1,7 +1,7 @@
----
+﻿---
 title: "Client Report - What's in a Name?"
 subtitle: "Unit 1 Task 2"
-author: "[STUDENT NAME]"
+author: "Dawson Packer"
 format:
   html:
     self-contained: true
@@ -17,55 +17,118 @@ format:
     code-overflow: wrap
     code-copy: hover
     code-tools:
-        source: false
-        toggle: true
-        caption: See code
-execute: 
+      source: false
+      toggle: true
+      caption: See code
+execute:
   warning: false
-    
 ---
 
 ```{python}
+# Import the tools we need for both questions
 import pandas as pd
-import numpy as np
-from lets_plot import *
+from IPython.display import Markdown
+from lets_plot import ggplot, aes, geom_line, geom_vline, labs, theme_minimal, scale_x_continuous
+from lets_plot import LetsPlot
 
+# Let lets_plot show charts inside the notebook
 LetsPlot.setup_html(isolated_frame=True)
+
+# Store my name and birth year so I can personalise Question 1
+preferred_name = "Taylor"
+birth_year = 1998
 ```
 
-```{python}
-# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+## Data Preparation
 
-# Include and execute your code here
-df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
+```{python}
+# Read the yearly SSA name counts provided in the assignment
+names_year = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
 
 ## QUESTION 1
 
-<!-- Make sure at least one of your charts includes reference marks!! -->
-
-__How does your name at your birth year compare to its use historically? Your must provide a chart. The years labels on your charts should not include a comma.__ 
-
-_type your results and analysis here_
+**How does your name at your birth year compare to its use historically?**
 
 ```{python}
-# Q1
-
-
+# Keep only the rows for my name that have recorded totals
+my_history = names_year.loc[(names_year["name"] == preferred_name) & (names_year["Total"] > 0), ["year", "Total"]].sort_values("year")
 ```
 
+```{python}
+# If the name never appears, show a reminder to pick a different one
+if my_history.empty:
+    plot_q1 = ggplot() + labs(title="Update preferred_name to a recorded SSA name")
+    note_q1 = "The dataset does not include this name; please update `preferred_name`."
+else:
+    # Draw the national totals over time with a dashed line at my birth year
+    plot_q1 = (
+        ggplot(my_history, aes("year", "Total"))
+        + geom_line(color="#1f77b4")
+        + geom_vline(xintercept=birth_year, linetype="dashed", color="#d62728")
+        + scale_x_continuous(format='d')
+        + labs(title=f"{preferred_name} births in the United States", x="Year", y="Total births")
+        + theme_minimal()
+    )
+    # Compare my birth year with the all-time peak
+    peak_row = my_history.loc[my_history["Total"].idxmax()]
+    birth_row = my_history.loc[my_history["year"] == birth_year]
+    if birth_row.empty:
+        note_q1 = f"No SSA counts for {preferred_name} were recorded in {birth_year}."
+    else:
+        note_q1 = (
+            f"In {birth_year}, {int(birth_row.iloc[0]['Total']):,} babies were named {preferred_name}. "
+            f"The peak was {int(peak_row['year'])} with {int(peak_row['Total']):,} births."
+        )
+```
+
+```{python}
+# Show the Question 1 chart and explanation
+plot_q1
+```
+
+```{python}
+Markdown(note_q1)
+```
 
 ## QUESTION 2
 
-__If you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess? Try to justify your answer with whatever statistics knowledge you have. You must provide a chart. The years labels on your charts should not include a comma.__  
-
-_type your results and analysis here_
+**If you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?**
 
 ```{python}
-# Q2
-
-
+# Filter to Brittany so we can see when the name was popular
+brittany_history = names_year.loc[(names_year["name"] == "Brittany") & (names_year["Total"] > 0), ["year", "Total"]].sort_values("year")
 ```
 
+```{python}
+# Plot Brittany's totals with a dashed line at the peak year
+peak_year = int(brittany_history.loc[brittany_history["Total"].idxmax(), "year"])
+plot_q2 = (
+    ggplot(brittany_history, aes("year", "Total"))
+    + geom_line(color="#cc79a7")
+    + geom_vline(xintercept=peak_year, linetype="dashed", color="#ff7f0e")
+    + scale_x_continuous(format='d')
+    + labs(title="Brittany births in the United States", x="Year", y="Total births")
+    + theme_minimal()
+)
+```
 
-<!-- Make sure at least one of your charts includes reference marks!! -->
+```{python}
+# Use a weighted average birth year and the latest data year for a quick age guess
+guess_year = int(round((brittany_history["year"] * brittany_history["Total"]).sum() / brittany_history["Total"].sum()))
+latest_year = int(brittany_history["year"].max())
+guess_age = latest_year - guess_year
+note_q2 = (
+    f"Brittany peaked in {peak_year}, and the weighted average birth year is {guess_year}. "
+    f"Because the latest data year is {latest_year}, I would guess someone named Brittany is about {guess_age} years old and avoid ages much younger or older."
+)
+```
+
+```{python}
+# Show the Brittany chart and explanation
+plot_q2
+```
+
+```{python}
+Markdown(note_q2)
+```
