@@ -66,10 +66,12 @@ plot_q1 = (
 birth_total = int(my_history.loc[my_history["year"] == birth_year, "Total"].iloc[0])
 # Pull the year where the name hit its national peak
 peak_row = my_history.loc[my_history["Total"].idxmax()]
-# Write a one-sentence takeaway comparing my year with the peak
 note_q1 = (
+    f"There weren't many {preferred_name}s born before the 1990s, but after 1997 it became more popular to name a child {preferred_name}, with uses of the name skyrocketing in the years after that. "
+    f"The peak year was {int(peak_row['year'])} with {int(peak_row['Total']):,} births. "
     f"In {birth_year}, {birth_total:,} babies were named {preferred_name}. "
-    f"The peak year was {int(peak_row['year'])} with {int(peak_row['Total']):,} births."
+    f"There haven't been as many {preferred_name}s as there were when I was born since then. "
+
 )
 ```
 
@@ -103,14 +105,11 @@ plot_q2 = (
 # Take a weighted average birth year so I can turn it into an age guess
 guess_year = int(round((brittany_history["year"] * brittany_history["Total"]).sum() / brittany_history["Total"].sum()))
 # Convert to an age range using the current year (2025)
-age_low, age_high = 2025 - peak_year, 2025 - guess_year
-# Mention the years with the lowest usage so we can say which ages we would avoid
-early_year = int(brittany_history.loc[brittany_history["Total"] == brittany_history["Total"].min(), "year"].iloc[0])
-late_year = int(brittany_history.loc[brittany_history["Total"] == brittany_history["Total"].tail(1).values[0], "year"].iloc[0])
-# Write a plain sentence explaining the guess and the ages to avoid
+peak_age, guess_age = 2025 - peak_year, 2025 - guess_year
+
 note_q2 = (
-    f"Brittany peaked in {peak_year} and averages around {guess_year}, so I would guess she is {age_high} or {age_high + 1}. "
-    f"I would avoid guessing ages tied to the very early years like {early_year} or the late-year dip in {late_year} because almost no babies were named Brittany then."
+    f"Brittany peaked in {peak_year} and averages around {guess_year}, so I would guess she is {guess_age} or {peak_age}. "
+    f"I would avoid guessing ages tied to anything that would correspond to their date of birth being before 1980(older than 45) or after 2005(younger than 20) because the use of the name Brittany spiked before/after those years."
 )
 ```
 

@@ -1,7 +1,7 @@
----
+﻿---
 title: "Client Report - Famous Names"
 subtitle: "Unit 1 Task 3"
-author: "[STUDENT NAME]"
+author: "Dawson Packer"
 format:
   html:
     self-contained: true
@@ -17,56 +17,92 @@ format:
     code-overflow: wrap
     code-copy: hover
     code-tools:
-        source: false
-        toggle: true
-        caption: See code
-execute: 
+      source: false
+      toggle: true
+      caption: See code
+execute:
   warning: false
-    
 ---
 
 ```{python}
+# Bring in pandas to read the spreadsheet-like data
 import pandas as pd
-import numpy as np
-from lets_plot import *
-
+# Bring in Markdown so I can print a short written answer
+from IPython.display import Markdown
+# Bring in the plotting pieces I need from lets_plot
+from lets_plot import ggplot, aes, geom_line, geom_vline, labs, theme_minimal, scale_x_continuous, LetsPlot
+# Turn on lets_plot visuals inside this report
 LetsPlot.setup_html(isolated_frame=True)
 ```
 
+## Data Preparation
+
 ```{python}
-# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
-
-# Include and execute your code here
-df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
+# Read the SSA name counts straight from the class GitHub file
+names_year = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
-
-
 
 ## QUESTION 1
 
-<!-- Make sure at least one of your charts includes reference marks!! -->
-
-__Mary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names in a single chart. What trends do you notice? You must provide a chart. The years labels on your charts should not include a comma.__ 
-
-_type your results and analysis here_
+**Mary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names in a single chart. What trends do you notice?**
 
 ```{python}
-# Q1
-
-
+# Keep just the four Christian names between 1920 and 2000
+christian_names = names_year[(names_year["name"].isin(["Mary", "Martha", "Peter", "Paul"])) & (names_year["year"].between(1920, 2000))].copy()
+# Draw one line plot for all four names
+plot_q1 = (
+    ggplot(christian_names, aes("year", "Total", color="name"))
+    + geom_line(size=1.1)
+    + scale_x_continuous(format='d')
+    + labs(title="Christian names in the United States", subtitle="Mary, Martha, Peter, and Paul (1920-2000)", x="Year", y="Total births", color="Name")
+    + theme_minimal()
+)
 ```
 
+```{python}
+plot_q1
+```
+
+```{python}
+Markdown("Starting in the year 1920, Mary is used the most, followed by Paul, then Martha, and then Peter. In the year 1954, Peter takes Martha's place as the third most used name. From the years 1968 to 1989, Mary and Paul 'jocked for position' for the most used, with Mary coming out on top in the end. In 2000, the final ranking of each was Mary, Paul, Peter, and then Martha.")
+```
 
 ## QUESTION 2
 
-1. __Think of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage? You must provide a chart. The years labels on your charts should not include a comma.__  
-
-_type your results and analysis here_
+**Think of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?**
 
 ```{python}
-# Q2
-
-
+# Pick Khaleesi from Game of Thrones (first season aired 2011) and pull yearly totals
+movie_name = "Khaleesi"
+movie_year = 2011
+khaleesi_history = names_year.loc[names_year["name"] == movie_name, ["year", "Total"]].sort_values("year")
+# Fill in missing years (1990-2020) with zeros so the absence before 2011 is visible
+khaleesi_recent = khaleesi_history.set_index("year").reindex(range(1990, 2021), fill_value=0).reset_index()
+khaleesi_recent.columns = ["year", "Total"]
+# Make a plot with a dashed line at the premiere year
+plot_q2 = (
+    ggplot(khaleesi_recent, aes("year", "Total"))
+    + geom_line(color="#cc79a7", size=1.1)
+    + geom_vline(xintercept=movie_year, linetype="dashed", color="#ff7f0e")
+    + scale_x_continuous(format='d')
+    + labs(title="Khaleesi births in the United States", subtitle="Game of Thrones premiered in 2011", x="Year", y="Total births")
+    + theme_minimal()
+)
+# Compare the highest counts before and after the show premiered
+before_series = khaleesi_recent.loc[khaleesi_recent["year"] < movie_year, "Total"]
+after_series = khaleesi_recent.loc[khaleesi_recent["year"] >= movie_year, "Total"]
+before_show = int(before_series.max()) if not before_series.empty else 0
+after_show = int(after_series.max()) if not after_series.empty else 0
+note_q2 = (
+    f"Khaleesi is essentially absent before the show debuted in 2011 (max {before_show} births between 1990 and 2010). "
+    f"Once Game of Thrones arrived in 2011, the counts jump to about {after_show} births a year before settling back down, so the series clearly drove the spike."
+)
 ```
 
+```{python}
+plot_q2
+```
 
+```{python}
+Markdown(note_q2)
+```

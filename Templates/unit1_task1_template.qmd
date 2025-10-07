@@ -62,17 +62,15 @@ Markdown(
 felisha_history = (
     names_year.query("name == 'Felisha' and Total > 0")
     .sort_values("year")
-    .loc[:, ["year", "Total", state_focus]]
+    .loc[:, ["year", "Total"]]
 )
 
-if felisha_history.empty:
-    response_q1 = "Felisha does not appear in the dataset, so no qualifying births were recorded."
-else:
-    first_row = felisha_history.iloc[0]
-    response_q1 = (
-        f"Felisha first appears in {int(first_row['year'])} with "
-        f"{int(first_row['Total']):,} babies nationwide."
-    )
+
+first_row = felisha_history.iloc[0]
+response_q1 = (
+    f"Felisha first appears in {int(first_row['year'])} with "
+    f"{int(first_row['Total']):,} babies nationwide."
+)
 
 felisha_history.head()
 ```
@@ -88,7 +86,7 @@ Markdown(response_q1)
 ```{python}
 david_counts = (
     names_year.query("name == 'David' and Total > 0")
-    .loc[:, ["year", "Total", state_focus]]
+    .loc[:, ["year", "Total"]]
 )
 
 peak_idx = david_counts["Total"].idxmax()
@@ -111,22 +109,18 @@ Markdown(
 ```{python}
 my_name_history = (
     names_year.query("name == @preferred_name and Total > 0")
-    .loc[:, ["year", "Total", state_focus]]
-    .sort_values("year")
+    .loc[:, ["year", "Total"]]
+    .sort_values("Total", ascending=False)
 )
 
-if my_name_history.empty:
-    response_q3 = (
-        "Update the `preferred_name` variable above; the placeholder does not appear in the dataset."
-    )
-else:
-    peak_row = my_name_history.loc[my_name_history["Total"].idxmax()]
-    response_q3 = (
-        f"{preferred_name} peaked nationwide in {int(peak_row['year'])} with "
-        f"{int(peak_row['Total']):,} recorded births."
-    )
 
-my_name_history.tail()
+peak_row = my_name_history.loc[my_name_history["Total"].idxmax()]
+response_q3 = (
+    f"{preferred_name} peaked nationwide in {int(peak_row['year'])} with "
+    f"{int(peak_row['Total']):,} recorded births."
+)
+
+my_name_history.head()
 ```
 
 ```{python}
@@ -146,7 +140,7 @@ oliver_ut_by_year = (
     names_year.query("name == 'Oliver'")
     .loc[:, ["year", state_focus, "Total"]]
     .rename(columns={state_focus: "ut_births"})
-    .sort_values("year")
+    .sort_values("ut_births", ascending=False)
 )
 oliver_ut_by_year.head()
 ```
