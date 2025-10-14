@@ -1,0 +1,824 @@
+Running Codex on Windows
+document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));
+html{scroll-behavior:smooth}article.prose h2,article.prose h3,article.prose h4,article.prose h5,article.prose h6{scroll-margin-top:110px}article.prose h2:target button[data-anchor-id],article.prose h3:target button[data-anchor-id],article.prose h4:target button[data-anchor-id],article.prose h5:target button[data-anchor-id],article.prose h6:target button[data-anchor-id]{opacity:1}
+Resources
+Codex
+ChatGPT
+Blog
+Search
+?K
+Search the docs
+?
+K
+/
+Ctrl
+K
+Close
+Primary navigation
+Codex
+Resources
+Codex
+ChatGPT
+Blog
+Home
+Categories
+Code
+Cookbooks
+Guides
+Videos
+Topics
+Agents
+Audio & Voice
+Image generation
+Tools
+Computer use
+Fine-tuning
+Scaling
+Home
+Quickstart
+Concepts
+Pricing
+Changelog
+Codex CLI
+Overview
+Configuration
+Codex IDE Extension
+Set up your IDE
+Configuration
+IDE ? Cloud tasks
+Codex Cloud
+Delegate to Codex
+Environments
+Code Review
+Internet Access
+Codex SDK
+Overview
+TypeScript
+GitHub Action
+Guides
+Agents SDK
+Prompting Codex
+Model Context Protocol (MCP)
+Autofix CI
+Enterprise Admin
+Security Admin
+Codex on Windows
+Integrations
+Slack
+Resources
+AGENTS.md
+Codex on GitHub
+Apps SDK
+Agentic Commerce
+All posts
+Recent
+Why we built the Responses API
+Developer notes on the Realtime API
+Hello, world!
+function initializeMobileNavigation() {
+    const drawer = document.getElementById("drawer");
+    const drawerButton = document.getElementById("header-drawer-button");
+
+    if (
+      !drawer ||
+      !drawerButton ||
+      drawer.dataset.mobileNavInitialized === "true"
+    ) {
+      return;
+    }
+
+    const navTrigger = drawer.querySelector("[data-mobile-nav-trigger]");
+    const navLabel = drawer.querySelector("[data-mobile-nav-label]");
+    const navChevron = drawer.querySelector("[data-mobile-nav-chevron]");
+    const navDropdown = drawer.querySelector("[data-mobile-nav-dropdown]");
+    const navOptionElements = Array.from(
+      drawer.querySelectorAll("[data-mobile-nav-option]")
+    );
+    const navLinkElements = Array.from(
+      drawer.querySelectorAll("[data-mobile-nav-link]")
+    );
+    const tabPanels = Array.from(
+      drawer.querySelectorAll("[data-mobile-nav-content]")
+    );
+
+    let dropdownOpen = false;
+    let activeTabId =
+      drawer.dataset.defaultTabId ||
+      navOptionElements.find((option) => option.dataset.selected === "true")
+        ?.dataset.tabId ||
+      tabPanels[0]?.getAttribute("data-tab-id") ||
+      navOptionElements[0]?.dataset.tabId ||
+      null;
+
+    const updateSelectedOption = (tabId) => {
+      let selectedLabel = "";
+
+      navOptionElements.forEach((option) => {
+        const isSelected = option.dataset.tabId === tabId;
+        option.dataset.selected = isSelected ? "true" : "false";
+        option.setAttribute("aria-selected", isSelected ? "true" : "false");
+
+        const indicator = option.querySelector(
+          "[data-mobile-nav-option-indicator]"
+        );
+        if (indicator instanceof HTMLElement) {
+          indicator.dataset.selected = isSelected ? "true" : "false";
+        }
+
+        if (isSelected && !selectedLabel) {
+          selectedLabel =
+            option.dataset.label || option.textContent?.trim() || "";
+        }
+      });
+
+      if (!selectedLabel && navOptionElements[0]) {
+        selectedLabel =
+          navOptionElements[0].dataset.label ||
+          navOptionElements[0].textContent?.trim() ||
+          "";
+      }
+
+      if (selectedLabel) {
+        if (navLabel instanceof HTMLElement) {
+          navLabel.textContent = selectedLabel;
+        }
+        if (navTrigger instanceof HTMLElement) {
+          navTrigger.setAttribute("title", selectedLabel);
+        }
+      }
+    };
+
+    const setDropdownState = (open) => {
+      dropdownOpen = open;
+
+      if (navTrigger instanceof HTMLButtonElement) {
+        navTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+        navTrigger.dataset.open = open ? "true" : "false";
+      }
+
+      if (navChevron instanceof HTMLElement) {
+        navChevron.dataset.open = open ? "true" : "false";
+      }
+
+      if (navDropdown instanceof HTMLElement) {
+        navDropdown.dataset.open = open ? "true" : "false";
+        navDropdown.setAttribute("aria-hidden", open ? "false" : "true");
+
+        if (open) {
+          navDropdown.removeAttribute("hidden");
+        } else {
+          navDropdown.setAttribute("hidden", "true");
+        }
+      }
+    };
+
+    const closeDropdown = () => {
+      if (dropdownOpen) {
+        setDropdownState(false);
+      }
+    };
+
+    const focusSelectedOption = () => {
+      const selectedOption =
+        navOptionElements.find(
+          (option) => option.dataset.selected === "true"
+        ) || navOptionElements[0];
+
+      selectedOption?.focus();
+    };
+
+    const activateTab = (tabId) => {
+      if (!tabId) return;
+      activeTabId = tabId;
+      updateSelectedOption(tabId);
+
+      tabPanels.forEach((panel) => {
+        const isActive = panel.getAttribute("data-tab-id") === tabId;
+        if (isActive) {
+          panel.removeAttribute("hidden");
+        } else {
+          panel.setAttribute("hidden", "true");
+        }
+      });
+    };
+
+    const closeDrawer = () => {
+      closeDropdown();
+      drawer.classList.remove("open");
+      drawerButton.classList.remove("open");
+      drawerButton.setAttribute("aria-expanded", "false");
+    };
+
+    const openDrawer = () => {
+      drawer.classList.add("open");
+      drawerButton.classList.add("open");
+      drawerButton.setAttribute("aria-expanded", "true");
+      closeDropdown();
+      if (activeTabId) {
+        activateTab(activeTabId);
+      }
+    };
+
+    const toggleDrawer = () => {
+      if (drawer.classList.contains("open")) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    };
+
+    const handleOptionSelection = (option) => {
+      const hasNav = option.dataset.hasNav === "true";
+      const href = option.dataset.href;
+      const tabId = option.dataset.tabId;
+
+      if (!tabId) {
+        closeDropdown();
+        return;
+      }
+
+      if (!hasNav && href) {
+        updateSelectedOption(tabId);
+        closeDropdown();
+        closeDrawer();
+        window.location.href = href;
+        return;
+      }
+
+      activateTab(tabId);
+      closeDropdown();
+      if (navTrigger instanceof HTMLButtonElement) {
+        navTrigger.focus();
+      }
+    };
+
+    const handleDocumentClick = (event) => {
+      if (!dropdownOpen) return;
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+
+      if (
+        navDropdown instanceof HTMLElement &&
+        navTrigger instanceof HTMLElement
+      ) {
+        if (!navDropdown.contains(target) && !navTrigger.contains(target)) {
+          closeDropdown();
+        }
+      } else if (!drawer.contains(target)) {
+        closeDropdown();
+      }
+    };
+
+    drawerButton.addEventListener("click", toggleDrawer);
+
+    if (navTrigger instanceof HTMLButtonElement) {
+      navTrigger.addEventListener("click", () => {
+        const willOpen = !dropdownOpen;
+        setDropdownState(willOpen);
+        if (willOpen) {
+          window.requestAnimationFrame(() => {
+            focusSelectedOption();
+          });
+        }
+      });
+
+      navTrigger.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault();
+          if (!dropdownOpen) {
+            setDropdownState(true);
+          }
+          window.requestAnimationFrame(() => {
+            focusSelectedOption();
+          });
+        } else if (
+          event.key === "Enter" ||
+          event.key === " " ||
+          event.key === "Space" ||
+          event.key === "Spacebar"
+        ) {
+          event.preventDefault();
+          const willOpen = !dropdownOpen;
+          setDropdownState(willOpen);
+          if (willOpen) {
+            window.requestAnimationFrame(() => {
+              focusSelectedOption();
+            });
+          }
+        } else if (event.key === "Escape" && dropdownOpen) {
+          event.preventDefault();
+          closeDropdown();
+        }
+      });
+    }
+
+    navOptionElements.forEach((option) => {
+      option.addEventListener("click", () => {
+        handleOptionSelection(option);
+      });
+
+      option.addEventListener("keydown", (event) => {
+        if (!navOptionElements.length) return;
+
+        const currentIndex = navOptionElements.indexOf(option);
+
+        if (event.key === "ArrowDown") {
+          event.preventDefault();
+          const nextIndex = (currentIndex + 1) % navOptionElements.length;
+          navOptionElements[nextIndex]?.focus();
+        } else if (event.key === "ArrowUp") {
+          event.preventDefault();
+          const prevIndex =
+            (currentIndex - 1 + navOptionElements.length) %
+            navOptionElements.length;
+          navOptionElements[prevIndex]?.focus();
+        } else if (event.key === "Home") {
+          event.preventDefault();
+          navOptionElements[0]?.focus();
+        } else if (event.key === "End") {
+          event.preventDefault();
+          navOptionElements[navOptionElements.length - 1]?.focus();
+        } else if (
+          event.key === "Enter" ||
+          event.key === " " ||
+          event.key === "Space" ||
+          event.key === "Spacebar"
+        ) {
+          event.preventDefault();
+          handleOptionSelection(option);
+        } else if (event.key === "Escape") {
+          event.preventDefault();
+          closeDropdown();
+          if (navTrigger instanceof HTMLButtonElement) {
+            navTrigger.focus();
+          }
+        } else if (event.key === "Tab") {
+          closeDropdown();
+        }
+      });
+    });
+
+    document.addEventListener("click", handleDocumentClick);
+
+    navLinkElements.forEach((link) => {
+      link.addEventListener("click", () => {
+        closeDrawer();
+      });
+    });
+
+    const mobileSearch = drawer.querySelector("[data-mobile-search]");
+    mobileSearch?.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target instanceof Element) {
+        const anchor = target.closest("a[href]");
+        if (anchor) {
+          closeDrawer();
+        }
+      }
+    });
+
+    mobileSearch?.addEventListener("focusin", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLInputElement) || target.type !== "text") {
+        return;
+      }
+      closeDrawer();
+      window.requestAnimationFrame(() => {
+        if (document.activeElement === target) {
+          target.blur();
+        }
+        document.dispatchEvent(
+          new CustomEvent("header:open-search", {
+            detail: {
+              trigger: target,
+              variant: "mobile",
+            },
+          })
+        );
+      });
+    });
+
+    drawer.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        if (dropdownOpen) {
+          event.stopPropagation();
+          closeDropdown();
+          if (navTrigger instanceof HTMLButtonElement) {
+            navTrigger.focus();
+          }
+          return;
+        }
+
+        closeDrawer();
+        drawerButton.focus();
+      }
+    });
+
+    drawer.dataset.mobileNavInitialized = "true";
+    if (activeTabId) {
+      activateTab(activeTabId);
+    } else if (navOptionElements[0]?.dataset.tabId) {
+      updateSelectedOption(navOptionElements[0].dataset.tabId);
+    }
+  }
+
+  function initializeHeaderSearch() {
+    const overlay = document.getElementById("header-search-overlay");
+    const searchButtons = Array.from(
+      document.querySelectorAll("[data-header-search-button]")
+    );
+
+    if (!overlay || overlay.dataset.searchInitialized === "true") {
+      return;
+    }
+
+    const closeButtons = overlay.querySelectorAll("[data-header-search-close]");
+    const dismissTarget = overlay.querySelector("[data-header-search-dismiss]");
+    const panel = overlay.querySelector("[data-header-search-panel]");
+    const overlayMobileClass = "header-search-overlay--mobile";
+    const panelMobileClass = "header-search-panel--mobile";
+    let lastTrigger = null;
+    let lastVariant = null;
+
+    const setExpandedState = (isOpen) => {
+      const expanded = isOpen ? "true" : "false";
+      searchButtons.forEach((button) => {
+        button.setAttribute("aria-expanded", expanded);
+        button.setAttribute("data-active", expanded);
+      });
+      overlay.dataset.open = expanded;
+      overlay.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    };
+
+    const focusSearchInput = () => {
+      window.requestAnimationFrame(() => {
+        const input = overlay.querySelector(
+          '[data-pagefind-ui] input[type="text"]'
+        );
+        if (input) {
+          input.focus();
+          input.select();
+        }
+      });
+    };
+
+    const openOverlay = (trigger, options = {}) => {
+      lastTrigger = trigger ?? document.activeElement;
+      const variant = options.variant ?? null;
+      lastVariant = typeof variant === "string" ? variant : null;
+      overlay.classList.remove("hidden");
+      overlay.classList.add("flex");
+      const isMobileVariant = lastVariant === "mobile";
+      if (isMobileVariant) {
+        overlay.dataset.variant = "mobile";
+      } else {
+        delete overlay.dataset.variant;
+      }
+      overlay.classList.toggle(overlayMobileClass, isMobileVariant);
+      panel?.classList.toggle(panelMobileClass, isMobileVariant);
+      document.documentElement.classList.add("has-header-search-open");
+      setExpandedState(true);
+      focusSearchInput();
+    };
+
+    const closeOverlay = () => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+      document.documentElement.classList.remove("has-header-search-open");
+      overlay.classList.remove(overlayMobileClass);
+      panel?.classList.remove(panelMobileClass);
+      delete overlay.dataset.variant;
+      setExpandedState(false);
+      if (lastTrigger instanceof HTMLElement) {
+        if (
+          lastVariant === "mobile" &&
+          typeof lastTrigger.blur === "function"
+        ) {
+          lastTrigger.blur();
+        } else if (lastVariant !== "mobile") {
+          lastTrigger.focus();
+        }
+      }
+      lastTrigger = null;
+      lastVariant = null;
+    };
+
+    searchButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        openOverlay(button);
+      });
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        closeOverlay();
+      });
+    });
+
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) {
+        closeOverlay();
+      }
+    });
+
+    dismissTarget?.addEventListener("click", closeOverlay);
+
+    const handleKeydown = (event) => {
+      const key = "key" in event ? event.key : undefined;
+      const isShortcut =
+        !!key && key.toLowerCase() === "k" && (event.metaKey || event.ctrlKey);
+
+      if (isShortcut) {
+        event.preventDefault();
+        openOverlay(searchButtons[0] ?? null);
+        return;
+      }
+
+      if (key === "Escape" && overlay.dataset.open === "true") {
+        event.preventDefault();
+        closeOverlay();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeydown);
+
+    document.addEventListener("header:open-search", (event) => {
+      const detail =
+        event instanceof CustomEvent && typeof event.detail === "object"
+          ? event.detail
+          : {};
+      const trigger =
+        detail && detail.trigger instanceof HTMLElement ? detail.trigger : null;
+      openOverlay(trigger, detail);
+    });
+
+    document.addEventListener("astro:before-swap", () => {
+      if (overlay.dataset.open === "true") {
+        closeOverlay();
+      }
+    });
+
+    overlay.dataset.searchInitialized = "true";
+  }
+
+  const handleAfterSwap = () => {
+    initializeMobileNavigation();
+    initializeHeaderSearch();
+  };
+
+  document.addEventListener("astro:after-swap", handleAfterSwap);
+  handleAfterSwap();
+Home
+Quickstart
+Concepts
+Pricing
+Changelog
+Codex CLI
+Overview
+Configuration
+Codex IDE Extension
+Set up your IDE
+Configuration
+IDE ? Cloud tasks
+Codex Cloud
+Delegate to Codex
+Environments
+Code Review
+Internet Access
+Codex SDK
+Overview
+TypeScript
+GitHub Action
+Guides
+Agents SDK
+Prompting Codex
+Model Context Protocol (MCP)
+Autofix CI
+Enterprise Admin
+Security Admin
+Codex on Windows
+Integrations
+Slack
+Resources
+AGENTS.md
+Codex on GitHub
+const NAV_SELECTOR = "nav[data-left-nav]";
+  const STORAGE_PREFIX = "left-nav-scroll:";
+  const INITIALIZED_ATTRIBUTE = "data-left-nav-scroll-initialized";
+
+  const isStorageAvailable = (() => {
+    try {
+      const storageKey = `${STORAGE_PREFIX}__test__`;
+      sessionStorage.setItem(storageKey, "1");
+      sessionStorage.removeItem(storageKey);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  })();
+
+  const getNav = () => document.querySelector(NAV_SELECTOR);
+
+  const getStorageKey = (nav) =>
+    `${STORAGE_PREFIX}${nav.dataset.leftNavId ?? "default"}`;
+
+  const restoreScrollPosition = (nav) => {
+    if (!isStorageAvailable) return;
+    const storedValue = sessionStorage.getItem(getStorageKey(nav));
+    if (storedValue !== null) {
+      nav.scrollTop = Number(storedValue);
+    }
+  };
+
+  const saveScrollPosition = (nav) => {
+    if (!isStorageAvailable) return;
+    sessionStorage.setItem(getStorageKey(nav), String(nav.scrollTop));
+  };
+
+  const setupNav = () => {
+    const nav = getNav();
+    if (!nav || nav.getAttribute(INITIALIZED_ATTRIBUTE) === "true") return;
+
+    restoreScrollPosition(nav);
+
+    nav.addEventListener(
+      "scroll",
+      () => {
+        saveScrollPosition(nav);
+      },
+      { passive: true }
+    );
+
+    nav.setAttribute(INITIALIZED_ATTRIBUTE, "true");
+  };
+
+  const persistScrollPosition = () => {
+    const nav = getNav();
+    if (!nav) return;
+    saveScrollPosition(nav);
+  };
+
+  const initialize = () => {
+    setupNav();
+    const nav = getNav();
+    if (!nav) return;
+    restoreScrollPosition(nav);
+  };
+
+  window.addEventListener("pageshow", initialize);
+  document.addEventListener("astro:page-load", initialize);
+  document.addEventListener("astro:after-swap", initialize);
+
+  document.addEventListener("astro:before-swap", persistScrollPosition);
+  window.addEventListener("beforeunload", persistScrollPosition);
+
+  initialize();
+astro-island,astro-slot,astro-static-slot{display:contents}
+(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();
+(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();
+window._$HY||(e=>{let t=e=>e&&e.hasAttribute&&(e.hasAttribute("data-hk")?e:t(e.host&&e.host.nodeType?e.host:e.parentNode));["click", "input"].forEach((o=>document.addEventListener(o,(o=>{if(!e.events)return;let s=t(o.composedPath&&o.composedPath()[0]||o.target);s&&!e.completed.has(s)&&e.events.push([s,o])}))))})(_$HY={events:[],completed:new WeakSet,r:{},fe(){}});
+Running Codex on Windows
+Best practices for running Codex on Windows
+For best performance on Windows, install and use
+Windows Subsystem for Linux
+(WSL2).
+Codex is trained to operate in Unix-style environments; running inside WSL2 gives you a Linux shell, unix-style semantics, and tooling that match how Codex is designed to work best.
+For example, when running Codex CLI on Linux, the agent can take advantage of built-in Linux sandboxing to automatically edit files while constraining edits to your workspace or run commands network-disabled.
+Install Codex in Windows Subsystem for Linux (WSL)
+Run these commands in an elevated PowerShell or Windows Terminal:
+# Install default Linux distribution (like Ubuntu)
+wsl
+--
+install
+# Start a shell inside of Windows Subsystem for Linux
+wsl
+# https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl
+# Install Node.js in WSL
+curl
+-
+o
+-
+https:
+//
+raw.githubusercontent.com
+/
+nvm
+-
+sh
+/
+nvm
+/
+master
+/
+install.sh
+|
+bash
+# In a new tab or after exiting and running `wsl` again to install Node.js
+nvm install
+22
+# Install and run Codex in WSL
+npm i
+-
+g @openai
+/
+codex
+codex
+Work on code inside WSL
+Working in Windows-mounted paths like
+/mnt/c/…
+can be slower than when working in them in Windows. Keep your repos under your Linux home directory (like
+~/code/my-app
+) for faster I/O and fewer symlink/permission issues:
+mkdir
+-p
+~/code
+&&
+cd
+~/code
+git
+clone
+https://github.com/your/repo.git
+cd
+repo
+If you need Windows access to files, they’re under
+\wsl$\Ubuntu\home&lt;user>
+in Explorer.
+Running Codex on Windows: common patterns
+For Codex CLI, start
+wsl
+then
+cd
+into your project and run
+codex
+to use of Linux-based sandboxing.
+For Codex IDE extension, the default mode
+Chat
+will ask you to approve file edits and running commands. Or you can select
+Agent (full access)
+- exercise caution when using this as this allows the agent to run unsandboxed without approval.
+Troubleshooting & FAQ
+Installed extension, but it’s unreponsive
+Your system may be missing C++ development tools, which some native dependencies require:
+Visual Studio Build Tools (C++ workload)
+Microsoft Visual C++ Redistributable (x64)
+With winget:
+winget install --id Microsoft.VisualStudio.2022.BuildTools -e
+Then fully restart VS Code after installation.
+If it feels slow on large repos
+Make sure you’re not working under
+/mnt/c
+. Move the repo to WSL (e.g.,
+~/code/…
+).
+Allocate more memory/CPU to WSL if constrained; update WSL to latest:
+wsl
+--
+update
+wsl
+--
+shutdown
+VS Code in WSL can’t find
+codex
+Verify the binary exists and is on PATH inside WSL:
+which
+codex
+||
+echo
+"codex not found"
+If the binary is not found, try installing by
+following the instructions
+earlier in this guide.
+const copyHeadingLink = async (slug) => {
+      const url = `${location.origin}${location.pathname}#${slug}`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(url);
+          return;
+        } catch (error) {
+          console.warn("Copy to clipboard failed", error);
+        }
+      }
+
+      window.prompt("Copy link", url);
+    };
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const button = target.closest("[data-anchor-id]");
+      if (!button) return;
+
+      const slug = button.getAttribute("data-anchor-id");
+      if (!slug) return;
+
+      event.preventDefault();
+      copyHeadingLink(slug);
+      const heading = document.getElementById(slug);
+      if (heading) {
+        heading.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      history.replaceState(null, "", `#${slug}`);
+    });
+(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();

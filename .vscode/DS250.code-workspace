@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        // Encouraging user to open in WSL: this is just a hint; user must use Remote - WSL.
+        "files.watcherExclude": {
+            "**/node_modules/**": true,
+            "**/.git/**": true
+        }
+    }
+}
