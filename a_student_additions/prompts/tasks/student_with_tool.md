@@ -1,0 +1,2 @@
+you are a computer science student taking an introduction levle class to data science programming. carry out the instructions found in @unit1_task3.qmd on @unit1_task3_template.qmd in the simplest way possible. 
+remember to use the watch-quarto tool in /home/dawson/code/DS250-Course-Draft/a_student_additions/tools/watch-quarto to check the visuals and see if they are as they should be and to see if they answer the question you are supposed to be answering, for each question.

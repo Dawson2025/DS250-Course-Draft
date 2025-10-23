@@ -1,6 +1,6 @@
 ---
 title: "Client Report - Batting Validation"
-subtitle: "Unit 2 Task 3"
+subtitle: "Unit 2 Task 2"
 author: "Dawson"
 format:
   html:
@@ -44,7 +44,7 @@ df_batting.head()
 
 ## QUESTION 1
 
-To validate the season-level batting averages, I filtered the batting records to players with at least 10 at bats in a given year, computed batting average as `H / AB`, and sorted by batting average (descending) and `playerID` (ascending). The pandas output confirms the SQL results I obtained earlier.
+__Write an SQL query that pulls in the batting table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
 ```{python}
 df_q1 = (
@@ -56,11 +56,12 @@ df_q1 = (
 df_q1.head(5)
 ```
 
-The top five seasons are dominated by small-sample performances such as `nymanny01` in 1974 and `carsoma01` in 2013, matching the ordering produced in SQL when using the same minimum-at-bats filter.
+To validate the season-level batting averages, I filtered the batting records to players with at least 10 at bats in a given year, computed batting average as `H / AB`, and sorted by batting average (descending) and `playerID` (ascending). The pandas output confirms the SQL results I obtained earlier. The top five seasons are dominated by small-sample performances such as `nymanny01` in 1974 and `carsoma01` in 2013, matching the ordering produced in SQL when using the same minimum-at-bats filter.
 
 ## QUESTION 2
 
-For career totals, I aggregated the same batting data across each `playerID`, limited the results to players with at least 100 career at bats, and sorted using the same criteria. The leaders—`cobbty01`, `barnero01`, and `hornsro01`—line up with the SQL-based rankings.
+ __Write an SQL query that pulls in the batting table. Then, with Python Pandas calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
+
 
 ```{python}
 df_q2 = (
@@ -77,4 +78,4 @@ df_q2.head(5)
 con.close()
 ```
 
-
+For career totals, I aggregated the same batting data across each `playerID`, limited the results to players with at least 100 career at bats, and sorted using the same criteria. The leaders—`cobbty01`, `barnero01`, and `hornsro01`—line up with the SQL-based rankings.
