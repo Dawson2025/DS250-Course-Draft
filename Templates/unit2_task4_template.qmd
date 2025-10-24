@@ -45,7 +45,7 @@ con = sqlite3.connect(sqlite_file)
 
 __Write an SQL query that provides a summary table showing the average salary for each position (e.g., pitcher, catcher, outfielder). Position information can be found in the fielding table in the POS column.__
 
-The analysis examines salary differences across baseball positions by calculating average salaries for each position. The query handles the complexity that players often play multiple positions in a single year by using the position where they played the most games that year.
+The analysis examines salary differences across baseball positions using Python pandas for data manipulation. The query handles the complexity that players often play multiple positions in a single year by using the position where they played the most games that year.
 
 ```{python}
 # SQL query to get position salary summary

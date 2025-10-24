@@ -1,6 +1,6 @@
 ---
 title: "Client Report - Batting Validation"
-subtitle: "Unit 2 Task 2"
+subtitle: "Unit 2 Task 2: Basic aggregation and wrangling"
 author: "Dawson"
 format:
   html:

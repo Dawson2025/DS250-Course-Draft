@@ -53,7 +53,7 @@ __Identify the top 10 players with the longest careers. Include their:__
     - last_name
     - career_length
 
-The analysis identifies the top 10 players with the longest careers in Major League Baseball. Career length is calculated as the difference between the last year and first year a player appeared in the batting table, plus 1 to include both years.
+The analysis identifies the top 10 players with the longest careers in Major League Baseball (MLB). Career length is calculated as the difference between the last year and first year a player appeared in the batting table, plus 1 to include both years.
 
 ```{python}
 # SQL query to find top 10 players with longest careers
