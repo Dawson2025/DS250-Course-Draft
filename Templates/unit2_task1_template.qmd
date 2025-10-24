@@ -1,7 +1,7 @@
 ---
 title: "Client Report - BYU-Idaho Players and Comparing Teams"
 subtitle: "Unit 2 Task 2"
-author: "[STUDENT NAME]"
+author: "[Dawson Packer]"
 format:
   html:
     self-contained: true
@@ -48,12 +48,22 @@ con = sqlite3.connect(sqlite_file)
 
 __Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
-__Describe your results and analysis here_
+The results show the top 5 players with the highest batting averages for players with at least 1 at bat in a given year. These are typically small sample sizes where players had very few at bats but got hits, resulting in artificially high batting averages.
 
 ```{python}
-# Include and execute your code here
+# SQL query for batting averages with at least 1 at bat
+query1 = """
+SELECT playerID, yearID, 
+       ROUND(CAST(H AS FLOAT) / CAST(AB AS FLOAT), 3) as batting_average
+FROM batting 
+WHERE AB >= 1
+ORDER BY batting_average DESC, playerID ASC
+LIMIT 5
+"""
 
-
+result1 = pd.read_sql_query(query1, con)
+print("Top 5 batting averages (min 1 at bat):")
+result1
 ```
 
 
@@ -61,12 +71,22 @@ __Describe your results and analysis here_
 
 __Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results.__  
 
-_Describe your results and analysis here_
+With a minimum of 10 at bats, the results are more meaningful as they represent players with more substantial playing time. This filter helps eliminate the small sample size bias seen in the previous query.
 
 ```{python}
-# Include and execute your code here
+# SQL query for batting averages with at least 10 at bats
+query2 = """
+SELECT playerID, yearID, 
+       ROUND(CAST(H AS FLOAT) / CAST(AB AS FLOAT), 3) as batting_average
+FROM batting 
+WHERE AB >= 10
+ORDER BY batting_average DESC, playerID ASC
+LIMIT 5
+"""
 
-
+result2 = pd.read_sql_query(query2, con)
+print("Top 5 batting averages (min 10 at bats):")
+result2
 ```
 
 
@@ -74,10 +94,28 @@ _Describe your results and analysis here_
 
 __Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
 
-_Describe your results and analysis here_
+Career batting averages provide the most meaningful measure of a player's hitting ability as they aggregate performance across multiple seasons. The 100 at bat minimum ensures we have substantial data for each player.
 
 ```{python}
-# Include and execute your code here
+# SQL query for career batting averages with at least 100 at bats
+query3 = """
+SELECT playerID, 
+       SUM(AB) as career_AB,
+       SUM(H) as career_H,
+       ROUND(CAST(SUM(H) AS FLOAT) / CAST(SUM(AB) AS FLOAT), 3) as career_batting_average
+FROM batting 
+GROUP BY playerID
+HAVING SUM(AB) >= 100
+ORDER BY career_batting_average DESC, playerID ASC
+LIMIT 5
+"""
 
+result3 = pd.read_sql_query(query3, con)
+print("Top 5 career batting averages (min 100 at bats):")
+result3
+```
 
+```{python}
+# Close the database connection
+con.close()
 ```

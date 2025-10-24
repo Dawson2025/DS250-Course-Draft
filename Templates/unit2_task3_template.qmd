@@ -53,12 +53,46 @@ __Identify the top 10 players with the longest careers. Include their:__
     - last_name
     - career_length
 
-_Describe your results and analysis here_
+The analysis identifies the top 10 players with the longest careers in Major League Baseball. Career length is calculated as the difference between the last year and first year a player appeared in the batting table, plus 1 to include both years.
 
 ```{python}
-# Include and execute your code here
+# SQL query to find top 10 players with longest careers
+query = """
+SELECT p.playerID,
+       p.nameFirst as first_name,
+       p.nameLast as last_name,
+       (MAX(b.yearID) - MIN(b.yearID) + 1) as career_length
+FROM people p
+JOIN batting b ON p.playerID = b.playerID
+GROUP BY p.playerID, p.nameFirst, p.nameLast
+ORDER BY career_length DESC, p.playerID ASC
+LIMIT 10
+"""
 
+result = pd.read_sql_query(query, con)
+print("Top 10 players with longest careers:")
+result
+```
 
+```{python}
+# Create a visualization of career lengths
+from lets_plot import *
+
+# Create a bar chart of the top 10 longest careers
+chart = (ggplot(result, aes(x='career_length', y='playerID')) +
+         geom_bar(stat='identity', fill='steelblue', alpha=0.7) +
+         labs(title='Top 10 Players with Longest MLB Careers',
+              x='Career Length (Years)',
+              y='Player ID') +
+         theme_minimal() +
+         theme(axis_text_y=element_text(size=8)))
+
+chart
+```
+
+```{python}
+# Close the database connection
+con.close()
 ```
 
 

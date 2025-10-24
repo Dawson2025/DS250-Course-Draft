@@ -33,20 +33,19 @@ sqlite_file = "../Data/lahmansbaseballdb.sqlite"
 con = sqlite3.connect(sqlite_file)
 ```
 
-```{python}
-query_batting = """
-SELECT playerID, yearID, AB, H
-FROM batting
-"""
-df_batting = pd.read_sql_query(query_batting, con)
-df_batting.head()
-```
-
 ## QUESTION 1
 
 __Write an SQL query that pulls in the batting table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
 ```{python}
+# Load batting data
+query_batting = """
+SELECT playerID, yearID, AB, H
+FROM batting
+"""
+df_batting = pd.read_sql_query(query_batting, con)
+
+# Create dataframe with batting averages for players with at least 10 at bats
 df_q1 = (
     df_batting.loc[df_batting["AB"] >= 10].copy()
     .assign(batting_avg=lambda d: (d["H"] / d["AB"]).round(3))
