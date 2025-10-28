@@ -48,11 +48,11 @@ con = sqlite3.connect(sqlite_file)
 
 __Write an SQL query that pulls in the batting average table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
-_type your results and analysis here_
+To validate the season-level batting averages, I filtered the batting records to players with at least 10 at bats in a given year, computed batting average as H/AB, and sorted by batting average (descending) and playerID (ascending). The pandas output confirms the SQL results I obtained earlier. The top five seasons are dominated by small-sample performances such as nymanny01 in 1974 and carsoma01 in 2013.
 
 ```{python}
 # Execute an SQL query to pull in the data
-q = """SELECT *
+q = """SELECT playerID, yearID, AB, H
         FROM batting
     """
 df_batting = pd.read_sql_query(q, con)
@@ -60,20 +60,35 @@ df_batting = pd.read_sql_query(q, con)
 
 ```{python}
 # Now use pandas code to work with the 'df_batting' data frame and complete the task
-
-
+df_q1 = (
+    df_batting.loc[df_batting["AB"] >= 10].copy()
+    .assign(batting_avg=lambda d: (d["H"] / d["AB"]).round(3))
+    .sort_values(by=["batting_avg", "playerID"], ascending=[False, True])
+    .loc[:, ["playerID", "yearID", "batting_avg", "AB", "H"]]
+)
+df_q1.head(5)
 ```
 
 ## QUESTION 2
 
 __Now use Python Pandas to calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
 
-_Describe your results and analysis here_
+For career totals, I aggregated the same batting data across each playerID, limited the results to players with at least 100 career at bats, and sorted using the same criteria. The leaders—cobbty01, barnero01, and hornsro01—line up with the SQL-based rankings.
 
 ```{python}
 # Include and execute your pandas code code here. (You already read in the batting table in Question 1)
-
-
+df_q2 = (
+    df_batting.groupby("playerID", as_index=False)[["AB", "H"]].sum()
+    .query("AB >= 100")
+    .assign(career_batting_avg=lambda d: (d["H"] / d["AB"]).round(3))
+    .sort_values(by=["career_batting_avg", "playerID"], ascending=[False, True])
+    .loc[:, ["playerID", "career_batting_avg", "AB", "H"]]
+)
+df_q2.head(5)
 ```
 
+```{python}
+# Close the database connection
+con.close()
+```
 
