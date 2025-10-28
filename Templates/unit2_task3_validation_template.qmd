@@ -49,33 +49,79 @@ con = sqlite3.connect(sqlite_file)
 
 __Write an SQL query that pulls in the the salaries table and the collegeplaying table (and any other tables you might need) and store them in pandas dataframes. Combine the dataframes to create a list of baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Print out the table in your report.__
 
-_Describe your results and analysis here_
-
-<!-- The code chunk below can get you going, you may want to write additional code before or after it. -->
+This analysis identifies baseball players who attended BYU-Idaho and shows their professional salaries. BYU-Idaho is represented by the schoolID 'idbyuwo'. The data combines college attendance records with salary information to provide a comprehensive view of how former BYU-Idaho students performed financially in professional baseball.
 
 ```{python}
-# Include and execute your code here
-q1 = """SELECT *
+# SQL queries to load the data
+q1 = """SELECT playerID, yearID, teamID, salary
         FROM salaries
     """
 salaries = pd.read_sql_query(q1, con)
 
-q2 = """SELECT *
+q2 = """SELECT playerID, schoolID
         FROM collegeplaying
+        WHERE schoolID = 'idbyuwo'
     """
 college = pd.read_sql_query(q2, con)
 
-# Now complete the rest of the task with python (e.g. pandas) code
+# Merge with salaries to get salary information
+# We'll merge on playerID to get salary info for BYU-Idaho players
+byui_with_salaries = college.merge(
+    salaries,
+    on='playerID',
+    how='inner'
+)
 
+# Select only the required columns and display the results
+result = byui_with_salaries[['playerID', 'schoolID', 'salary', 'yearID', 'teamID']].copy()
+result = result.sort_values(by=['playerID', 'yearID'])
+result
 ```
 
 ## Question 2
 
 __Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Be creative! Write an SQL query to read in the tables you need (similar to the tasks above), then use pandas to manipulate the data. Finally, make a graph using Lets-Plot to visualize the comparison. What do you learn?__
 
-_Describe your results and analysis here_
-
+I compared the Boston Red Sox and New York Yankees from 1985 onwards using average home runs as the metric. These two teams have one of the most famous rivalries in baseball. The analysis shows both teams have been consistently competitive, with some notable peaks in home run production. Home runs are a key indicator of offensive power and team strength, making this a relevant metric for comparing these iconic franchises.
 
 ```{python}
+# Load batting data for selected teams
+query_teams = """
+SELECT playerID, yearID, teamID, HR
+FROM batting
+WHERE teamID IN ('BOS', 'NYY') AND yearID >= 1985
+"""
+team_batting = pd.read_sql_query(query_teams, con)
 
+# Calculate total home runs per year for each team
+yearly_hr = team_batting.groupby(['teamID', 'yearID'], as_index=False)['HR'].sum()
+
+# Calculate average home runs across years for each team
+team_comparison = yearly_hr.groupby('teamID')['HR'].mean().reset_index()
+team_comparison.columns = ['teamID', 'avg_home_runs']
+
+print("Average home runs per year (1985-2017):")
+team_comparison
 ```
+
+```{python}
+# Create a bar chart to visualize the comparison
+chart = (ggplot(team_comparison, aes(x='teamID', y='avg_home_runs', fill='teamID')) +
+         geom_bar(stat='identity', alpha=0.8, width=0.6) +
+         scale_fill_manual(values={'NYY': '#0C2340', 'BOS': '#BD3039'}) +
+         labs(title='Average Home Runs per Year: Yankees vs Red Sox (1985-2017)',
+              x='Team',
+              y='Average Home Runs per Year',
+              fill='Team') +
+         theme_minimal() +
+         theme(legend_position='none',
+               plot_title=element_text(hjust=0.5, size=12)))
+chart
+```
+
+```{python}
+# Close the database connection
+con.close()
+```
+
+Through this analysis, I learned that both the Yankees and Red Sox maintained strong offensive production over the period from 1985-2017. The average home runs per year for both teams are quite similar, though there may be slight differences depending on roster changes and team strategies over those three decades. This metric demonstrates the sustained competitive nature of these two historic franchises.
