@@ -1,6 +1,6 @@
 ---
 title: "Client Report - Longevity of Baseball Players"
-subtitle: "Unit 2 Task 3"
+subtitle: "Unit 2 Task 3: Longevity of Players"
 author: "[STUDENT NAME]"
 format:
   html:

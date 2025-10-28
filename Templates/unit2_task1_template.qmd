@@ -1,6 +1,6 @@
 ---
-title: "Client Report - BYU-Idaho Players and Comparing Teams"
-subtitle: "Unit 2 Task 2"
+title: "Client Report - Batting Averages"
+subtitle: "Unit 2 Task 1: Batting Averages"
 author: "[Dawson Packer]"
 format:
   html:
