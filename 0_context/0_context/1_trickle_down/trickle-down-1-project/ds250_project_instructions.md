@@ -17,6 +17,7 @@ Before starting any work, understand these key aspects:
 **Stack**: Quarto + Python 3.12 + lets-plot + pandas + scikit-learn
 **Environment**: WSL Ubuntu (Cursor IDE with Claude Code)
 **Location**: `/home/dawson/code/DS250-Course-Draft/`
+**Published Site**: Assignments and course materials are accessed at: https://byuidatascience.github.io/DS250-Course-Draft/
 
 ## Critical Rules
 
