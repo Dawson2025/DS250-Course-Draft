@@ -48,7 +48,7 @@ con = sqlite3.connect(sqlite_file)
 
 __Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
-Batting average is calculated as hits divided by at-bats (H/AB). Players must have at least 1 at-bat to be included. The top 5 players by batting average are shown below, sorted first by batting average (descending) and then by playerID alphabetically.
+The results reveal an interesting pattern: all five top players achieved a perfect 1.000 batting average (1 hit in 1 at-bat). These single-at-bat performances span over 95 years, from 1923 (abramge01) to 2019 (alanirj01), demonstrating that such rare events occur across different eras. While statistically perfect, these results represent very small sample sizes—just one plate appearance—and therefore may not reflect true hitting ability. This underscores why minimum at-bat thresholds are important for meaningful batting average statistics.
 
 ```{python}
 # SQL query to calculate batting averages for players with at least 1 at bat
@@ -72,7 +72,7 @@ print(result1.head(5))
 
 __Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results.__  
 
-This query is similar to Question 1, but requires players to have at least 10 at-bats in the season. This filter helps eliminate players with very small sample sizes that might have misleading batting averages. The top 5 players with at least 10 at-bats are shown below.
+With the minimum 10 at-bat threshold, we see more realistic batting averages ranging from 0.571 to 0.643 (57.1% to 64.3%). The top performer is nymanny01 in 1974 with 0.643 (9 hits in 14 at-bats), followed closely by carsoma01 in 2013 at 0.636 (7 hits in 11 at-bats). Notably, two players tied at 0.600—altizda01 (1910) and johnsde01 (1975)—spanning the early 20th century and modern era. The years represented (1910, 1948, 1974-1975, 2013) show these exceptional single-season performances have occurred throughout baseball history, not just in recent decades.
 
 ```{python}
 # SQL query to calculate batting averages for players with at least 10 at bats
@@ -96,7 +96,7 @@ print(result2.head(5))
 
 __Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
 
-This query aggregates data across all years for each player to calculate their career batting average. Players are required to have at least 100 total at-bats across their entire career to be included, ensuring meaningful career statistics. The top 5 career batting averages are shown below.
+The career statistics paint a different picture than single-season performances. Ty Cobb (cobbty01) leads with a career average of 0.366 (36.6%) over 11,436 at-bats—4,189 career hits. This is followed by barnero01 at 0.360 (36.0%) with 2,391 at-bats, and Rogers Hornsby (hornsro01) at 0.358 (35.8%) with 8,173 at-bats. All five players in the top tier achieved career averages between 0.355 and 0.366, demonstrating remarkable consistency over thousands of plate appearances. Interestingly, these all-time greats played primarily in the early 20th century, suggesting the importance of historical context when comparing career achievements across eras.
 
 ```{python}
 # SQL query to calculate career batting averages (all years combined)
