@@ -1,0 +1,118 @@
+---
+title: "Client Report - Batting Averages"
+subtitle: "Unit 2 Task 1"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+
+# Include and execute your code here
+sqlite_file = '/home/dawson/code/DS250-Course-Draft/Data/lahmansbaseballdb.sqlite'
+# Database is located in the Data directory (absolute path)
+con = sqlite3.connect(sqlite_file)
+```
+
+## QUESTION 1
+
+__Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
+
+Batting average is calculated as hits divided by at-bats (H/AB). Players must have at least 1 at-bat to be included. The top 5 players by batting average are shown below, sorted first by batting average (descending) and then by playerID alphabetically.
+
+```{python}
+# SQL query to calculate batting averages for players with at least 1 at bat
+query1 = """
+SELECT 
+    playerID,
+    yearID,
+    CAST(H AS FLOAT) / NULLIF(AB, 0) AS batting_avg
+FROM batting
+WHERE AB >= 1
+ORDER BY batting_avg DESC, playerID ASC
+LIMIT 5
+"""
+
+result1 = pd.read_sql_query(query1, con)
+print(result1.head(5))
+```
+
+
+## QUESTION 2
+
+__Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results.__  
+
+This query is similar to Question 1, but requires players to have at least 10 at-bats in the season. This filter helps eliminate players with very small sample sizes that might have misleading batting averages. The top 5 players with at least 10 at-bats are shown below.
+
+```{python}
+# SQL query to calculate batting averages for players with at least 10 at bats
+query2 = """
+SELECT 
+    playerID,
+    yearID,
+    CAST(H AS FLOAT) / NULLIF(AB, 0) AS batting_avg
+FROM batting
+WHERE AB >= 10
+ORDER BY batting_avg DESC, playerID ASC
+LIMIT 5
+"""
+
+result2 = pd.read_sql_query(query2, con)
+print(result2.head(5))
+```
+
+
+## QUESTION 3
+
+__Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
+
+This query aggregates data across all years for each player to calculate their career batting average. Players are required to have at least 100 total at-bats across their entire career to be included, ensuring meaningful career statistics. The top 5 career batting averages are shown below.
+
+```{python}
+# SQL query to calculate career batting averages (all years combined)
+query3 = """
+SELECT 
+    playerID,
+    SUM(H) AS total_hits,
+    SUM(AB) AS total_at_bats,
+    CAST(SUM(H) AS FLOAT) / NULLIF(SUM(AB), 0) AS career_batting_avg
+FROM batting
+GROUP BY playerID
+HAVING SUM(AB) >= 100
+ORDER BY career_batting_avg DESC, playerID ASC
+LIMIT 5
+"""
+
+result3 = pd.read_sql_query(query3, con)
+print(result3.head(5))
+```

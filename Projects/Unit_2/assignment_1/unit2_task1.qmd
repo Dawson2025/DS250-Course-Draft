@@ -82,7 +82,7 @@ The reading for this task are from this excellent [SQL Guide](https://docs.data.
 
 ### Questions and Tasks
 
-Download the [Unit 2 Task 1 Template](../Templates/unit2_task1_template.qmd). Note: batting average is number of hits divided by the number of at-bats. It is a number between 0 and 1 that represents what % of the time a player gets a hit (as opposed to getting out, for example).
+Download the [Unit 2 Task 1 Template](../../Templates/Unit_2/assignment_1/unit2_task1_template.qmd). Note: batting average is number of hits divided by the number of at-bats. It is a number between 0 and 1 that represents what % of the time a player gets a hit (as opposed to getting out, for example).
 
 1. __Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
@@ -115,7 +115,7 @@ When you have completed the report, you will need to follow this process to subm
 
 ### Deliverables:
 
-_Use this [unit2_task1_template](../Templates/unit2_task1_template.qmd) to submit your Client Report._
+_Use this [unit2_task1_template](../../Templates/Unit_2/assignment_1/unit2_task1_template.qmd) to submit your Client Report._
 
 Answers to the questions | tasks. Each should include a written description of your results, code cells with comments, charts and/or tables.
 

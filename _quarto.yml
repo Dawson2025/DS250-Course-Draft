@@ -51,13 +51,13 @@ website:
       - text: "Unit 2 SQLite"
         menu:
           - text: "Task 1"
-            file: Projects/unit2_task1.qmd
+            file: Projects/Unit_2/assignment_1/unit2_task1.qmd
           - text: "Task 2"
-            file: Projects/unit2_task2.qmd
+            file: Projects/Unit_2/assignment_2/unit2_task2.qmd
           - text: "Task 3"
-            file: Projects/unit2_task3_validation_in_py.qmd
+            file: Projects/Unit_2/assignment_3/unit2_task3_validation_in_py.qmd
           - text: "Task 4"
-            file: Projects/unit2_task3.qmd
+            file: Projects/Unit_2/assignment_4/unit2_task3.qmd
       - text: "Unit 3 Wrangling"
         menu:
           - text: "Task 1"

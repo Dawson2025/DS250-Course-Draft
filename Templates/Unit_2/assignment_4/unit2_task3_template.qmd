@@ -1,0 +1,99 @@
+---
+title: "Client Report - Longevity of Baseball Players"
+subtitle: "Unit 2 Task 3"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+
+# Include and execute your code here
+sqlite_file = '/home/dawson/code/DS250-Course-Draft/Data/lahmansbaseballdb.sqlite'
+# Database is located in the Data directory (absolute path)
+con = sqlite3.connect(sqlite_file)
+```
+
+## QUESTION 1
+
+__Identify the top 10 players with the longest careers. Include their:__
+
+    - playerID
+    - first_name
+    - last_name
+    - career_length
+
+Career length is calculated as the number of years between a player's first appearance and last appearance in Major League Baseball. This analysis identifies players who sustained long careers in professional baseball, which often indicates exceptional skill, durability, or both.
+
+```{python}
+# Include and execute your code here
+# First, get player names from people table
+q_people = """SELECT playerID, nameFirst as first_name, nameLast as last_name
+              FROM people
+           """
+people = pd.read_sql_query(q_people, con)
+
+# Get batting data to calculate career span (first year to last year)
+q_batting = """SELECT playerID, yearID
+               FROM batting
+               GROUP BY playerID, yearID
+            """
+batting_years = pd.read_sql_query(q_batting, con)
+
+# Calculate career length for each player
+career_lengths = batting_years.groupby('playerID').agg({
+    'yearID': ['min', 'max']
+}).reset_index()
+
+career_lengths.columns = ['playerID', 'first_year', 'last_year']
+career_lengths['career_length'] = career_lengths['last_year'] - career_lengths['first_year'] + 1
+
+# Merge with people table to get names
+result = pd.merge(
+    career_lengths[['playerID', 'career_length']],
+    people[['playerID', 'first_name', 'last_name']],
+    on='playerID',
+    how='inner'
+)
+
+# Sort by career_length descending and select top 10
+top10_longest_careers = result.sort_values('career_length', ascending=False).head(10)
+
+# Select columns in the required order
+final_result = top10_longest_careers[['playerID', 'first_name', 'last_name', 'career_length']].copy()
+
+print("Top 10 Players with Longest MLB Careers:")
+print(final_result)
+```
+
+

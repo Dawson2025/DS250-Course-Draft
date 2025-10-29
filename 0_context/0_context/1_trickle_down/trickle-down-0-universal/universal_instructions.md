@@ -69,7 +69,45 @@ Before making changes:
 - Keep requirements/specifications up to date
 - Create or update architecture docs for significant changes
 
-### 7. File Organization Best Practices
+### 7. Update 0_context Documentation Before Ending Turn
+**CRITICAL:** Before completing any task or ending your turn as an AI agent:
+
+- **MANDATORY**: Review and update all relevant documentation in the `0_context/` directory structure
+  - If you created new features, tools, or processes → document them in appropriate trickle-down levels
+  - If you modified workflows → update workflow documentation
+  - If you discovered new patterns or standards → add them to universal instructions or project-specific docs
+  - If you fixed issues → document the solution for future reference
+  - If you changed file locations → update path references in documentation
+
+- **MANDATORY ARCHIVING**: Create archive entry for **every change** made to `0_context/`
+  - Create entry file in `0_context/0_context/archive/entries/` using format: `YYYY-MM-DD-HHMMSS-description.md`
+  - Update `0_context/0_context/archive/CHANGELOG.md` with summary of changes
+  - Follow archive entry template (see `0_context/0_context/archive/README.md`)
+  - Document: what changed, why it changed, previous state, new state, and impact
+  - Link related archive entries if applicable
+
+- **What to update:**
+  - `0_context/0_context/0_universal_instructions/` - Universal patterns and workflows
+  - `0_context/0_context/1_trickle_down/trickle-down-0.5-environment/` - Environment setup docs
+  - `0_context/0_context/1_trickle_down/trickle-down-1-project/` - Project-specific instructions
+  - Any other relevant `0_context/` subdirectories based on your changes
+
+- **When documentation is especially critical:**
+  - After creating new tools or scripts
+  - After modifying authentication or security systems
+  - After changing project structure or file organization
+  - After discovering bugs or solutions
+  - After implementing new features or capabilities
+
+- **This ensures:**
+  - Future AI agents have accurate context
+  - Knowledge persists across sessions
+  - Patterns and solutions are captured for reuse
+  - The trickle-down documentation structure remains current
+
+**Do NOT end your turn until `0_context/` documentation reflects your work.**
+
+### 8. File Organization Best Practices
 **CRITICAL:** Always organize files following this three-level hierarchy:
 
 #### Organization Hierarchy
@@ -204,10 +242,27 @@ If you find poor organization:
    - Add/update comments
    - Remove debug code
    - Clean up temporary files
+   - **CRITICAL: Update `0_context/` documentation** (see Principle #7)
 
-8. **Final Review**
-   - Review all changed files
+8. **Update 0_context Documentation and Archive Changes**
+   - Review all changes made during this task
+   - Update relevant files in `0_context/` directory structure:
+     - Universal instructions if patterns/processes changed
+     - Environment docs if setup/configurations changed
+     - Project instructions if project-specific details changed
+     - Feature docs if new capabilities were added
+   - Ensure documentation accurately reflects current state
+   - Add examples or notes for future reference if needed
+   - **CRITICAL: Create archive entry** for every change:
+     - File: `0_context/0_context/archive/entries/YYYY-MM-DD-HHMMSS-description.md`
+     - Update: `0_context/0_context/archive/CHANGELOG.md`
+     - Follow format in `0_context/0_context/archive/README.md`
+     - Document what, why, before/after, and impact
+
+9. **Final Review**
+   - Review all changed files (code AND documentation)
    - Ensure TODO list is complete
+   - Verify `0_context/` documentation is updated
    - Verify tests pass
    - Check git diff for unintended changes
 
@@ -377,18 +432,23 @@ If you find poor organization:
 
 ## Summary Checklist
 
-Before marking any task complete, verify:
+Before marking any task complete or ending your turn, verify:
 
 - [ ] TODO list created and maintained
 - [ ] Existing code read and understood
 - [ ] Implementation follows project patterns
 - [ ] Tests written and passing
-- [ ] Documentation updated
+- [ ] Documentation updated (general project docs)
+- [ ] **CRITICAL: `0_context/` documentation updated** - All relevant docs in `0_context/` directory reflect current state
+- [ ] **CRITICAL: Archive entries created** - Every change to `0_context/` has archive entry in `archive/entries/`
+- [ ] **CRITICAL: CHANGELOG.md updated** - `archive/CHANGELOG.md` includes summary of all changes
 - [ ] No secrets/credentials committed
 - [ ] Code reviewed for quality
 - [ ] Git commits are clean and descriptive
 - [ ] No linter errors or warnings
 - [ ] Edge cases considered and handled
+
+**REMEMBER:** Updating `0_context/` documentation is MANDATORY before ending your turn. This ensures future AI agents have accurate, up-to-date context about the project, workflows, and solutions discovered.
 
 ---
 

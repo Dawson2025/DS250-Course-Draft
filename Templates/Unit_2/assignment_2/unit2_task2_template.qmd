@@ -39,8 +39,8 @@ LetsPlot.setup_html(isolated_frame=True)
 # Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
 
 # Include and execute your code here
-sqlite_file = '../../Data/lahmansbaseballdb.sqlite'
-# Database is located in the Data directory
+sqlite_file = '/home/dawson/code/DS250-Course-Draft/Data/lahmansbaseballdb.sqlite'
+# Database is located in the Data directory (absolute path)
 con = sqlite3.connect(sqlite_file)
 ```
 

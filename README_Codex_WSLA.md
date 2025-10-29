@@ -6,11 +6,11 @@ Short guide
 
 1. Enable WSL and install a Linux distribution (Ubuntu recommended):
 
-   - Run `docs/setup_wsl.ps1` from an elevated PowerShell (Admin). The script can call `wsl --install` and will launch a WSL shell.
+   - Run `0_context/0_context/1_trickle_down/trickle-down-0.5-environment/setup-scripts/setup_wsl.ps1` from an elevated PowerShell (Admin). The script can call `wsl --install` and will launch a WSL shell.
 
 2. Inside WSL, install Node and Codex:
 
-   - Run `bash ./docs/install_codex_in_wsl.sh` inside WSL. This installs nvm, Node 22, and `@openai/codex` globally.
+   - Run `bash ./0_context/0_context/1_trickle_down/trickle-down-0.5-environment/setup-scripts/install_codex_in_wsl.sh` inside WSL. This installs nvm, Node 22, and `@openai/codex` globally.
 
 3. Developer workflow recommendations:
 
@@ -22,4 +22,4 @@ Troubleshooting
 - If `codex` isn't found in VS Code's WSL terminal, verify with `which codex` in WSL.
 - If npm native builds fail, the PowerShell script can optionally install Visual Studio Build Tools via winget.
 
-See `docs/CODACE_WINDOWS_README.md` for the detailed helper files.
+See `0_context/0_context/1_trickle_down/trickle-down-0.5-environment/codex-windows-setup.md` for the detailed helper files.

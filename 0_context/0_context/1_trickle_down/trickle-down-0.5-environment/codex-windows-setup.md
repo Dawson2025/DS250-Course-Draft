@@ -13,7 +13,7 @@ Files
 Usage
 1. Open PowerShell as Administrator and run:
 
-    .\docs\setup_wsl.ps1
+    .\0_context\0_context\1_trickle_down\trickle-down-0.5-environment\setup-scripts\setup_wsl.ps1
 
    This script will enable the WSL optional feature and prompt you to restart if needed. It will then launch a WSL shell (you may need to re-run to continue after a restart).
 
@@ -23,7 +23,7 @@ Usage
 
    Or, from inside WSL after cloning this repo, run:
 
-    . ./docs/install_codex_in_wsl.sh
+    . ./0_context/0_context/1_trickle_down/trickle-down-0.5-environment/setup-scripts/install_codex_in_wsl.sh
 
 3. After installation, in WSL verify the `codex` binary is available:
 

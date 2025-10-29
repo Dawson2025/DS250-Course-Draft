@@ -171,8 +171,8 @@ Projects typically load data via URLs (e.g., GitHub raw links) rather than local
 ### WSL Setup Scripts
 
 The repository includes helper scripts for setting up WSL development (see `README_Codex_WSLA.md`):
-- `docs/setup_wsl.ps1`: PowerShell script to enable WSL and install Linux distribution
-- `docs/install_codex_in_wsl.sh`: Bash script for WSL environment setup
+- `0_context/0_context/1_trickle_down/trickle-down-0.5-environment/setup-scripts/setup_wsl.ps1`: PowerShell script to enable WSL and install Linux distribution
+- `0_context/0_context/1_trickle_down/trickle-down-0.5-environment/setup-scripts/install_codex_in_wsl.sh`: Bash script for WSL environment setup
 - Files are stored in WSL home directory for performance (not under `/mnt/c/...`)
 
 ### Universal MCP Configuration

@@ -1,0 +1,143 @@
+---
+title: "Client Report - Joins and Team Comparison"
+subtitle: "Unit 2 Task 3"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+
+# Include and execute your code here
+sqlite_file = '/home/dawson/code/DS250-Course-Draft/Data/lahmansbaseballdb.sqlite'
+# Database is located in the Data directory (absolute path)
+con = sqlite3.connect(sqlite_file)
+```
+
+
+## Question 1
+
+__Write an SQL query that pulls in the the salaries table and the collegeplaying table (and any other tables you might need) and store them in pandas dataframes. Combine the dataframes to create a list of baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Print out the table in your report.__
+
+This task demonstrates joining tables using pandas. We first load the salaries and collegeplaying tables via SQL, then use pandas merge operations to combine them and filter for BYU-Idaho players. The schoolID for BYU-Idaho in the database is 'idbyuid'.
+
+```{python}
+# Include and execute your code here
+q1 = """SELECT *
+        FROM salaries
+    """
+salaries = pd.read_sql_query(q1, con)
+
+q2 = """SELECT *
+        FROM collegeplaying
+    """
+college = pd.read_sql_query(q2, con)
+
+# Filter college data for BYU-Idaho (schoolID = 'idbyuid')
+byui_players = college[college['schoolID'] == 'idbyuid'].copy()
+
+# Merge salaries with BYU-Idaho players on playerID
+# This creates a dataframe with all salary records for BYU-Idaho players
+byui_salaries = pd.merge(
+    byui_players[['playerID', 'schoolID']],
+    salaries[['playerID', 'salary', 'yearID', 'teamID']],
+    on='playerID',
+    how='inner'
+)
+
+# Select the five required columns in the specified order
+result = byui_salaries[['playerID', 'schoolID', 'salary', 'yearID', 'teamID']].copy()
+
+# Print the result
+print(f"BYU-Idaho players with salary records: {len(result)} rows")
+print(result.head(10))
+```
+
+## Question 2
+
+__Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Be creative! Write an SQL query to read in the tables you need (similar to the tasks above), then use pandas to manipulate the data. Finally, make a graph using Lets-Plot to visualize the comparison. What do you learn?__
+
+For this comparison, I've chosen to compare the New York Yankees (NYY) and the Boston Red Sox (BOS) by examining their average team salaries over time. This metric provides insight into team investment in player salaries and can help understand the relationship between spending and performance. The comparison will show how these two historic rivals have invested in their rosters over the years.
+
+```{python}
+# Load teams table to get team names
+q_teams = """SELECT teamID, name
+             FROM teams
+          """
+teams = pd.read_sql_query(q_teams, con)
+
+# Filter salaries for Yankees (NYY) and Red Sox (BOS)
+team_comparison = salaries[salaries['teamID'].isin(['NYY', 'BOS'])].copy()
+
+# Merge with teams table to get team names
+team_comparison = pd.merge(
+    team_comparison,
+    teams[teams['teamID'].isin(['NYY', 'BOS'])][['teamID', 'name']],
+    on='teamID',
+    how='left'
+)
+
+# Calculate average salary by team and year
+avg_salary_by_year = team_comparison.groupby(['teamID', 'name', 'yearID'])['salary'].mean().reset_index()
+
+# Rename for clarity
+avg_salary_by_year.columns = ['teamID', 'team_name', 'year', 'avg_salary']
+
+print("Average team salaries over time:")
+print(avg_salary_by_year.head(10))
+```
+
+```{python}
+# Create visualization using Lets-Plot
+# Plot average salary by year for both teams
+
+p = (ggplot(avg_salary_by_year) +
+     geom_line(aes(x='year', y='avg_salary', color='team_name'), size=1.5) +
+     geom_point(aes(x='year', y='avg_salary', color='team_name'), size=3) +
+     labs(
+         x='Year',
+         y='Average Team Salary (USD)',
+         title='Average Team Salary Comparison: Yankees vs Red Sox Over Time',
+         color='Team'
+     ) +
+     theme(plot_title=element_text(hjust=0.5, size=14, face='bold'),
+           axis_title=element_text(size=12),
+           legend_title=element_text(size=11, face='bold'),
+           legend_position='right') +
+     scale_y_continuous()
+)
+
+print(p)
+```
+
+**Analysis:** This visualization reveals interesting patterns in team investment over time. Both teams show significant increases in average salaries as baseball salaries have grown. The comparison allows us to see which team has invested more heavily in player compensation during different time periods, which could correlate with competitive success during those years.
