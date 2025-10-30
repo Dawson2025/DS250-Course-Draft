@@ -181,8 +181,8 @@ All AI coding assistants (Cursor, Claude Code, Warp, Copilot, etc.) share a unif
 
 - **Location**: `~/.config/mcp/mcp.json` (single source of truth)
 - **Setup**: All assistants symlink to master config
-- **Documentation**: `0_context/0_context/0.5_setup/universal-mcp-configuration/`
-- **Tool Guide**: `0_context/0_context/0.75_universal_tools/universal-mcp-manager/`
+- **Documentation**: `0_context/0_context/trickle-down-0.5-environment/universal-mcp-configuration/`
+- **Tool Guide**: `0_context/0_context/trickle-down-0.75-universal-tools/universal-mcp-manager/`
 
 **Configured MCP Servers**:
 - `filesystem` - Access to DS250-Course-Draft directory

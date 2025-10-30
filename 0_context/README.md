@@ -15,13 +15,13 @@ The `0_context` directory provides a hierarchical documentation system that help
 Documentation is organized in levels, where higher levels contain foundational information that informs lower levels:
 
 ### Level 0: Universal Instructions
-**Location**: `0_context/0_universal_instructions/`
+**Location**: `0_context/trickle-down-0-universal-instructions/`
 **Content**: Universal patterns applicable to any project
 - `/init` command protocol
 - General initialization procedures
 
 ### Level 0.5: Environment Setup
-**Location**: `0_context/1_trickle_down/trickle-down-0.5-environment/`
+**Location**: `0_context/trickle-down-0.5-environment/`
 **Content**: DS250-specific environment configuration
 - `ds250_ai_agent_setup.md` - WSL Ubuntu + Quarto + Python 3.12 setup
 - `universal-mcp-configuration/` - Universal MCP server management
@@ -30,14 +30,14 @@ Documentation is organized in levels, where higher levels contain foundational i
 - Common environment issues and solutions
 
 ### Level 0.75: Universal Tools
-**Location**: `0_context/0.75_universal_tools/`
+**Location**: `0_context/trickle-down-0.75-universal-tools/`
 **Content**: Universal tools that work across any project
 - `universal-mcp-manager/` - Cross-AI-agent MCP coordination
 - Tool documentation and usage patterns
 - Integration examples
 
 ### Level 1: Project Instructions
-**Location**: `0_context/1_trickle_down/trickle-down-1-project/`
+**Location**: `0_context/trickle-down-1-project/`
 **Content**: DS250 project-specific guidelines
 - `ds250_project_instructions.md` - Complete project guide
 - Critical rules (Quarto-first workflow, template safety, etc.)
@@ -46,7 +46,7 @@ Documentation is organized in levels, where higher levels contain foundational i
 - Traffic light system for edits
 
 ### Level 2: Features
-**Location**: `0_context/1_trickle_down/trickle-down-2-features/`
+**Location**: `0_context/trickle-down-2-features/`
 **Content**: Feature-specific documentation
 - `README.md` - Overview of all DS250 features
 - Feature categories (Projects, Templates, Workbooks, Skill Builders, etc.)
@@ -83,21 +83,21 @@ To load complete context at the start of a Claude Code session:
 ## Key Documentation Files
 
 ### Essential Reading
-1. **[constitution.md](0_context/1_trickle_down/trickle-down-1-project/constitution.md)** - Project foundation, principles, non-negotiables
+1. **[constitution.md](0_context/trickle-down-1-project/constitution.md)** - Project foundation, principles, non-negotiables
 2. **[../CLAUDE.md](../CLAUDE.md)** - Repository overview, technologies, commands, architecture
-3. **[ds250_project_instructions.md](0_context/1_trickle_down/trickle-down-1-project/ds250_project_instructions.md)** - Project-specific guidelines
-4. **[ds250_ai_agent_setup.md](0_context/1_trickle_down/trickle-down-0.5-environment/ds250_ai_agent_setup.md)** - Environment configuration
-5. **[ds250_init_command.md](0_context/0_universal_instructions/initialization/ds250_init_command.md)** - Complete /init protocol
+3. **[ds250_project_instructions.md](0_context/trickle-down-1-project/ds250_project_instructions.md)** - Project-specific guidelines
+4. **[ds250_ai_agent_setup.md](0_context/trickle-down-0.5-environment/ds250_ai_agent_setup.md)** - Environment configuration
+5. **[ds250_init_command.md](0_context/trickle-down-0-universal-instructions/initialization/ds250_init_command.md)** - Complete /init protocol
 
 ### Configuration
 - **[../_quarto.yml](../_quarto.yml)** - Site configuration, navigation, rendering rules
 
 ### Universal Tools
-- **[Universal MCP Manager](0_context/0.75_universal_tools/universal-mcp-manager/README.md)** - Cross-AI-agent MCP coordination
-- **[MCP Setup Guide](0_context/0.5_setup/universal-mcp-configuration/README.md)** - Installation and configuration
+- **[Universal MCP Manager](0_context/trickle-down-0.75-universal-tools/universal-mcp-manager/README.md)** - Cross-AI-agent MCP coordination
+- **[MCP Setup Guide](0_context/trickle-down-0.5-environment/universal-mcp-configuration/README.md)** - Installation and configuration
 
 ### Feature Documentation
-- **[Features README](0_context/1_trickle_down/trickle-down-2-features/README.md)** - All feature categories and guidelines
+- **[Features README](0_context/trickle-down-2-features/README.md)** - All feature categories and guidelines
 
 ## Project Technology Stack
 
