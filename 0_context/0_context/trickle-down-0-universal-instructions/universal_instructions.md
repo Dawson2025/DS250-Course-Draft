@@ -107,6 +107,17 @@ Before making changes:
 
 **Do NOT end your turn until `0_context/` documentation reflects your work.**
 
+### 7b. Commit Every Turn Using Git Best Practices
+Before ending your turn:
+
+- Stage only the files that belong to the work you just completed (documentation, code, tests, assets, etc.).
+- Write an informative, imperative commit message that summarizes the change (`Fix`, `Add`, `Document`, etc.).
+- Ensure the working tree is clean after committing (`git status` should show no pending changes apart from known exceptions approved by the user).
+- If unrelated changes are present, separate them into their own commits or leave them untouched with a note to the user.
+- When a task spans multiple turns, make focused commits at the end of each turn so the history always reflects the current state of delivered work.
+
+**No turn is complete without a git commit.**
+
 ### 8. File Organization Best Practices
 **CRITICAL:** Always organize files following this three-level hierarchy:
 
@@ -453,7 +464,6 @@ Before marking any task complete or ending your turn, verify:
 ---
 
 **Remember:** The goal is not just to make code work, but to make it work reliably, maintainably, and professionally. Take the time to do it right.
-
 
 
 
