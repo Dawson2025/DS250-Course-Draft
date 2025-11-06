@@ -39,6 +39,9 @@ This directory contains documentation for the major content areas (features) of 
 **Unit Folder Structure**:
 For units with multiple assignments, templates may be organized in unit folders with assignment subfolders (e.g., `Templates/Unit_2/assignment_1/`). See `templates/unit-folder-setup-guide.md` for complete instructions on setting up this structure aligned with Canvas assignments and GitHub Pages.
 
+**Viewing Templates in Browser**:
+When viewing rendered assignment templates in a browser, always look in the `Templates/Unit_N/` directory (not `Projects/`). Template HTML files are already rendered and should be opened in separate browser tabs for easy comparison. See `templates/template-browser-preview-workflow.md` for the complete workflow.
+
 ### 3. Workbooks
 **Location**: `Workbooks/` directory
 **Purpose**: Practice workbooks corresponding to each project
