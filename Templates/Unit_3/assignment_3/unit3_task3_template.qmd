@@ -89,6 +89,7 @@ month_summary = (
     .assign(
         delay_rate=lambda d: d["delayed_flights"] / d["total_flights"],
         avg_delay_minutes=lambda d: d["total_delay_minutes"] / d["delayed_flights"],
+        delay_rate_pct=lambda d: d["delayed_flights"] / d["total_flights"] * 100,
     )
     .reset_index()
     .sort_values("month")
@@ -106,12 +107,12 @@ month_summary.style.format(
 
 ```{python}
 ggplot(month_summary) + geom_bar(
-    aes(x="month", y="delay_rate"),
+    aes(x="month", y="delay_rate_pct"),
     stat="identity",
     fill="#1f77b4",
-) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l]) + labs(
+) + labs(
     x="Month",
-    y="Share of flights with a delay",
+    y="Percent of flights with a delay",
     title="Monthly delay rate across all tracked airports",
 ) + theme(axis_text_x=element_text(angle=45, hjust=1))
 ```

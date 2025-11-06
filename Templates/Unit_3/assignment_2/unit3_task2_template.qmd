@@ -161,16 +161,19 @@ weather_summary = (
         weather_delays=("weather_delay_total", "sum"),
         total_flights=("num_of_flights_total", "sum"),
     )
-    .assign(weather_delay_rate=lambda d: d["weather_delays"] / d["total_flights"])
+    .assign(
+        weather_delay_rate=lambda d: d["weather_delays"] / d["total_flights"],
+        weather_delay_pct=lambda d: d["weather_delays"] / d["total_flights"] * 100,
+    )
 )
 
 ggplot(weather_summary) + geom_bar(
-    aes(x=as_discrete("airport_code", order=-1, order_by="weather_delay_rate"), y="weather_delay_rate"),
+    aes(x=as_discrete("airport_code", order=-1, order_by="weather_delay_rate"), y="weather_delay_pct"),
     stat="identity",
     fill="#1f77b4",
-) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l]) + labs(
+) + labs(
     x="Airport Code",
-    y="Share of flights delayed by weather",
+    y="Percent of flights delayed by weather",
     title="Weather-driven delay share by airport",
 ) + theme(axis_text_x=element_text(angle=45, hjust=1))
 ```

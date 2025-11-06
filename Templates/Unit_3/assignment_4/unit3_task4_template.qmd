@@ -99,7 +99,8 @@ delay_totals = pd.DataFrame(
         ],
     }
 ).assign(
-    delay_share=lambda d: d["delay_count"] / d["delay_count"].sum()
+    delay_share=lambda d: d["delay_count"] / d["delay_count"].sum(),
+    delay_share_pct=lambda d: d["delay_count"] / d["delay_count"].sum() * 100,
 )
 
 delay_totals.style.format({"delay_count": "{:,.0f}", "delay_share": "{:.1%}"})
@@ -107,12 +108,12 @@ delay_totals.style.format({"delay_count": "{:,.0f}", "delay_share": "{:.1%}"})
 
 ```{python}
 ggplot(delay_totals) + geom_bar(
-    aes(x="delay_reason", y="delay_share"),
+    aes(x="delay_reason", y="delay_share_pct"),
     stat="identity",
     fill="#1f77b4",
-) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l], limits=(0, 0.75)) + labs(
+) + labs(
     x="Delay reason",
-    y="Share of tracked delays",
+    y="Percent of tracked delays",
     title="Weather delays dominate overall disruption",
 )
 ```
@@ -144,6 +145,7 @@ airport_long = (
     .assign(
         delay_reason=lambda d: d["delay_reason"].str.replace("_delays", "", regex=False).str.title(),
         delay_share=lambda d: d["delay_count"] / d["total_focus"],
+        delay_share_pct=lambda d: d["delay_count"] / d["total_focus"] * 100,
     )
 )
 
@@ -158,13 +160,13 @@ airport_long.pivot_table(
 ggplot(airport_long) + geom_bar(
     aes(
         x="airport_code",
-        y="delay_share",
+        y="delay_share_pct",
         fill="delay_reason",
     ),
     position="stack",
-) + scale_y_continuous(labels=lambda l: [f"{v*100:.0f}%" for v in l]) + scale_fill_brewer(type="qual", palette="Set2") + labs(
+) + scale_fill_brewer(type="qual", palette="Set2") + labs(
     x="Airport",
-    y="Share of delays by reason",
+    y="Percent of delays by reason",
     title="Delay composition varies by airport but weather still leads",
     fill="Delay reason",
 ) + theme(axis_text_x=element_text(angle=45, hjust=1))
