@@ -200,6 +200,13 @@ Projects span ~2 weeks (4 class days) with ~8 hours expected outside class time.
 
 The `ds250_project_template.qmd` is instructional and should NOT be used directly for writing reports (except Project 0). Students should use the project-specific templates (P0_template.qmd through P5_template.qmd).
 
+**Viewing Rendered Templates:**
+When asked to view or preview rendered assignment templates:
+- Look in `Templates/Unit_N/` directories (NOT `Projects/`)
+- Template HTML files are already rendered (e.g., `unit3_task1_template.html`)
+- Open each template in a separate browser tab for easy comparison
+- See `0_context/0_context/trickle-down-2-features/templates/template-browser-preview-workflow.md` for complete workflow
+
 ### Data Sources
 
 Projects typically load data via URLs (e.g., GitHub raw links) rather than local files to ensure reports work when published to GitHub. If local data files are used, they must be in the same directory as the `.qmd` file.
