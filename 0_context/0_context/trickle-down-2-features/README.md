@@ -28,12 +28,16 @@ This directory contains documentation for the major content areas (features) of 
 - `ds250_project_template.qmd` - Instructional template (Project 0 only)
 - `P0_template.qmd` through `P5_template.qmd` - Project-specific templates
 - `unit*_task*_template.qmd` - Unit task templates
+- `Unit_N/` directories - Unit folders with assignment subfolders (for organized units)
 
 **Key Characteristics**:
 - NOT rendered to website (excluded in `_quarto.yml`)
 - Students download and use locally
 - Self-contained HTML output
 - Code folding enabled by default
+
+**Unit Folder Structure**:
+For units with multiple assignments, templates may be organized in unit folders with assignment subfolders (e.g., `Templates/Unit_2/assignment_1/`). See `templates/unit-folder-setup-guide.md` for complete instructions on setting up this structure aligned with Canvas assignments and GitHub Pages.
 
 ### 3. Workbooks
 **Location**: `Workbooks/` directory

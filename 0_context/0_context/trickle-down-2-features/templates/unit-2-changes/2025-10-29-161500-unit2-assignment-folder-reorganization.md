@@ -91,4 +91,9 @@ The assignment folders follow the Canvas module display order:
 ## Related Archive Entries
 
 - `2025-10-29-160500-unit2-folders-github-pages-canvas-alignment.md` - Previous alignment verification
+- `../unit-folder-setup-guide.md` - Complete guide for replicating this process for future units
+
+## Future Reference
+
+The process documented in this entry has been captured in a comprehensive guide: **`unit-folder-setup-guide.md`**. When setting up future units (Unit_3, Unit_4, etc.) with assignment folder structure, follow the step-by-step instructions in that guide.
 

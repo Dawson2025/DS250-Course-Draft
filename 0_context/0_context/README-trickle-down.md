@@ -5,6 +5,8 @@
 
 The Trickle-Down documentation structure provides a hierarchical approach to organizing project documentation, where higher levels contain more general, foundational information that "trickles down" to inform and guide lower levels of implementation.
 
+> **Cursor Terminal Notice:** See `TERMINAL_HANGING_FIX.md` in this directory before running Python scripts from Cursor. Always use the documented wrapper commands instead of `run_terminal_cmd` to avoid hanging terminals.
+
 ## Documentation Levels
 
 ### Level 0: Universal Instructions

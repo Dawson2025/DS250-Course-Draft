@@ -212,6 +212,18 @@ conn = sqlite3.connect("../Data/lahmansbaseballdb.sqlite")
 
 ### Template Completion Best Practices
 
+#### Critical Rule: Template Alignment
+
+**The finished template must have the same question text, title, and layout as the original template that the project file from Canvas and GitHub Pages provides. We are only filling out the solution sections—we do NOT modify the questions, titles, or structure.**
+
+**See**: `0_context/0_context/trickle-down-2-features/templates/template-verification-and-completion-guide.md` for the complete verification process.
+
+**Quick Verification Checklist:**
+1. **Title Format**: Must be `"Client Report - [Title]"` with subtitle `"Unit N Task X"`
+2. **Question Text**: Must match project file word-for-word
+3. **Layout**: Must follow standard structure (YAML → imports → data setup → questions)
+4. **Solution Only**: Only fill solution sections, never modify questions
+
 #### SQL Query Templates (Example: Unit_2 Assignment 1)
 **Reference**: `Templates/Unit_2/assignment_1/unit2_task1_template.qmd`
 
@@ -271,6 +283,7 @@ conn = sqlite3.connect("../Data/lahmansbaseballdb.sqlite")
    - Reference specific values: player IDs, years, percentages, ranges
    - Identify patterns and historical context
    - Compare results across questions to show progression
+   - **Only describe what the rendered report shows**: every claim must be supported by the tables, charts, or statistics visible in the Quarto output—never reference unseen intermediate data or external knowledge
    
    **Example Good Analysis:**
    > "The results reveal an interesting pattern: all five top players achieved a perfect 1.000 batting average (1 hit in 1 at-bat). These single-at-bat performances span over 95 years, from 1923 (abramge01) to 2019 (alanirj01), demonstrating that such rare events occur across different eras."
@@ -307,6 +320,38 @@ conn = sqlite3.connect("../Data/lahmansbaseballdb.sqlite")
     - Every question has explanatory text
     - Code runs without errors
     - Results display correctly when rendered
+
+11. **Visual Verification with MCP Browser Tools**
+    - After rendering, use MCP servers to programmatically verify output
+    - Available tools: `mcp__playwright__*`, `mcp__chrome-devtools__*`, `mcp__browser__*`
+    - Take screenshots to verify all content displays correctly
+    - Confirm analysis text only references visible results
+    - Verify tables, charts, JSON examples render properly
+    - Create visual documentation for quality assurance
+
+    **Example Workflow:**
+    ```python
+    # Render template
+    quarto render Templates/Unit_N/assignment_X/template.qmd
+
+    # Navigate to rendered HTML with MCP
+    mcp__playwright__browser_navigate("file:///path/to/template.html")
+
+    # Screenshot for verification
+    mcp__playwright__browser_take_screenshot(fullPage=true)
+
+    # Verify page snapshot shows expected content
+    # Check analysis references match visible output
+    ```
+
+    **Why Visual Verification:**
+    - Ensures analysis statements can be verified from rendered output only
+    - Catches formatting or display issues before publication
+    - Provides screenshots for documentation and audit trail
+    - Validates that students will see correct results
+    - Follows 0_context rule: analysis must match rendered visuals
+
+    See `0_context/0_context/trickle-down-2-features/templates/template-verification-and-completion-guide.md` Step 7.4 for detailed MCP verification process.
 
 ### Standard Imports
 ```python

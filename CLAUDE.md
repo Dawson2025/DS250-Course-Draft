@@ -52,6 +52,49 @@ This repository is actively developed in **WSL (Windows Subsystem for Linux)** u
 - **Key Python Libraries**: pandas, lets-plot, scikit-learn, numpy, palmerpenguins, nbformat, nbclient, pyyaml, setuptools
 - **Plotting**: lets-plot (grammar of graphics, similar to ggplot2 in R)
 
+## Assignment Workflow Agents
+
+This repository includes **specialized Claude Code agents** for automated assignment setup:
+
+### Quick Start
+
+```
+User: "Set up Unit 3 Assignment 1"
+→ Use assignment-planner agent
+→ Review plan
+→ Approve
+→ Use assignment-executor agent
+→ Done!
+```
+
+### Available Agents
+
+1. **assignment-planner** (`.claude/agents/agent-assignment-planner.md`)
+   - Authenticates with Canvas (using `canvas_authenticate.py`)
+   - Extracts assignment requirements
+   - Creates comprehensive implementation plans
+   - Follows all 0_context rules automatically
+
+2. **assignment-executor** (`.claude/agents/agent-assignment-executor.md`)
+   - Executes approved plans with full tool access
+   - Tracks progress with todos in real-time
+   - Verifies with MCP browser tools
+   - Creates documentation automatically
+
+### Benefits
+
+- ✅ Hands-off execution after plan approval
+- ✅ All 0_context rules enforced
+- ✅ Canvas authentication handled securely
+- ✅ MCP visual verification included
+- ✅ Progress tracked automatically
+
+### Documentation
+
+- **Quick Start**: `0_context/0_context/0_universal_instructions/agent-patterns/assignment-quick-start.md`
+- **Full Workflow**: `0_context/0_context/0_universal_instructions/agent-patterns/assignment-workflow.md`
+- **Canvas Auth**: `0_context/0_context/trickle-down-0.5-environment/canvas-authentication-setup.md`
+
 ## Common Commands
 
 ### Building and Previewing the Site

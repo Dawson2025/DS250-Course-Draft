@@ -1,7 +1,7 @@
 ---
 title: "Client Report - Longevity of Baseball Players"
 subtitle: "Unit 2 Task 3"
-author: "[STUDENT NAME]"
+author: "Dawson Packer"
 format:
   html:
     self-contained: true
@@ -53,7 +53,7 @@ __Identify the top 10 players with the longest careers. Include their:__
     - last_name
     - career_length
 
-The analysis reveals exceptional career longevity, with the top 10 players spanning 28-36 seasons in Major League Baseball. Nick Altrock leads with an extraordinary 36-year career, followed by Jim O'Rourke at 33 years and Minnie Minoso at 32 years. Notably, several players achieved 28-year careers—including Nolan Ryan, one of the most celebrated pitchers in baseball history, along with Hughie Jennings and Johnny Evers. These exceptionally long careers span from the late 19th century (starting careers in the 1870s-1880s) to modern times (Ryan's career extended into the 1990s). Such longevity requires not just exceptional talent but remarkable physical durability and adaptability to changes in the game over decades. The concentration of these careers in earlier baseball eras suggests that modern specialization and physical demands may make 30+ year careers even rarer today.
+The results show 10 players with career lengths between 28 and 36 seasons. Nick Altrock tops the table at 36 years, Jim O'Rourke follows with 33 seasons, and Minnie Minoso sits third at 32. The remaining seven players each logged 28–31 seasons, including a four-way tie at 28 seasons (Nolan Ryan, Hughie Jennings, Johnny Evers, and Gabby Street). This table highlights just how rare multi-decade careers are in MLB—anything above 30 seasons appears only three times in the data.
 
 ```{python}
 # Include and execute your code here
@@ -95,5 +95,4 @@ final_result = top10_longest_careers[['playerID', 'first_name', 'last_name', 'ca
 print("Top 10 Players with Longest MLB Careers:")
 print(final_result)
 ```
-
 

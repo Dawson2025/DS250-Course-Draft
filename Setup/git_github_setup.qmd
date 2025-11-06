@@ -97,6 +97,14 @@ Note: Changes have been made to this course since the video was recorded. The vi
         * __Confirm the `Update _quarto.yml` is working by the yellow circle turning to a green check circle (Note: this can take 3-5min)__  
         ![](/Images/gh_all_workflows.png){width=300}
 
+1. __Publish your Pages site and grab the submission link__
+    a. __Open the main page of your repository on github.com.__
+        * __Click the gear icon in the upper-right "Repository details" card__ (it is to the right of the green `<> Code` button).
+        * __Check the box labeled `Use your GitHub Pages website` and click `Save changes`.__
+    a. __Copy the Pages link that now appears in the Repository details card.__
+        * The link will look like `https://username.github.io/your-portfolio/` once the build finishes (give GitHub a couple of minutes if it still shows a 404).
+        * Keep this URL handy—you will paste it into Canvas for the **Git Going** assignment submission.
+
 1. __Fix for a common bug__
     a. __Fix for the main page loading the ReadMe.md file instead of the portfolio website__
         * __Run `quarto publish gh-pages` in the terminal of VS Code__

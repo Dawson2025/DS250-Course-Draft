@@ -10,6 +10,13 @@ The `0_context` directory provides a hierarchical documentation system that help
 3. Access detailed feature documentation
 4. Initialize with complete project context
 
+## Critical: Terminal Hanging Fix
+
+- Read `0_context/0_context/TERMINAL_HANGING_FIX.md` before running any scripts in Cursor.
+- Never call `run_terminal_cmd` for Python scripts; it can hang after the process exits.
+- Use `python3 scripts/terminal_wrapper.py --script <script>` (or the wrapper command described in the fix doc) so output streams close correctly.
+- See the quick reference table in that file for other long-running or complex commands.
+
 ## Trickle-Down Documentation Structure
 
 Documentation is organized in levels, where higher levels contain foundational information that informs lower levels:

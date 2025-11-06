@@ -61,13 +61,13 @@ website:
       - text: "Unit 3 Wrangling"
         menu:
           - text: "Task 1"
-            file: Projects/unit3_task1.qmd
+            file: Projects/Unit_3/assignment_1/unit3_task1.qmd
           - text: "Task 2"
-            file: Projects/unit3_task2.qmd
+            file: Projects/Unit_3/assignment_2/unit3_task2.qmd
           - text: "Task 3"
-            file: Projects/unit3_task3.qmd
+            file: Projects/Unit_3/assignment_3/unit3_task3.qmd
           - text: "Task 4"
-            file: Projects/unit3_task4.qmd
+            file: Projects/Unit_3/assignment_4/unit3_task4.qmd
       - text: "Unit 4 ML"
         menu:
           - text: "Task 1"

@@ -1,7 +1,7 @@
 ---
-title: "Client Report - Batting Average Validation"
-subtitle: "Unit 2 Task 2"
-author: "[STUDENT NAME]"
+title: "Client Report - Longevity of Baseball Players"
+subtitle: "Unit 2 Task 3"
+author: "Dawson Packer"
 format:
   html:
     self-contained: true
@@ -46,7 +46,7 @@ con = sqlite3.connect(sqlite_file)
 
 ## QUESTION 1
 
-__Write an SQL query that pulls in the batting average table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
+__Write an SQL query that pulls in the batting table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
 The pandas validation confirms the same results as our SQL queries. The top 5 players with at least 10 at-bats show batting averages from 0.571 to 0.643, matching the SQL output exactly: nymanny01 leads at 0.643 (1974), followed by carsoma01 at 0.636 (2013). This validation demonstrates that both SQL and pandas can produce identical results when performing the same calculations—nymanny01's exceptional 1974 season (9 hits in 14 at-bats) represents one of the highest single-season batting averages in the dataset when requiring meaningful sample sizes.
 
@@ -79,12 +79,23 @@ print(top5_q1)
 
 ## QUESTION 2
 
-__Now use Python Pandas to calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
+__Write an SQL query that pulls in the batting table. Then, with Python Pandas calculate the batting average for each player over their entire career (all years combined). Only include players with at least 100 at bats over their entire career. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
 
 The career batting averages calculated through pandas aggregation reveal the all-time greats: Ty Cobb (cobbty01) achieves the highest career average at 0.366 over 11,436 at-bats, followed by barnero01 (0.360), Rogers Hornsby (hornsro01, 0.358), and Joe Jackson (jacksjo01, 0.356). These results match our SQL calculations exactly, validating that pandas groupby operations correctly aggregate multi-year data. The tight clustering of values (0.355-0.366) among the top tier demonstrates how rare sustained excellence is—even Hall of Fame-caliber players rarely exceed a 36% career batting average when measured over thousands of plate appearances.
 
 ```{python}
-# Include and execute your pandas code code here. (You already read in the batting table in Question 1)
+# Execute an SQL query to pull in the batting table
+# (Note: We already have df_batting from Question 1, but showing SQL query as instructed in Question 2)
+q = """SELECT *
+        FROM batting
+    """
+# In this case, we can reuse df_batting from Question 1, but the instruction asks for an SQL query
+# So we show it here (but won't re-read unnecessarily)
+# df_batting already exists from Question 1, so this SQL is shown for instructional purposes
+```
+
+```{python}
+# Now use Python Pandas to calculate career batting averages (all years combined)
 # Group by playerID and sum hits and at-bats across all years
 career_stats = df_batting.groupby('playerID').agg({
     'H': 'sum',
