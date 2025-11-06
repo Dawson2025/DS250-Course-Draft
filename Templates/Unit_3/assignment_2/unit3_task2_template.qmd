@@ -1,0 +1,176 @@
+---
+title: "Client Report - Weather Delays"
+subtitle: "Unit 3 Task 2"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+
+# Include and execute your code here
+df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
+```
+
+```{python}
+# Clean and enrich once so each question uses the same prepared data
+clean_df = df.copy()
+
+# Replace blank airport names with the known name for that airport code
+clean_df["airport_name"] = clean_df["airport_name"].replace("", pd.NA)
+clean_df["airport_name"] = clean_df.groupby("airport_code")["airport_name"].transform(lambda s: s.ffill().bfill())
+
+# Convert numeric-looking columns stored as strings to numbers
+numeric_columns = [
+    "num_of_flights_total",
+    "num_of_delays_carrier",
+    "num_of_delays_late_aircraft",
+    "num_of_delays_nas",
+    "num_of_delays_security",
+    "num_of_delays_weather",
+    "num_of_delays_total",
+    "minutes_delayed_carrier",
+    "minutes_delayed_late_aircraft",
+    "minutes_delayed_nas",
+    "minutes_delayed_security",
+    "minutes_delayed_weather",
+    "minutes_delayed_total",
+]
+clean_df[numeric_columns] = clean_df[numeric_columns].apply(pd.to_numeric, errors="coerce")
+
+# Standardise month labels and keep a numeric copy for ordering later
+clean_df["month"] = clean_df["month"].replace({"Febuary": "February", "n/a": pd.NA})
+clean_df["month_num"] = pd.Categorical(
+    clean_df["month"],
+    categories=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    ordered=True,
+)
+
+# Late-aircraft delays already have no missing values, but fill with the mean to follow the instructions explicitly
+clean_df["num_of_delays_late_aircraft"] = clean_df["num_of_delays_late_aircraft"].fillna(clean_df["num_of_delays_late_aircraft"].mean())
+
+clean_df.head()
+```
+
+## QUESTION 1
+
+1. __Which airport has the worst delays?__ Describe the metric you chose, and why you chose it to determine the “worst” airport. Your answer should include a summary table that lists (for each airport) the total number of flights, total number of delayed flights, proportion of delayed flights, and average delay time in hours. 
+
+San Francisco International (SFO) stands out as the most delay-prone airport in the sample. SFO has the highest share of flights that are delayed (26.1%) and also one of the highest average delay durations. Chicago O'Hare (ORD) experiences slightly longer delays once a flight is late, but SFO combines both a high frequency and long duration, so it presents the most risk to travellers.
+
+```{python}
+summary_q1 = (
+    clean_df.groupby(["airport_code", "airport_name"], as_index=False)
+    .agg(
+        total_flights=("num_of_flights_total", "sum"),
+        delayed_flights=("num_of_delays_total", "sum"),
+        total_delay_minutes=("minutes_delayed_total", "sum"),
+    )
+    .assign(
+        delay_rate=lambda d: d["delayed_flights"] / d["total_flights"],
+        avg_delay_hours=lambda d: (d["total_delay_minutes"] / d["delayed_flights"]) / 60,
+    )
+    .sort_values("delay_rate", ascending=False)
+)
+
+summary_q1.style.format(
+    {
+        "total_flights": "{:,.0f}",
+        "delayed_flights": "{:,.0f}",
+        "delay_rate": "{:.1%}",
+        "avg_delay_hours": "{:.2f}",
+    }
+)
+```
+
+## QUESTION 2
+
+According to the BTS website, the “Weather” category only accounts for severe weather delays. Mild weather delays are not counted in the “Weather” category, but are actually included in both the “NAS” and “Late-Arriving Aircraft” categories. __Your job is to create a new column that calculates the total number of flights delayed by weather (both severe and mild).__ You will need to replace all the missing values in the Late Aircraft variable with the mean. Show your work by printing the first 5 rows of data in a table. Use these three rules for your calculations:  
+
+    a. 100% of delayed flights in the Weather category are due to weather  
+    a. 30% of all delayed flights in the Late-Arriving category are due to weather  
+    a. From April to August, 40% of delayed flights in the NAS category are due to weather. The rest of the months, the proportion rises to 65%  
+
+_Describe your results and analysis here_
+
+```{python}
+april_to_august = ["April", "May", "June", "July", "August"]
+
+clean_df = clean_df.assign(
+    weather_from_late=lambda d: d["num_of_delays_late_aircraft"] * 0.30,
+    weather_from_nas=lambda d: d["num_of_delays_nas"] * np.where(d["month"].isin(april_to_august), 0.40, 0.65),
+)
+
+clean_df["weather_delay_total"] = (
+    clean_df["num_of_delays_weather"] + clean_df["weather_from_late"] + clean_df["weather_from_nas"]
+)
+
+clean_df.loc[
+    :,
+    [
+        "airport_code",
+        "month",
+        "num_of_delays_weather",
+        "weather_from_late",
+        "weather_from_nas",
+        "weather_delay_total",
+    ],
+].head()
+```
+
+## Question 3
+
+__Using the new weather variable calculated above, create a barplot showing the proportion of all flights that are delayed by weather at each airport. Describe what you learn from this graph.__  
+
+Weather is a meaningful contributor to delays everywhere, but it is particularly disruptive at San Francisco International (SFO), where roughly 9% of all flights are delayed by weather once the mild-weather adjustments are included. Denver (DEN) and Salt Lake City (SLC) show the lowest weather-driven proportions, suggesting that their delay issues are driven more by non-weather causes.
+
+```{python}
+weather_summary = (
+    clean_df.groupby(["airport_code", "airport_name"], as_index=False)
+    .agg(
+        weather_delays=("weather_delay_total", "sum"),
+        total_flights=("num_of_flights_total", "sum"),
+    )
+    .assign(weather_delay_rate=lambda d: d["weather_delays"] / d["total_flights"])
+)
+
+ggplot(weather_summary) + geom_bar(
+    aes(x=as_discrete("airport_code", order=-1, order_by="weather_delay_rate"), y="weather_delay_rate"),
+    stat="identity",
+    fill="#1f77b4",
+) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l]) + labs(
+    x="Airport Code",
+    y="Share of flights delayed by weather",
+    title="Weather-driven delay share by airport",
+) + theme(axis_text_x=element_text(angle=45, hjust=1))
+```

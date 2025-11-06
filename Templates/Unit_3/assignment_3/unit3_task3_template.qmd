@@ -1,0 +1,118 @@
+---
+title: "Client Report - If not now, when?"
+subtitle: "Unit 3 Task 3"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+
+```{python}
+# Learn morea about Code Cells: https://quarto.org/docs/reference/cells/cells-jupyter.html
+
+# Include and execute your code here
+df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
+```
+
+```{python}
+# Prepare the data once for consistent downstream calculations
+clean_df = df.copy()
+clean_df["airport_name"] = clean_df["airport_name"].replace("", pd.NA)
+clean_df["airport_name"] = clean_df.groupby("airport_code")["airport_name"].transform(lambda s: s.ffill().bfill())
+
+numeric_columns = [
+    "num_of_flights_total",
+    "num_of_delays_carrier",
+    "num_of_delays_late_aircraft",
+    "num_of_delays_nas",
+    "num_of_delays_security",
+    "num_of_delays_weather",
+    "num_of_delays_total",
+    "minutes_delayed_carrier",
+    "minutes_delayed_late_aircraft",
+    "minutes_delayed_nas",
+    "minutes_delayed_security",
+    "minutes_delayed_weather",
+    "minutes_delayed_total",
+]
+clean_df[numeric_columns] = clean_df[numeric_columns].apply(pd.to_numeric, errors="coerce")
+
+month_order = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+clean_df["month"] = clean_df["month"].replace({"Febuary": "February", "n/a": pd.NA})
+clean_df = clean_df[clean_df["month"].notna()].copy()
+clean_df["month"] = pd.Categorical(clean_df["month"], categories=month_order, ordered=True)
+clean_df.head()
+```
+
+## QUESTION 1
+
+__What is the best month to fly if you want to avoid delays of any length?__ Describe the metric you chose and why you chose it to calculate your answer. Include one chart to help support your answer, with the x-axis ordered by month.
+
+September is the safest bet for on-time travel. Across all airports it shows the lowest share of delayed flights (16.5%), which means nearly five out of six flights depart without any delay at all. October and April are the next-best options, while December and June have the highest delay rates, so avoiding peak holiday and early-summer schedules matters.
+
+```{python}
+month_summary = (
+    clean_df.groupby("month", observed=True)
+    .agg(
+        total_flights=("num_of_flights_total", "sum"),
+        delayed_flights=("num_of_delays_total", "sum"),
+        total_delay_minutes=("minutes_delayed_total", "sum"),
+    )
+    .assign(
+        delay_rate=lambda d: d["delayed_flights"] / d["total_flights"],
+        avg_delay_minutes=lambda d: d["total_delay_minutes"] / d["delayed_flights"],
+    )
+    .reset_index()
+    .sort_values("month")
+)
+
+month_summary.style.format(
+    {
+        "total_flights": "{:,.0f}",
+        "delayed_flights": "{:,.0f}",
+        "delay_rate": "{:.1%}",
+        "avg_delay_minutes": "{:.1f}",
+    }
+)
+```
+
+```{python}
+ggplot(month_summary) + geom_bar(
+    aes(x="month", y="delay_rate"),
+    stat="identity",
+    fill="#1f77b4",
+) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l]) + labs(
+    x="Month",
+    y="Share of flights with a delay",
+    title="Monthly delay rate across all tracked airports",
+) + theme(axis_text_x=element_text(angle=45, hjust=1))
+```
+

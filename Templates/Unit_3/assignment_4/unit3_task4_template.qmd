@@ -1,0 +1,171 @@
+---
+title: "Client Report - Comparing Delay Types"
+subtitle: "Unit 3 Task 4"
+author: "[STUDENT NAME]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+import sqlite3
+from lets_plot import *
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+```{python}
+# Load the BTS delay data used across Unit 3
+df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
+```
+
+## Shared data preparation
+
+```{python}
+clean_df = df.copy()
+
+# Fill missing airport names using the code-specific name present elsewhere
+clean_df["airport_name"] = clean_df["airport_name"].replace("", pd.NA)
+clean_df["airport_name"] = clean_df.groupby("airport_code")["airport_name"].transform(lambda s: s.ffill().bfill())
+
+# Convert numeric-looking columns to actual numbers
+numeric_columns = [
+    "num_of_flights_total",
+    "num_of_delays_carrier",
+    "num_of_delays_late_aircraft",
+    "num_of_delays_nas",
+    "num_of_delays_security",
+    "num_of_delays_weather",
+    "num_of_delays_total",
+    "minutes_delayed_carrier",
+    "minutes_delayed_late_aircraft",
+    "minutes_delayed_nas",
+    "minutes_delayed_security",
+    "minutes_delayed_weather",
+    "minutes_delayed_total",
+]
+clean_df[numeric_columns] = clean_df[numeric_columns].apply(pd.to_numeric, errors="coerce")
+
+# Standardise month labels for later use
+clean_df["month"] = clean_df["month"].replace({"Febuary": "February", "n/a": pd.NA})
+
+# Derive the comprehensive weather delay metric from Task 2
+april_to_august = ["April", "May", "June", "July", "August"]
+clean_df = clean_df.assign(
+    weather_from_late=lambda d: d["num_of_delays_late_aircraft"] * 0.30,
+    weather_from_nas=lambda d: d["num_of_delays_nas"] * np.where(d["month"].isin(april_to_august), 0.40, 0.65),
+)
+clean_df["weather_delay_total"] = (
+    clean_df["num_of_delays_weather"] + clean_df["weather_from_late"] + clean_df["weather_from_nas"]
+)
+
+clean_df.head()
+```
+
+## Question 1
+
+__Which delay is the worst delay?__ Build on the analysis you already did regarding Weather Delay. This time though, instead of comparing one type of delay across multiple airports, we want to compare Weather Delay (an involved calculation that you already did in a previous task) with Carrier Delay and Security Delay (both of which are in the dataset and don't need fancy calculations like Weather did). Compare the proportion of delay for each of the three categories in a chart and a table. Describe your results.
+
+Weather-driven disruptions dwarf the other categories once both severe and mild conditions are incorporated. Roughly two thirds of all recorded delays stem from weather, while carrier issues account for a little over one third and security events are exceptionally rare in comparison.
+
+```{python}
+delay_totals = pd.DataFrame(
+    {
+        "delay_reason": ["Weather", "Carrier", "Security"],
+        "delay_count": [
+            clean_df["weather_delay_total"].sum(),
+            clean_df["num_of_delays_carrier"].sum(),
+            clean_df["num_of_delays_security"].sum(),
+        ],
+    }
+).assign(
+    delay_share=lambda d: d["delay_count"] / d["delay_count"].sum()
+)
+
+delay_totals.style.format({"delay_count": "{:,.0f}", "delay_share": "{:.1%}"})
+```
+
+```{python}
+ggplot(delay_totals) + geom_bar(
+    aes(x="delay_reason", y="delay_share"),
+    stat="identity",
+    fill="#1f77b4",
+) + scale_y_continuous(labels=lambda l: [f"{v*100:.1f}%" for v in l], limits=(0, 0.75)) + labs(
+    x="Delay reason",
+    y="Share of tracked delays",
+    title="Weather delays dominate overall disruption",
+)
+```
+
+## Question 2
+
+Create another chart that shows the proportion of delays for each reason (Weather, Carrier, and Security) across all 7 airports. Describe your results.
+
+Weather is the leading cause everywhere, yet the mix does vary by airport. San Diego (SAN) and Salt Lake City (SLC) experience a higher share of carrier-related delays, while Atlanta (ATL) and Chicago O'Hare (ORD) see more weather-driven issues. Security delays remain negligible at every facility.
+
+```{python}
+per_airport = (
+    clean_df.groupby(["airport_code", "airport_name"], as_index=False)
+    .agg(
+        weather_delays=("weather_delay_total", "sum"),
+        carrier_delays=("num_of_delays_carrier", "sum"),
+        security_delays=("num_of_delays_security", "sum"),
+    )
+    .assign(total_focus=lambda d: d[["weather_delays", "carrier_delays", "security_delays"]].sum(axis=1))
+)
+
+airport_long = (
+    per_airport.melt(
+        id_vars=["airport_code", "airport_name", "total_focus"],
+        value_vars=["weather_delays", "carrier_delays", "security_delays"],
+        var_name="delay_reason",
+        value_name="delay_count",
+    )
+    .assign(
+        delay_reason=lambda d: d["delay_reason"].str.replace("_delays", "", regex=False).str.title(),
+        delay_share=lambda d: d["delay_count"] / d["total_focus"],
+    )
+)
+
+airport_long.pivot_table(
+    index="airport_code",
+    columns="delay_reason",
+    values="delay_share",
+).reset_index().style.format("{:.1%}")
+```
+
+```{python}
+ggplot(airport_long) + geom_bar(
+    aes(
+        x="airport_code",
+        y="delay_share",
+        fill="delay_reason",
+    ),
+    position="stack",
+) + scale_y_continuous(labels=lambda l: [f"{v*100:.0f}%" for v in l]) + scale_fill_brewer(type="qual", palette="Set2") + labs(
+    x="Airport",
+    y="Share of delays by reason",
+    title="Delay composition varies by airport but weather still leads",
+    fill="Delay reason",
+) + theme(axis_text_x=element_text(angle=45, hjust=1))
+```
