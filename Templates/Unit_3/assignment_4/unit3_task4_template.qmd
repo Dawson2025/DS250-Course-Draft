@@ -149,11 +149,15 @@ airport_long = (
     )
 )
 
-airport_long.pivot_table(
+pivot_result = airport_long.pivot_table(
     index="airport_code",
     columns="delay_reason",
     values="delay_share",
-).reset_index().style.format("{:.1%}")
+).reset_index()
+
+# Format only the numeric columns (not airport_code)
+numeric_cols = [col for col in pivot_result.columns if col != "airport_code"]
+pivot_result.style.format({col: "{:.1%}" for col in numeric_cols})
 ```
 
 ```{python}
