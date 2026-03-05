@@ -1,4 +1,5 @@
 ---
+resource_id: "5fd5eb96-87e7-47a1-ad0a-63de38d4d428"
 title: "Unit 2 Task 4: Highest Paid Positions"
 date: 2025-04-02T11:02:05+06:00
 lastmod: 2025-04-02T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "c61a4c43-dc38-40b3-9cdf-9f7e693bf3f6" -->
 ### Background
 
 When you hear the word “relationship” what is the first thing that comes to mind? Probably not baseball. But a relationship is simply a way to describe how two or more objects are connected. There are many relationships in baseball such as those between teams and managers, players and salaries, even stadiums and concession prices. 
@@ -15,11 +17,13 @@ When you hear the word “relationship” what is the first thing that comes to 
 The graphs on [Data Visualizations from Best Tickets](https://web.archive.org/web/20200804101201/http://www.besttickets.com/blog/mlb-players-census/) show many other relationships that exist in baseball.
 
 
+<!-- section_id: "7386b4fe-cda0-4f37-8609-3bb527c70b23" -->
 ### Client Request
 
 For this project, the Client wants SQL queries that they can use to retrieve data, then work with the data in pandas.  They would also like to see the results in Lets-Plot charts.
 
 
+<!-- section_id: "cdbb73a6-d23e-4f32-8584-ad7359d8587e" -->
 ### Data
 
 ::: {.callout-note collapse="false"}
@@ -31,6 +35,7 @@ __Information:__ [Lahman Data Dictionary](/Data/readme2014.txt)
 __Setup Instructions:__ [See SQL Setup](/Setup/sql_setup.qmd)
 
 
+<!-- section_id: "43beb7ba-40c1-4c7f-9084-ca8c61ef80f7" -->
 ### Readings
 
 ::: {.callout-note collapse="true"}
@@ -59,6 +64,7 @@ Reading you may find useful (depending on how you approach the assignment):
 - [CASE](https://docs.data.world/documentation/sql/concepts/intermediate/CASE.html)
 - [WITH](https://docs.data.world/documentation/sql/concepts/advanced/WITH.html)
 
+<!-- section_id: "3aef9eab-6c7d-46ca-b72f-a3db7ae1f7ec" -->
 ### Question 1
 
 - Write an SQL query that provides a summary table showing the average salary for each position (e.g., pitcher, catcher, outfielder). Position information can be found in the fielding table in the POS column.
@@ -82,6 +88,7 @@ The highest_salary column should display the highest salary ever earned by a pla
 
 __Hint__: Beware, it is common for a player to play multiple positions in a single year. For this analysis, each player’s salary should only be counted toward one position in a given year: the position at which they played the most games that year. This will likely require a (sub-query)
 
+<!-- section_id: "a79703f1-b38f-4ad7-8e48-1c70f60ebeed" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -104,6 +111,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "6bd23d31-8faf-43d7-84a8-934e689853d1" -->
 ### Deliverables:
 
 No template is provided. Create a new quarto file for this assignment. It is part of stretching yourself. But don't forget to __include a 1 paragraph write-up / summary description of your results!__

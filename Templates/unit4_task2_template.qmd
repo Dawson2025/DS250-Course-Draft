@@ -1,4 +1,5 @@
 ---
+resource_id: "b9150299-501d-4f8b-972b-0bc45037ec5d"
 title: "Client Report -How good is it, really?"
 subtitle: "Unit 4 Task 2"
 author: "[STUDENT NAME]"
@@ -41,6 +42,7 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "620a0fb8-cf4a-45d8-8252-ad28d62b9d38" -->
 ## QUESTION 1
 
 __Describe the quality of your classification model using 2-3 different evaluation metrics.__ You also need to explain how to interpret each of the evaluation metrics you use.  
@@ -54,6 +56,7 @@ _type your write-up and analysis here_
 ```
 
 
+<!-- section_id: "b04dc56f-f577-4064-a8cc-461896ba4653" -->
 ## QUESTION 2
 
 __Justify your classification model by discussing the most important features selected by your model.__ This discussion should include a feature importance chart and a description of the features.

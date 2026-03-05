@@ -1,7 +1,9 @@
 ---
+resource_id: "68368864-7d2b-49cd-941f-d22a0be30201"
 title: "Course Setup"
 ---
 
+<!-- section_id: "830a055d-69bb-4fd7-ba0b-e92cb07c9935" -->
 ### How to get your computer setup?
 
 The left navigation bar is sequenced for the setup process:  

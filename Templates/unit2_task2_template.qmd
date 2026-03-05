@@ -1,4 +1,5 @@
 ---
+resource_id: "63147e9a-db49-4b3a-bc71-fa423cc7659f"
 title: "Client Report - Longevity of Baseball Players"
 subtitle: "Unit 2 Task 3"
 author: "[STUDENT NAME]"
@@ -44,6 +45,7 @@ sqlite_file = 'lahmansbaseballdb.sqlite'
 con = sqlite3.connect(sqlite_file)
 ```
 
+<!-- section_id: "314251a3-a80f-4482-adcc-f1d390fdbe51" -->
 ## QUESTION 1
 
 __Write an SQL query that pulls in the batting average table. Then, with Python Pandas code create a dataframe that contains playerID, yearID, and batting average for players with at least 10 at bat that year. Sort the dataframe from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
@@ -64,6 +66,7 @@ df_batting = pd.read_sql_query(q, con)
 
 ```
 
+<!-- section_id: "0b389675-d412-427b-808e-a7a9494ab6fa" -->
 ## QUESTION 2
 
 __Now use Python Pandas to calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__

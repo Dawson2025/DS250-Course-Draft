@@ -1,4 +1,5 @@
 ---
+resource_id: "4fe76f69-ecd0-4447-8ce1-151638d81e45"
 title: "DS 250 Syllabus"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -11,6 +12,7 @@ keywords: [""]
 > Most people would sooner die than think, and most of them do.    
 > [-Bertrand Russell-](https://www.goodreads.com/work/quotes/1200871-the-abc-of-relativity)
 
+<!-- section_id: "cb13bb62-2ea1-432c-ba98-7debef36e2ce" -->
 ### Overview
 
 ```{=html}
@@ -27,6 +29,7 @@ Upon completing this course, you will be able to use _data-informed_ programming
 1. __Use machine learning libraries to discover insights, make predictions, and interpret the success of these algorithms.__
 1. __Use industry-leading tools to collaborate and share your work.__
 
+<!-- section_id: "b658db32-ade8-47e6-a921-6721c1f31a68" -->
 ### Principles of DS teaching
 
 The course follows these principles of teaching Data Science[^2]   
@@ -37,16 +40,19 @@ The course follows these principles of teaching Data Science[^2]
 * _Structure course activities to realistically mimic a data scientist's experience_
 * _Demonstrate the importance of critical thinking/skepticism through examples_
 
+<!-- section_id: "4fa39721-a59c-441b-88d2-64a6fa8836f3" -->
 ### Competency assumptions
 
 This course focuses on programming with data to find insights. The prerequisite for this course is an introductory programming course in Python ([CSE 110](https://www.byui.edu/catalog#/courses/rkrSeUvn7?bc=true&bcCurrent=Programming%20Building%20Blocks&bcItemType=Courses))[^3]. We recommend taking [CSE 111](https://www.byui.edu/catalog#/courses/H1EmfUvn7?bc=true&bcCurrent=Programming%20with%20Functions&bcItemType=Courses) before or during the same semester you take this course - especially if programming is complicated for you. We assume that you do know what the Terminal is and how to execute scripts.
 
 An understanding of [standard deviation](https://www.khanacademy.org/math/statistics-probability/displaying-describing-data/sample-standard-deviation/v/statistics-standard-deviation){target="blank"} and [variance](https://www.khanacademy.org/math/statistics-probability/displaying-describing-data/sample-standard-deviation/v/statistics-sample-variance){target="blank"} will be valuable.  
 
+<!-- section_id: "22dd9274-0366-4887-883b-92bafc178779" -->
 ### Course materials and structure
 
 This course focuses on building core data science skills. You will learn to program with Python, but you will also learn how to communicate and collaborate with your peers and mentors.
 
+<!-- section_id: "818157c3-5dc9-4d09-aafb-3c549962f9ad" -->
 ### Course communication
 
 > How do I talk with my teacher, TA, and other students in this class?
@@ -60,6 +66,7 @@ This course focuses on building core data science skills. You will learn to prog
     B. We will respond to your message with edits you can make to earn full credit on your resubmit.   
     C. Class announcements about the grading of projects are posted in __Slack__.  
  
+<!-- section_id: "95688330-8b2b-4feb-8d04-282523228d02" -->
 ### Online reading materials
 
 * Python for Data Science [python4DS](https://aeturrell.github.io/python4DS/welcome.html) is a port of [R for Data Science (2e)](https://r4ds.hadley.nz/) into Python.
@@ -68,10 +75,12 @@ This course focuses on building core data science skills. You will learn to prog
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 * [SQL](https://docs.data.world/documentation/sql/concepts/basic/intro.html)
 
+<!-- section_id: "d439de7b-6326-439b-ab82-903841022c1c" -->
 ### Preparation
 
 In my experience, getting lectured training outside of college is even more expensive than it is in college. A week's worth of training can cost more than a semester of school here at BYU-I. Due to this expense, learning how to digest online material gain understanding before going to the expert with questions is a valuable skill to develop. **I expect that you have completed the assigned reading material before class begins.**
 
+<!-- section_id: "686dd43f-09bc-4496-a871-a45af959f0c8" -->
 ### Specifications Grading {#spec}
 
 Grading is a nasty side effect of mass learning and academia. We are in a class at a university and will have to manage this side effect. **However, we don't have to let it control our learning, thinking, or this class. Learning and thinking should motivate each activity.** 

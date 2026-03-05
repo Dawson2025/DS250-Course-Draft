@@ -1,4 +1,5 @@
 ---
+resource_id: "6aeb9ce3-5b25-4c44-b4d2-38034ad9ee9c"
 title: "Client Report - Finding Relationships in Baseball"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -44,6 +45,7 @@ sqlite_file = 'lahmansbaseballdb.sqlite'
 con = sqlite3.connect(sqlite_file)
 ```
 
+<!-- section_id: "77800599-da5f-4c14-8610-4e7d86680f40" -->
 ## QUESTION|TASK 1
 
 __Write an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.__  
@@ -57,6 +59,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "f7c3e487-08b7-4df9-87ff-c1659fa551de" -->
 ## QUESTION|TASK 2
 
 __This three-part question requires you to calculate batting average (number of hits divided by the number of at-bats)__  
@@ -85,6 +88,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "6365b29e-8fe3-4bac-b847-d9a18432cb30" -->
 ## QUESTION|TASK 3
 
 __Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph using Lets-Plot to visualize the comparison. What do you learn?__
@@ -98,6 +102,7 @@ _type your results and analysis here_
 
 ---
 
+<!-- section_id: "5b6e4eb6-46b0-44ca-9de0-0955c171cf06" -->
 ## STRETCH QUESTION|TASK 1
 
 __Advanced Salary Distribution by Position (with Case Statement):__  
@@ -129,6 +134,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "cea78088-5e95-4526-aaff-524e57d5a167" -->
 ## STRETCH QUESTION|TASK 2
 
 __Advanced Career Longevity and Performance (with Subqueries):__

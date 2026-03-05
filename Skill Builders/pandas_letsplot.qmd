@@ -1,4 +1,5 @@
 ---
+resource_id: "bf1ea9c7-cca6-48fd-8a5a-466a1e6975a5"
 title: "Pandas and LetsPlot"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "9393c7ab-7212-40af-936b-7855e3fc2353" -->
 ## Skill Builder
 #### Pandas and LetsPlot
 
@@ -17,6 +19,7 @@ You may want to at least scan the readings before beginning this task since this
 
 ---
 
+<!-- section_id: "508ced41-65d5-4bd2-8fa4-334bb649e3a0" -->
 ## Data Import
 
 __Run the following code to import the data we need for this skill builder:__
@@ -40,6 +43,7 @@ Make sure the variable `df` is correctly assigned in your environment and finish
 
 ---
 
+<!-- section_id: "bee8314d-e971-4d46-8f5a-a3478aab87f6" -->
 ### Exercise 1
 
 One of the first things we can do to a freshly imported data is to check its columns. This will help us understand the basic structure of the dataframe(table). 
@@ -74,6 +78,7 @@ Now run `df.head()`. It will print out the first 5 rows of data in `df`.
 
 ---
 
+<!-- section_id: "dec6d519-540b-4eca-bfcc-116ceb8f7104" -->
 ### Exercise 2
 
 After a  brief investigation of the data, we will clean up the data. By **cleaning up**, we are trying to filter down `df` so this only holds data we need. We will first get rid of the extra column we found in the previous excercise.
@@ -97,6 +102,7 @@ Don't forget to save the changes in `df`. Run `df.head()` to make sure the colum
 
 ---
 
+<!-- section_id: "46ac934c-c599-4c12-99cd-c3d2dffc6b2c" -->
 ### Exercise 3
 
 We have filtered `df` vertically by dropping a column. Now we will try to filter `df` horizontally, meaning we will get rid of some the rows. 
@@ -142,6 +148,7 @@ Don't forget to save the changes in `df`. Run `df.shape()` to make sure the ther
 
 ---
 
+<!-- section_id: "4f114ffb-1c54-4e99-a0a3-1c44559a8361" -->
 ### Exercise 4
 
 Besides filtering, we can manipulate the data by adding new data to it. By adding a new column to the data, we assign a new value to each row.
@@ -158,6 +165,7 @@ Besides filtering, we can manipulate the data by adding new data to it. By addin
 
 ---
 
+<!-- section_id: "402f093e-941c-4dd3-8902-afda3385c668" -->
 ### Exercise 5
 
 > __Create a scatter plot that shows the relationship between murder rate and violent rate for the state of Idaho. Your chart should show murder rate as the x-axis, violent as the y-axis.__
@@ -171,14 +179,17 @@ Besides filtering, we can manipulate the data by adding new data to it. By addin
 
 ---
 
+<!-- section_id: "424ad2fd-bab8-44b7-ab20-4cd8568297a7" -->
 ## Because You're Extra
 
+<!-- section_id: "bc80f97f-04ac-424f-b07d-cf0cd3d18eba" -->
 ### Exercise 6
 
 > __Using a line of code, filter down the data set so that it only shows the data in years between 1993 and 1997.__
 
 ---
 
+<!-- section_id: "56654a50-3dbd-4359-acb2-61720d1b5885" -->
 ### Exercise 7
 
 > __Create a line chart that show prisoners numbers for the state of Idaho, Utah, and Oregon.__
@@ -187,6 +198,7 @@ Your chart should show year as the x-axis, prisoner as the y-axis, states as dif
 
 ---
 
+<!-- section_id: "d429a8be-9342-496d-b756-d5e15a0f3922" -->
 ### Exercise 8
 
 > __Without using `query()`, finshed the data wrangling in question 2,5 and 6.__

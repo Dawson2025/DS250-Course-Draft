@@ -1,4 +1,5 @@
 ---
+resource_id: "c128c200-0855-4ff2-8b4f-3c51fb2c4620"
 title: "Client Report - Exploring Names"
 subtitle: "Unit 1 Task 1"
 author: "[STUDENT NAME]"
@@ -40,6 +41,7 @@ LetsPlot.setup_html(isolated_frame=True)
 df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
 
+<!-- section_id: "af159717-59e9-4172-bd66-d30579aec6a6" -->
 ## QUESTION 1
 
 __What was the earliest year that the name ‘Felisha’ was used?__
@@ -53,6 +55,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "776ff8ea-dbf8-4122-8a3b-22e57f7cb113" -->
 ## QUESTION 2
 
 __What year had the most babies named 'David'? How many babies were named 'David' that year?__
@@ -66,6 +69,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "efd159a8-e6ab-49dc-885f-2bcb4b1b0b2f" -->
 ## QUESTION 3
 
 __What year did your name hit its peak? How many babies were named your name in that year?__
@@ -79,6 +83,7 @@ _type your results and analysis here_
 
 
 
+<!-- section_id: "e667932c-f99f-4b52-92ee-de3c4bb0117a" -->
 ## QUESTION 4
 
 __How many babies are named ‘Oliver’ in the state of Utah for all years?__  
@@ -93,6 +98,7 @@ _type your results and analysis here_
 
 ---
 
+<!-- section_id: "4f55ddb8-c282-4e2c-b0d9-c3074d9cb3fe" -->
 ## QUESTION 5
 
 __In the most recent year, what was the most common female name in Utah?__ 

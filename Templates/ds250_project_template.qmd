@@ -1,4 +1,5 @@
 ---
+resource_id: "a7a8a8d7-fe93-4865-b0c6-fcc2af2ea926"
 title: "Client Report - [Insert Project Title]"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -36,6 +37,7 @@ LetsPlot.setup_html(isolated_frame=True)
 ```
 
 
+<!-- section_id: "a9ee5881-43c5-4c8a-ba73-e44e73e1e8de" -->
 ## Elevator pitch
 _A SHORT (2-3 SENTENCES) PARAGRAPH THAT `DESCRIBES KEY INSIGHTS` TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS._ (Note: this is not a summary of the project, but a summary of the results.)
 
@@ -50,6 +52,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/byuidatascience/data4python4
 
 __Highlight the Questions and Tasks__
 
+<!-- section_id: "4d6baaef-763c-4d01-88ef-ad6b6f4ecb0c" -->
 ## Question|Task 1
 
 __COPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE__
@@ -70,6 +73,7 @@ df.head()
 
 ```
 
+<!-- section_id: "c41a0203-ecad-455f-b195-89a949020c9c" -->
 ## Question|Task 2
 
 __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
@@ -84,6 +88,7 @@ __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
 )
 ```
 
+<!-- section_id: "01101d52-bd5a-46b5-b960-7d7c1cad8a09" -->
 ## Question|Task 3
 
 __COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__

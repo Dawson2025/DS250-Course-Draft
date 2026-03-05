@@ -1,4 +1,5 @@
 ---
+resource_id: "a3868914-df86-4b8b-9eb2-be4fe2affada"
 title: "Project 3: Late Flights & Missing Data (JSON)"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,15 +10,18 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "bc5b5e99-33bc-4660-9781-6a2298a571b5" -->
 ### Walkthrough
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_23faja3r&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_pa4fc35g" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W04 - Project 2 Walkthrough"></iframe>
 ```
 
+<!-- section_id: "f22e57cf-8722-4919-ae76-ebabeb4ddf5c" -->
 ### Setup
 Install [Git & GitHub](/Setup/git_github_setup.qmd)
 
 
+<!-- section_id: "c0906256-5095-400a-b3d7-01b9381baa21" -->
 ### Background
 
 Delayed flights are not something most people look forward to. In the best case scenario you may only wait a few extra minutes for the plane to be cleaned. However, those few minutes can stretch into hours if a mechanical issue is discovered or a storm develops. Arriving hours late may result in you missing a connecting flight, job interview, or your best friend’s wedding.
@@ -25,11 +29,13 @@ Delayed flights are not something most people look forward to. In the best case 
 In 2003 the Bureau of Transportation Statistics (BTS) began collecting data on the causes of delayed flights. The categories they use are Air Carrier, National Aviation System, Weather, Late-Arriving Aircraft, and Security. You can visit the [BTS website](https://www.bts.gov/topics/airlines-and-airports/understanding-reporting-causes-flight-delays-and-cancellations) to read definitions of these categories.
 
 
+<!-- section_id: "4d34754a-c06e-43c1-b71b-5edca19d23c9" -->
 ### Client Request
 
 The JSON file for this project contains information on delays at 7 airports over 10 years. Your task is to clean the data, search for insights about flight delays, and communicate your results to the Client. The Client is a CEO of a flight booking app who is interested in the causes of flight delays and wants to know which airports have the worst delays. They also want to know the best month to fly if you want to avoid delays of any length.
 
 
+<!-- section_id: "1e9da7f3-6f8c-426e-9827-9458bb5802cd" -->
 ### Data
 ::: {.callout-note collapse="true"}
 Every data science project should start with data, and our class projects are no different. Each project will have __'URL'__ and __'Information'__ links like the ones below. Right click the __'URL'__ link and select "Copy Link" to use it to import the data into your project. This is the preferred method to get data into your report as you will be publishing your report to GitHub. If you choose to download the data file to your computer you will need to save it in the same folder as your `project#.qmd` file for it to work correclty in GitHub. 
@@ -40,6 +46,7 @@ __Information:__ [Data Description](https://github.com/byuidatascience/data4miss
 __Subject Matter:__ [Types of Delay](https://aspm.faa.gov/aspmhelp/index/Types_of_Delay.html)  
 
 
+<!-- section_id: "a95f96ea-65fc-4d95-8272-b0b3645a431c" -->
 ### Readings
 - [P4DS: CH4 Data Transformation](https://byuidatascience.github.io/python4ds/transform.html) (Read)
 - [P4DS: CH6 Tidy Data](https://byuidatascience.github.io/python4ds/tidy-data.html) (Read)
@@ -64,6 +71,7 @@ __Subject Matter:__ [Types of Delay](https://aspm.faa.gov/aspmhelp/index/Types_o
 - [Lambda Function](https://realpython.com/python-lambda/)
 
 
+<!-- section_id: "0018c0f5-cc32-44a8-bf7c-3d05b32ab89d" -->
 ### Questions and Tasks (Core)
 ::: {.callout-note collapse="true"}
 This section lists the questions and tasks that need to be completed for the project. Your work on the project must be compiled into a report, rendered to HTML file in a Course Portfolio a link to that project page uploaded in Canvas.
@@ -85,6 +93,7 @@ There are two types of questions: Core and Stretch. Core questions are required 
 1. __Using the new weather variable calculated above, create a barplot showing the proportion of all flights that are delayed by weather at each airport. Describe what you learn from this graph.__  
 
 
+<!-- section_id: "6fe56f2f-f1dd-4780-83ef-468ee90729fa" -->
 ### Questions and Tasks (Stretch)
 
 Here is an example Stretch question(s) for this project. Your instructor may assign different Stretch question(s). You must comment in Canvas when submitting your project if you completed any of the Stretch questions.  
@@ -92,6 +101,7 @@ Here is an example Stretch question(s) for this project. Your instructor may ass
 1. __Which delay is the worst delay?__ Create a similar analysis as above for Weahter Delay with: Carrier Delay and Security Delay. Compare the proportion of delay for each of the three categories in a Chart and a Table. Describe your results.
 
 
+<!-- section_id: "6e96e2f9-58a6-4232-99c4-816a89947ce4" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -120,6 +130,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "98430896-a329-44f2-b1b7-11bf3e8c7ec1" -->
 ### Deliverables:
 
 ::: {.callout-note collapse="true"}
@@ -137,6 +148,7 @@ _Your report should be written in quarto markdown files and pushed to GitHub. Su
 :::
 
 
+<!-- section_id: "90f65e35-7a1a-4160-9e95-944baf40b410" -->
 ### Feedback:
 ::: {.callout-note collapse="true"}
 You will recieve feedback and/or coaching notes in the form of a GitHub issue. You will need to address the feedback, re-render and resubmit the project, and mark the GitHub issue as closed.

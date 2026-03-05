@@ -1,4 +1,5 @@
 ---
+resource_id: "a802a263-f986-4095-a381-fc6e09e0d99a"
 title: "Project 3 Workbook"
 subtitle: "Course DS 250"
 author: "Brother Clark"
@@ -36,6 +37,7 @@ execute:
 # Project 3 WorkBook
 
 
+<!-- section_id: "2246be37-cf55-4b47-afcf-6be4e181761e" -->
 ## Tutoring Lab Info
 The [data science lab](https://byuidatascience.github.io/lab/) is a resource you can use in person, online, and in Slack.
 
@@ -46,6 +48,7 @@ The [data science lab](https://byuidatascience.github.io/lab/) is a resource you
 ---
 
 
+<!-- section_id: "0edb4771-4210-4c68-b7a9-af92e53b632a" -->
 ### 1. ` sqlite3.connect()`
 
 :::{.callout-tip collapse="true" title="Connect to Database"}
@@ -65,6 +68,7 @@ con = sqlite3.connect('*\lahmansbaseballdb.sqlite')
 
 
 
+<!-- section_id: "d820b562-a0b3-4933-a68a-d74f38fae969" -->
 ### 2. `SELECT/FROM`
 
 :::{.callout-tip collapse="true" title="SELECT/FROM Statement Explanation"}
@@ -90,6 +94,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "eb19d44c-0f94-4109-b2a7-0a0984181d72" -->
 ### 3. `WHERE`
 
 :::{.callout-tip collapse="true" title="WHERE Clause Explanation"}
@@ -169,6 +174,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "ec69f9b4-195f-4406-b28d-f20f7336adb8" -->
 ### 5. `ORDER BY`
 
 :::{.callout-tip collapse="true" title="ORDER BY Clause Explanation"}
@@ -211,6 +217,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "4e61a52f-274e-47ad-89ec-3cc137f7f657" -->
 ### 7. `ALIAS`
 
 :::{.callout-tip collapse="true" title="Alias Explanation"}
@@ -234,6 +241,7 @@ pd.read_sql_query(p, con)
 ```
 
 
+<!-- section_id: "3f12ebbf-4e46-4ac5-9a57-de3ef02d6ae7" -->
 ### 6. `CAST`
 
 :::{.callout-tip collapse="true" title="CAST Function Explanation"}
@@ -262,6 +270,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "bc0eb4ac-79f8-44e4-b9c3-be5c3e144061" -->
 ### 8. `HAVING`
 
 
@@ -293,6 +302,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "17185e96-7c4f-4f96-8588-975bc3a55e53" -->
 ### 9. `LIMIT`
 
 :::{.callout-tip collapse="true" title="LIMIT Clause Explanation"}
@@ -319,6 +329,7 @@ pd.read_sql_query(p , con)
 
 
 
+<!-- section_id: "d5250bef-5526-4ec2-8aee-278ad07e1bfd" -->
 ### 10. `GROUP BY`
 
 :::{.callout-tip collapse="true" title="GROUP BY Clause Explanation"}

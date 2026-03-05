@@ -1,10 +1,12 @@
 ---
+resource_id: "e89f8395-089c-40cd-8764-c047c34eb9b2"
 title: "Frequently Asked Questions"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
 draft: false
 ---
 
+<!-- section_id: "e684856c-e0ed-4481-9523-cbe119d9dc2c" -->
 ### "What do you mean by data science programming?"
 Most likely, you have had 1-2 courses of programming before you have taken DS 250.  Unlike traditional computer science courses, DS 250 uses Python in an interactive mode instead of building programs. The data provider usually has some big questions that need answering; However, there are hundreds of little issues and responses along the way.  We use programming to facilitate this investigation.  
 
@@ -12,6 +14,7 @@ There are similarities with User Experience Designers.  In our case, we don't ge
 
 ---
 
+<!-- section_id: "65ac1837-5323-447b-8eef-98858e850acf" -->
 ### "How does DS 250 compare to DS 350?"
 
 The two courses have similarities.  You could think of DS 250 as an introduction to data wrangling and visualization.  Both classes use real-world data and are built around data science projects.  There are some critical differences between the two courses. 
@@ -23,31 +26,37 @@ The two courses have similarities.  You could think of DS 250 as an introduction
 
 ---
 
+<!-- section_id: "485ab7ef-90ec-4e9f-a89e-09f194660dde" -->
 ### faq "How does DS 250 prepare me for DS 350 and CSE 450?"
 You will be comfortable with interactive programming and have an introduction to the principles of data formats for data science applications.  You will be introduced to principles related to machine learning, data wrangling, and data visualization.
 
 ---
 
+<!-- section_id: "4c79fb42-d544-435f-89a3-5f8ef40cb00a" -->
 ### "What programming languages do we use in this course?"
 The course is done using Python.  We focus on the pandas and the lets-plot plotting packages (this plotting package is modeled after ggplot2 in R).
 
 ---
 
+<!-- section_id: "fae34d2e-05ab-4c4b-8be5-ad639644f236" -->
 ### "What are the prerequisites for this course?"
 Using the new courses at BYU-I, the prerequisite is CSE 110.  However, if you have experience programming from other classes, you most likely are prepared for this course.
 
 ---
 
+<!-- section_id: "f22b7eb8-c3d2-4020-9365-32d15793e55e" -->
 ### "Why Python instead of R?"
 The computer science and software engineering programs at BYU-I use Python as their foundational courses.  The standard student will have some experience with Python before DS 250. Python is an essential programming language for data scientists, and we already have [DS350](https://byuistats.github.io/M335/), which is taught in R.  
 
 ---
 
+<!-- section_id: "4f93124d-7c54-4587-b830-9875b185e46c" -->
 ### "What is pandas?"
 [pandas](https://pandas.pydata.org/docs/getting_started/index.html) is the foundational data science package in Python. If you are using tabular data you will be in pandas. Polars is growing in popularity, but there isn't as much help for it yet.
 
 ---
 
+<!-- section_id: "16a22bf0-27e5-43c2-8dfb-d94eb7b2a732" -->
 ### "Why are we using lets-plot instead of Seaborn or Matplotlib or Altair?"
 Matplotlib was the first visualization package to gain a following in Python.  Seaborn is built on top of Matplotlib. Seaborn is easy to pick-up and understand, but much less flexible. Many data scientists use both in their work—neither leverage the [grammar of graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448) as developed by Leland Wilkinson. Altair is built on Vega-Lite, which uses the Vega visualization grammar. It is declarative and actively developed.  
 

@@ -1,4 +1,5 @@
 ---
+resource_id: "7e9e4261-c3f2-42c8-b197-8ec617111048"
 title: "Client Report - Can You Predict That?"
 subtitle: "Unit 4 Task 1"
 author: "[STUDENT NAME]"
@@ -41,6 +42,7 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "5cabba59-9b69-4d47-9499-9e4214c1a65f" -->
 ## QUESTION
 
 __Build a classification model labeling houses as being built “before 1980” or “during or after 1980”.__ Your goal is to reach or exceed 90% accuracy. Report your final model choice and any other model parameters you may have tweaked (train-test split ratio, tuning parameters, etc).  

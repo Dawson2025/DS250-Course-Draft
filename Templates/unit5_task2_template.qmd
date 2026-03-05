@@ -1,4 +1,5 @@
 ---
+resource_id: "eccce937-d7e9-4bc5-b734-322406693cab"
 title: "Client Report - Recoding Range Variables: Smarter than Dummy Encoding"
 subtitle: "Unit 5 Task 2"
 author: "[STUDENT NAME]"
@@ -41,6 +42,7 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "7aba27f5-ce20-4427-8344-b4fa55852c28" -->
 ## QUESTION 1
 
 1. __Clean and format the data so that it can be used in a machine learning model.__ As you format the data, you should complete each item listed below. In your final report provide an excerpt of the reformatted data with a short description of the changes made.  

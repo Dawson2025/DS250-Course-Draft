@@ -1,4 +1,5 @@
 ---
+resource_id: "1fe82c21-bfe9-408d-befd-44262fdaf3dd"
 title: "Project 2 Workbook"
 subtitle: "Course DS 250"
 author: "Brother Clark"
@@ -36,6 +37,7 @@ execute:
 # Project 2 WorkBook
 
 
+<!-- section_id: "6a7e2272-44da-4ef1-97ec-d40b9d7b374d" -->
 ## Tutoring Lab Info
 The [data science lab](https://byuidatascience.github.io/lab/) is a resource you can use in person, online, and in Slack.
 
@@ -46,6 +48,7 @@ The [data science lab](https://byuidatascience.github.io/lab/) is a resource you
 ---
 
 
+<!-- section_id: "418b1aa7-f7e5-459c-b6a4-e13e58d1b13f" -->
 ### 1. `replace()` function
 
 :::{.callout-tip collapse="true" title="Replace Function Explanation"}
@@ -59,6 +62,7 @@ df['column_name'].replace(old_value, new_value, inplace=True)
 ```
 
 
+<!-- section_id: "3a37c136-669a-4a7e-8053-5142eae7703d" -->
 ### 2. `min()` function
 
 :::{.callout-tip collapse="true" title="Min Function Explanation"}
@@ -75,6 +79,7 @@ min_value = df['column_name'].min()
 
 
 
+<!-- section_id: "85718386-afe4-4287-bdcd-65b38a9a23df" -->
 ### 3. `max()` function
 
 :::{.callout-tip collapse="true" title="Max Function Explanation"}
@@ -89,6 +94,7 @@ max_value = df['column_name'].max()
 ```
 
 
+<!-- section_id: "52891709-e91d-4baf-b031-effc55b60c15" -->
 ### 4. `groupby()` function
 
 :::{.callout-tip collapse="true" title="Groupby Function Explanation"}
@@ -105,6 +111,7 @@ grouped_data = df.groupby('grouping_column').sum()
 
 
 
+<!-- section_id: "58655cff-f319-40c0-811d-c7b2fb1e3234" -->
 ### 5. `sum()` function
 
 :::{.callout-tip collapse="true" title="Sum Function Explanation"}
@@ -119,6 +126,7 @@ sum_result = df['column_name'].sum()
 ```
 
 
+<!-- section_id: "f82af2e7-8b5c-45a7-a046-782222ee973e" -->
 ### 6. `index` attribute
 
 :::{.callout-tip collapse="true" title="Index Function Explanation"}
@@ -133,6 +141,7 @@ index_values = df.index
 ```
 
 
+<!-- section_id: "669813f6-8057-44c1-b9b3-2826ed10d8a6" -->
 ### 7. `round()` function
 
 :::{.callout-tip collapse="true" title="Round Function Explanation"}
@@ -148,6 +157,7 @@ rounded_values = df['column_name'].round(decimals=2)
 
 
 
+<!-- section_id: "9dc9146e-5b95-40a6-bd02-37efb36ef325" -->
 ### 8. Indexing a String
 
 
@@ -166,6 +176,7 @@ string_value = df['string_column'][index]
 
 
 
+<!-- section_id: "427f6145-36d8-4d0f-8716-e2922adf4eff" -->
 ### 9. `to_json()` function
 
 :::{.callout-tip collapse="true" title="To JSON Function Explanation"}
@@ -182,6 +193,7 @@ json_representation = df.to_json(orient='records')
 
 
 
+<!-- section_id: "c43b88d8-03cb-4633-bb85-c968c2ea9927" -->
 ### 10. `isin()` function
 
 :::{.callout-tip collapse="true" title="Isin Function Explanation"}
@@ -197,6 +209,7 @@ filtered_data = df[df['column_name'].isin(['value1', 'value2'])]
 
 
 
+<!-- section_id: "6854016c-8d08-44f7-b62d-768ea2c8a6be" -->
 ### 11. `all()` function
 
 :::{.callout-tip collapse="true" title="All Function Explanation"}
@@ -213,6 +226,7 @@ all_elements_true = df['boolean_column'].all()
 
 
 
+<!-- section_id: "ccd1c3f1-8f24-4dc2-a697-e2a0fcd6b6d2" -->
 ### 12. `fillna()` function
 
 :::{.callout-tip collapse="true" title="Fillna Function Explanation"}
@@ -228,6 +242,7 @@ filled_data = df['column_name'].fillna(value)
 
 
 
+<!-- section_id: "a0d5605a-4c0f-42d4-a30a-25ed09b3e596" -->
 ### 13. `mean()` function
 
 :::{.callout-tip collapse="true" title="Mean Function Explanation"}
@@ -259,6 +274,7 @@ url = "https://github.com/byuidatascience/data4python4ds/raw/master/data-raw/mpg
 data = pd.read_csv(url)
 ```
 
+<!-- section_id: "96f3d32d-4a3d-4f4a-b0f5-84a7f1e538d5" -->
 ## Plotly Chart Structure
 
 ```{python}
@@ -266,6 +282,7 @@ fig = px.scatter(data, x='displ', y='hwy')
 fig.show()
 ```
 
+<!-- section_id: "e9d0f875-f599-4623-9e7f-933dbc36aa8c" -->
 ## Size of Chart
 
 **Width and Height**
@@ -281,6 +298,7 @@ fig.show()
 The `width` and `height` parameters in the `update_layout` method are used to set the width and height of the plot in pixels, respectively. In this example, the width is set to 600 pixels, and the height is also set to 600 pixels. Adjust these values according to your desired dimensions for the scatter plot.
 :::
 
+<!-- section_id: "27f227c3-6904-4b43-8ec6-55d9dc564b28" -->
 ## Title and Subtitle 
 
 **Title**

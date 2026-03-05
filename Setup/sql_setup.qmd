@@ -1,4 +1,5 @@
 ---
+resource_id: "f427060d-94dc-4ece-8006-6ed4f39a1d04"
 title: "SQL for Data Science"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,18 +10,21 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "d6605325-582a-4bbc-82b8-144bc7e4affa" -->
 ### SQLITE Setup
 
 There is nothing to download to `setup` SQLITE
 This [SQLite Viewer](https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer) VS Code extension will be helpful to explore the database 
 
 
+<!-- section_id: "4b59bd2a-1dd3-4d89-9aa1-f69e1074c339" -->
 ### Downloads
 
 Download this [sqlite db file](/Data/lahmansbaseballdb.sqlite)
 Save it in the same place as the `.py` or `.qmd` file created in the next step
 
 
+<!-- section_id: "5b6b4181-99b8-4a76-a259-bab1bee79f9d" -->
 ### Test Your Setup
 
 Copy the code below and test it in a `.py` file. If everything works you are all set

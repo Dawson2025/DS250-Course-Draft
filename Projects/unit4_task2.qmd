@@ -1,4 +1,5 @@
 ---
+resource_id: "3076a9cf-9abb-4db0-a456-c226fcfd206c"
 title: "Unit 4, Task 2: How good is it, really?"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "5fbc0b35-5d6a-424a-9f55-d558ecaf5e4c" -->
 ### Background
 
 The clean air act of 1970 was the beginning of the end for the use of asbestos in home building.  By 1976, the U.S. Environmental Protection Agency (EPA) was given authority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos You can [read more about this ban](https://www.asbestos.com/mesothelioma-lawyer/legislation/ban/).  
@@ -18,11 +20,13 @@ The state of Colorado has a large portion of their residential dwelling data tha
 Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods.
 
 
+<!-- section_id: "076d4ada-706b-4a39-8cec-0fb3a47d5c1f" -->
 ### Client Request
 
 The Client is a state agency in Colorado that is responsible for the health and safety of its residents. They have a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980.
 
 
+<!-- section_id: "235c4bcf-edc9-4bb8-a427-7d195a72bb65" -->
 ### Data
 
 __URL:__  [dwellings_ml.csv (ml ready)](https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv)  
@@ -31,6 +35,7 @@ __Informational URL:__  [dwellings_denver.csv (not cleansed)](https://github.com
 __Information:__ [Data description](https://github.com/byuidatascience/data4dwellings/blob/master/data.md)  
 
 
+<!-- section_id: "f0e759a2-3c52-4d3e-bfd8-6b395152304d" -->
 ### Readings
 
 - [How to choose a good evaluation metric for your Machine learning model](https://web.archive.org/web/20240213170741/https://ranvir.xyz/blog/how-to-evaluate-your-machine-learning-model-like-a-pro-metrics/)
@@ -46,6 +51,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 
  
 
+<!-- section_id: "5b1c6d64-2a08-47e1-b059-78beac7c25b2" -->
 ### Questions
 
 1. __Describe the quality of your classification model using 2-3 different evaluation metrics.__ You also need to explain how to interpret each of the evaluation metrics you use.  
@@ -54,6 +60,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 
 
 
+<!-- section_id: "01b6627e-4657-4cd6-89a4-4d4df8e03443" -->
 ### Submission / Deliverables:
 
 _Use this [unit4_task2_template](../Templates/unit4_task2_template.qmd) to create your Client Report. Answer the questions. Each answer should include a written description of your results, code cells with comments, charts and/or tables._  

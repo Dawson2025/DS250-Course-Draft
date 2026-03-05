@@ -1,4 +1,5 @@
 ---
+resource_id: "f3d55539-8bb9-42c2-9263-c5619f43b850"
 title: "Client Report - BYU-Idaho Players and Comparing Teams"
 subtitle: "Unit 2 Task 2"
 author: "[STUDENT NAME]"
@@ -44,6 +45,7 @@ sqlite_file = 'lahmansbaseballdb.sqlite'
 con = sqlite3.connect(sqlite_file)
 ```
 
+<!-- section_id: "c9cfdf3f-dabf-4827-a750-cf2dbf48f400" -->
 ## QUESTION 1
 
 __Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report.__
@@ -57,6 +59,7 @@ __Describe your results and analysis here_
 ```
 
 
+<!-- section_id: "9e78f9ce-4846-452d-a2da-b198f62e842f" -->
 ## QUESTION 2
 
 __Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results.__  
@@ -70,6 +73,7 @@ _Describe your results and analysis here_
 ```
 
 
+<!-- section_id: "7e0d59e9-0f73-42e1-bc26-ca2bd88e0b49" -->
 ## QUESTION 3
 
 __Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__

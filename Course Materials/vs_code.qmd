@@ -1,4 +1,5 @@
 ---
+resource_id: "e85f0a70-9bd0-4a81-8b2a-aae00ca41d0a"
 title: "VS Code for Data Science"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,11 +9,13 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "65660e66-9291-48fa-aaca-7c4a50699644" -->
 ### Learn How to Install VS Code
 [VS Code](/Setup/vs_code_setup.qmd)
 
 ---
 
+<!-- section_id: "94b8d9f8-8a17-4085-97af-20886756ecf1" -->
 ### What if my interactive Python window in VS Code is not using the same version of Python as my terminal?
 
 You can set your Python version in VS Code by opening a `.py` script and then clicking on the Python text in the bottom left corner as shown below.
@@ -37,12 +40,14 @@ Here you can set the jupyter path to Python to match the one you picked for your
 
 ---
 
+<!-- section_id: "5119651f-0294-4301-b9b9-145596ae01bc" -->
 ### What if I am not able to read in files from the GitHub links using `read_csv()?`
 
 Most likely your Python SSl certificates are not installed.  Follow the answer in [this post](https://stackoverflow.com/questions/50236117/scraping-ssl-certificate-verify-failed-error-for-http-en-wikipedia-org).
 
 ---
 
+<!-- section_id: "f07eab0c-0dfc-4815-9191-59196180abc5" -->
 ### How do I use VS Code to collaborate?"
 
 [Microsft's Live Share extension documentation](https://code.visualstudio.com/learn/collaboration/live-share) says, _'Live Share enables you to quickly collaborate with a friend, classmate, or professor on the same code without the need to sync code or to configure the same development tools, settings, or environment.'_  You can follow their guide or use our course created video.

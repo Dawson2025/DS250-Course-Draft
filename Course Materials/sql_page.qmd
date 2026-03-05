@@ -1,7 +1,12 @@
+---
+resource_id: "e721cab4-0a98-425d-bc57-ed54046a7689"
+---
+<!-- section_id: "3e852824-b4e3-4df0-b0c5-66473b42f8c1" -->
 ## Introduction
 
 Structured Query Language (SQL) is a powerful tool for managing and manipulating relational databases. It is essential for data scientists, analysts, and anyone working with large datasets. This chapter will explore the importance of SQL, its applications, and provide example code format to illustrate its utility.
 
+<!-- section_id: "ec43e811-9d51-41de-bb9a-0eb5c14f842b" -->
 ## Why SQL is Important
 
 1. **Data Management**: SQL allows for efficient management of large volumes of data. It provides the means to create, read, update, and delete data in a relational database.
@@ -10,6 +15,7 @@ Structured Query Language (SQL) is a powerful tool for managing and manipulating
 4. **Data Integration**: SQL supports the integration of data from different sources, allowing for comprehensive data analysis.
 5. **Standardization**: SQL is a standardized language used by most relational database management systems (RDBMS), making it a versatile and essential skill for professionals in the field.
 
+<!-- section_id: "8c532e9f-2914-4b9a-90c4-930725d3a552" -->
 ## Basic SQL Concepts
 
 ```{python}
@@ -18,6 +24,7 @@ import pandas as pd
 ```
 
 
+<!-- section_id: "e2f23188-6189-40e8-ae8f-9fbad7b2d567" -->
 ## Basic SQL Concepts
 
 To illustrate the following SQL concepts, we will use the `employees` table with the following data:
@@ -48,6 +55,7 @@ To illustrate the following SQL concepts, we will use the `employees` table with
 | 20  | Tina       | Adams     | IT         | 81000  |
 
 
+<!-- section_id: "cb7f7642-4f2d-42dc-b471-3e8a06a9e169" -->
 ### SELECT and FROM
 
 The `SELECT` statement is used to fetch data from a database, and the `FROM` clause specifies the table.
@@ -132,6 +140,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "22a30b12-054f-458d-a3a7-c934b5b20c5f" -->
 ### SELECT EXCLUDE and RENAME
 
 You can exclude columns using `SELECT` and rename them for clarity.
@@ -214,6 +223,7 @@ pd.read_sql_query(p, con)
 | Tina    | Adams   |
 
 
+<!-- section_id: "e488be90-bb02-4011-93d3-d36304cd4940" -->
 ### LIMIT and OFFSET
 
 The `LIMIT` clause restricts the number of rows returned, and `OFFSET` skips rows before beginning to return rows.
@@ -278,6 +288,7 @@ pd.read_sql_query(p, con)
 | 15  | Olivia     | Perez     | Sales      | 68000  |
 
 
+<!-- section_id: "68852bf8-bebd-4300-a5c0-3bb02920494a" -->
 ### ORDER BY
 
 The `ORDER BY` clause sorts the result set.
@@ -360,6 +371,7 @@ pd.read_sql_query(p, con)
 | 12  | Leo        | Martin    | Sales      | 50000  |
 
 
+<!-- section_id: "821081f6-b715-45c8-855c-5e4ddd47723a" -->
 ### AND, OR, NOT
 
 Logical operators `filter` records based on multiple conditions.
@@ -387,6 +399,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "08a6a61d-5071-49d3-9ac9-54ab48a41cf6" -->
 ### Numeric Operations
 
 Perform `arithmetic` operations in SQL.
@@ -432,6 +445,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "ad9ea4a4-56d8-4d63-959f-0c8b5dca87d6" -->
 ### LIKE and NOT LIKE
 
 Pattern matching using `LIKE`.
@@ -459,6 +473,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "6c117e9a-f88e-4979-84fa-3872c5454d80" -->
 ### BETWEEN
 
 Range filtering using `BETWEEN`.
@@ -488,6 +503,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "5df93e1d-152d-4021-904f-6120eb0fa004" -->
 ### OFFSET
 
 `Skip` a specific number of rows before starting to return rows.
@@ -527,9 +543,11 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "d4529752-46be-4252-a692-bc0172dc9176" -->
 ## Intermediate SQL Concepts
 
 
+<!-- section_id: "303834e6-ba32-426d-9577-b9d22e2ee11c" -->
 ### Joins
 
 **Table: employees**
@@ -611,6 +629,7 @@ pd.read_sql_query(p, con)
 | Rachel     | Scott     | Sales           |
 
 
+<!-- section_id: "ae169821-5bb6-4838-b90d-f624792ba193" -->
 ### CAST
 
 Convert `data` from one type to another.
@@ -653,6 +672,7 @@ pd.read_sql_query(p, con)
 | 81000.00 |
 
 
+<!-- section_id: "0d7ec063-0045-49d3-a46e-fb47f08995c1" -->
 ### Aggregations
 
 Perform `calculations` on a set of values.
@@ -683,6 +703,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "3ddbbd50-9fd9-4817-b296-329f543d8eee" -->
 ### GROUP BY and HAVING
 
 `Group` rows that have the same values and `filter` groups.
@@ -711,6 +732,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "124e3726-9a4c-471a-bb7f-0676bf071ab0" -->
 ### UNION, INTERSECT, MINUS
 
 Combine result sets
@@ -770,6 +792,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "cefd9c16-43f6-4444-80d9-24523d1b6051" -->
 ### POSITION
 
 `Find` the position of a `substring`.
@@ -811,6 +834,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "0f2f8710-f7d4-47f6-b00d-0e41aab5e7e6" -->
 ### CASE
 
 `Conditional` logic in `SQL.
@@ -860,6 +884,7 @@ pd.read_sql_query(p, con)
 
 # Joins
 
+<!-- section_id: "52f1f0f3-d92d-4ee1-b61c-a42fd8901b6a" -->
 ## Introduction
 
 It's rare that a data analysis involves only a single data frame. Typically you have many data frames, and you must *join* them together to answer the questions that you're interested in.
@@ -878,10 +903,12 @@ matplotlib_inline.backend_inline.set_matplotlib_formats("svg")
 ```
 
 
+<!-- section_id: "a064f6da-a29b-4378-998c-4d562047a08e" -->
 ### Prerequisites
 
 This chapter will use the **pandas** data analysis package.
 
+<!-- section_id: "12afcef6-c516-4674-8c70-b1b14bde4ad2" -->
 ## Concatenate
 
 If you have two or more data frames with the same index or the same columns, you can glue them together into a single data frame using `pd.concat()`.
@@ -925,6 +952,7 @@ df = pd.concat(list_of_state_dfs, keys=state_codes, axis=0)
 
 Note that the `keys` argument is optional, but is useful for keeping track of origin data frames within the merged data frame.
 
+<!-- section_id: "5f3e88f2-a6b1-4670-a6cf-0dcc0363f735" -->
 ### Exercise
 Concatenate the follow two data frames:
 
@@ -938,6 +966,7 @@ df2 = pd.DataFrame([['c', 3], ['d', 4]],
 ```
 
 
+<!-- section_id: "9b301f41-69bd-4749-be8d-c5d4564c39ea" -->
 ### Merge
 
 There are so many options for merging data frames using `pd.merge(left, right, on=..., how=...` that we won't be able to cover them all here. The most important features are: the two data frames to be merged, what variables (aka keys) to merge on (and these can be indexes) via `on=`, and *how* to do the merge (eg left, right, outer, inner) via `how=`. This diagram shows an example of a merge using keys from the left-hand data frame:
@@ -994,6 +1023,7 @@ pd.merge(left, right, on=["key1", "key2"], how="outer", indicator=True)
 
 Now we can see that the products of all key combinations are here. The `indicator=True` option has caused an extra column to be added, called '_merge', that tells us which data frame the keys on that row came from.
 
+<!-- section_id: "00d303e8-2031-46d3-8a8f-da20bd2912fe" -->
 ### Exercise
 
 Merge the following two data frames using the `left_on` and `right_on` keyword arguments to specify a join on `lkey` and `rkey` respectively:
@@ -1006,6 +1036,7 @@ df2 = pd.DataFrame({'rkey': ['foo', 'bar', 'baz', 'foo'],
 ```
 
 
+<!-- section_id: "27e201f0-d60a-4804-a9f7-8244f77daa82" -->
 ### Exercise
 
 Merge the following two data frames on `"a"` using `how="left"` as a keyword argument:
@@ -1022,12 +1053,15 @@ For more on the options for merging, see **pandas**' comprehensive [merging docu
 
 
 
+<!-- section_id: "2b4d0743-8b73-4da7-8617-ed44426fce78" -->
 ## Introduction to SQL Joins
 
 SQL joins are used to combine rows from two or more tables based on a related column between them. Understanding joins is crucial for effective data retrieval and manipulation. This section will cover the four main types of joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN, using visual aids and code snippets with a fake data frame.
 
+<!-- section_id: "ddc2afdd-53d9-4819-8685-6675198e8e3f" -->
 ## Types of Joins
 
+<!-- section_id: "a4fa3f41-95cc-472e-8cf6-0a2fd37870b0" -->
 ### INNER JOIN
 
 An INNER JOIN returns only the rows that have matching values in both tables.
@@ -1051,6 +1085,7 @@ pd.read_sql_query(p, con)
 
 
 
+<!-- section_id: "b1b6911d-0646-4316-9282-6253db337a01" -->
 ### LEFT JOIN
 
 A LEFT JOIN returns all the rows from the left table and the matched rows from the right table. If no match is found, NULL values are returned for columns from the right table.
@@ -1073,6 +1108,7 @@ pd.read_sql_query(p, con)
 ```
 
 
+<!-- section_id: "20b53512-27e4-4c57-be8e-d703f44dd494" -->
 ### RIGHT JOIN
 
 A RIGHT JOIN returns all the rows from the right table and the matched rows from the left table. If no match is found, NULL values are returned for columns from the left table.
@@ -1094,6 +1130,7 @@ pd.read_sql_query(p, con)
 ```
 
 
+<!-- section_id: "79fa4132-36c3-476c-a725-d2daaf7898a2" -->
 ### FULL JOIN
 
 A FULL JOIN returns all the rows when there is a match in either left or right table. Rows without a match in one of the tables will contain NULL values for columns from that table.
@@ -1116,6 +1153,7 @@ pd.read_sql_query(p, con)
 ```
 
 
+<!-- section_id: "043092f8-7450-4c19-be84-893487f1783d" -->
 ## Example Data Frames
 
 To illustrate these joins, let's consider two fake data frames: `Customers` and `Orders`.
@@ -1147,6 +1185,7 @@ print(orders)
 
 
 
+<!-- section_id: "837ab143-a013-44e5-9e20-e8902bc15009" -->
 ## Conclusion
 
 SQL is an indispensable tool for anyone working with data. Its ability to manage, manipulate, and integrate data makes it essential for data analysis and decision-making. The examples provided in this chapter illustrate some of the key operations and techniques used in SQL, highlighting its importance in the field of data science.

@@ -1,3 +1,4 @@
+# resource_id: ec611141-2747-403e-b381-6763cbaf998f
 The Lahman Baseball Database
 
 2014 Version

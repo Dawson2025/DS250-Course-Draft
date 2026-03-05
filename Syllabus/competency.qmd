@@ -1,4 +1,5 @@
 ---
+resource_id: "1ed54974-2fcc-4224-9a82-f607007b4558"
 title: "DS 250 Competency"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -10,6 +11,7 @@ keywords: [""]
 
 > We need skills not grades!  [Shifting Attention](https://www.thegraidenetwork.com/blog-all/2018/8/1/retiring-the-red-pen-shifting-attention-from-grades-to-learning)
 
+<!-- section_id: "6b52e602-feeb-4541-afb1-e19ee8653c95" -->
 ### Competency scale {#scale}
 
 You must complete __all__ competency items at the level detailed to achieve the listed grade. You can request __half-step__ adjustments if you fall slightly short on some elements __and__ over on others.  If you are fall short slightly on some elements but dont achive over on others you have not met the requirements for the __half-step__ adjustment.
@@ -39,6 +41,7 @@ Here is my assessment of my efforts and the competency that they align with, as 
 
 ::: {.panel-tabset}
 
+<!-- section_id: "fd56995d-2e85-4fc9-be96-cb5bed68d98b" -->
 ## Leader (A)
 #### Leader (A)
 | Element                                   | Requirement     | Description               |
@@ -51,6 +54,7 @@ Here is my assessment of my efforts and the competency that they align with, as 
 | __Course Goal Letter (End)__              | submission      | --                        |
 | __Coding challenge__                      | At least 3      | Score is out of 4         |
 
+<!-- section_id: "e2d341a5-636e-4a43-98af-839ecc6221ae" -->
 ## Supporter (B)
 #### Supporter (B)
 | Element                                   | Requirement     | Description               |
@@ -63,6 +67,7 @@ Here is my assessment of my efforts and the competency that they align with, as 
 | __Course Goal Letter (End)__              | submission      | --                        |
 | __Coding challenge__                      | At least 3      | Score is out of 4         |
 
+<!-- section_id: "32718523-6f60-45e6-bc15-b2b8aee356b9" -->
 ## Listener (C)
 #### Listener (C)
 | Element                                   | Requirement     | Description               |
@@ -75,6 +80,7 @@ Here is my assessment of my efforts and the competency that they align with, as 
 | __Course Goal Letter (End)__              | submission      | --                        |
 | __Coding challenge__                      | At least 2      | Score is out of 4         |
 
+<!-- section_id: "a0518ee9-26da-404b-8be8-a69465d14c06" -->
 ## Asleep (D)
 #### Asleep (D)
 | Element                                   | Requirement     | Description               |
@@ -90,10 +96,12 @@ Here is my assessment of my efforts and the competency that they align with, as 
 :::
 
 
+<!-- section_id: "a63695bf-0111-48d2-b51d-7864ef5d75c9" -->
 ### Competency elements {#elements}
 
 
 ::: {.panel-tabset}
+<!-- section_id: "68021d84-07bf-49a0-adf3-bec1ea0cc2d4" -->
 ## Projects
 #### Projects (Questions|Tasks)
 
@@ -114,6 +122,7 @@ _Projects 1-5 will have stretch questions. You must complete all the core questi
 * **4 points:** High-quality work that addresses each of the __**Questions and Tasks**__ and a comment in Canvas of your statement of work quality
 * **5 points:** Perfect-quality work or Rework that addressed all issues from the early submission
 
+<!-- section_id: "fb834b31-b97c-4a9a-8640-b227074c67a4" -->
 ## Quiz Checkpoints
 #### Checkpoints (methods and calculations)
 
@@ -131,6 +140,7 @@ _These Methods and Calculation Quizzes are in Canvas and they open when the proj
 1. Example (direct):  What is the recommended function for arranging your data by a variable? What are the outputs after using `<FUNCTION>`?
 2. Example (open): Your client has shown some confusion about NumPy's 'nan' handling in Python. Help them understand by answering the question, 'How is missing data handled in Pandas?' 
 
+<!-- section_id: "6c492c71-e71d-4c1f-8c8f-7d7fedb7e477" -->
 ## Checkpoints Mid-Project (online only)
 #### Checkpoints (Mid-project status)
 
@@ -146,6 +156,7 @@ _The mid-project checkpoint has a few questions. It opens the first day of the p
 1. Submit your 1 minute video. 
     > You may share any additional notes with your teacher using the Canvas comment feature.
 
+<!-- section_id: "d2f146a3-87cf-4224-9e48-7c843d02f10a" -->
 ## DS Community
 #### Data Science Community
 
@@ -158,11 +169,13 @@ To earn credit for the DS Community element you must __complete tasks from the l
 - Reach out to someone who works in a data-related field and ask them for 15 minutes of their time. Use this time to conduct an "[informational interview](https://brightspotcdn.byu.edu/54/b6/2554ebb842fab54640a15ff0afb3/informational-interview.pdf)" and learn more about their responsibilities and career path.
 - Research and apply to at least 5 data-related jobs or internships.
 
+<!-- section_id: "3081d29e-6134-4e7f-89ae-df0ae5892308" -->
 ## Course Goals Letter
 #### Finishing the semester
 
 Submit a __**Course Goals Letter (End)**__ that includes what you have learned from this class, the next data science course you plan on taking, and the final grade that you are requesting based on the work you have submitted compared to the competencies above.
 
+<!-- section_id: "e199e45b-73e2-44fa-b18f-615a75cb8fe9" -->
 ## Challenge
 #### Coding challenge
 

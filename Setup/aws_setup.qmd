@@ -1,4 +1,5 @@
 ---
+resource_id: "8c7ffcb5-1b52-4092-88af-065c3357e9a4"
 title: "AWS Virtual Machine Setup"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,10 +10,12 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "04c086d7-789c-4f8c-8002-9fb778ac5762" -->
 ### Prerequisites
 If you want to use a AWS Academy VM for this course, you will need to have an AWS Educate account. Please [email the admin](mailto:clarkty@byui.edu) for with the subject line "AWS Educate Account Request" and include your full name and course code. You will receive an email from AWS Educate with instructions on how to create an account.
 
 
+<!-- section_id: "2f80529e-c4d3-461e-9e50-d4de01b9db0c" -->
 ### AWS Virtual Machine Setup
 Watch and follow the two videos, and or follow along with the AWS Virtual Machine Creation Document. Copy paste code from the cell below.
 
@@ -25,10 +28,12 @@ Watch and follow the two videos, and or follow along with the AWS Virtual Machin
 ```
 
 
+<!-- section_id: "9a3308ca-0057-4da1-8a51-3d0ee262f8f6" -->
 ### Setup AWS Documentation
 - [AWS Virtual Machine Creation](https://www.cse-byui.org/)
 
 
+<!-- section_id: "a51e5189-4b9a-463d-b944-b13a3fc956f7" -->
 ### Copy Paste Code Block
 ```{.batch}
 git clone https://github.com/byui-bwh/db-workstation-automation.git 
@@ -38,12 +43,14 @@ cd db-workstation-automation/
 . ./provision_vm.sh
 ```
 
+<!-- section_id: "ac790a81-e235-47a3-9047-92972e1436a7" -->
 ### Clone this GitHub Repository
 ```{.batch}
 cd Desktop
 git clone https://github.com/NicholasBoss/clarkstudents24.git
 ```
 
+<!-- section_id: "022aeb0d-b9c0-445a-8c1b-30882cd31401" -->
 ### Installing GitHub Desktop
 - Open the Repo just cloned in Visual Studio Code
 - Navigate through `code` to `week 2` and open the `root.py` file
@@ -52,10 +59,12 @@ git clone https://github.com/NicholasBoss/clarkstudents24.git
     - When asked to run the file setup script answer `n`
     - Close the file
 
+<!-- section_id: "625f8df0-c5fe-4304-867f-6f1b0e7eda9c" -->
 ### Installing Quarto CLI
 - Navigete to the Quarto CLI [website for Linux](https://byuidss.slack.com/archives/D01ULMRAD8T/p1715879012282849)
     - Run all the termainal commands on the site in the terminal in the AWS instance
 
+<!-- section_id: "d734d5fe-1a51-4971-96b3-6d583c31138f" -->
 ### Installing the Quarto VS Code Extension
 - Open Visual Studio Code
 - Click on the `Extensions` icon in the left side bar
@@ -63,6 +72,7 @@ git clone https://github.com/NicholasBoss/clarkstudents24.git
 - Click the `Install` button on the `Quarto` extension
 - Close the `Extensions` tab
 
+<!-- section_id: "5e624024-4d7a-4b16-9c8d-daea7a780012" -->
 ### Install Python Libraries
 - Open the terminal in Visual Studio Code
 - Run the following command to install the required Python libraries  
@@ -71,6 +81,7 @@ git clone https://github.com/NicholasBoss/clarkstudents24.git
 pip install numpy pandas scikit-learn plotly.express nbformat nbclient pyyaml jupyter
 ```
 
+<!-- section_id: "0446116d-eda4-4a03-a69e-d81c273740eb" -->
 ### Install Other VS Code Extensions
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)

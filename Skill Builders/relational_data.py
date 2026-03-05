@@ -1,3 +1,4 @@
+# resource_id: 8137a9f9-f2ac-48ab-a713-ed251bf8e408
 # Exercise 1
 # What is the name of the table that records data about pitchers in the regular seasons?'''
 

@@ -1,4 +1,5 @@
 ---
+resource_id: "7fc27d14-7c9f-4d61-a130-09b1e649c7bb"
 title: "Quarto for Data Science"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "a667c98e-6b50-4df4-9dbb-95d014374f40" -->
 ### Quarto 
 
 ```{=html}
@@ -20,11 +22,13 @@ Quarto is an open-source scientific and technical publishing system built on [Pa
 We use this perfect union of Jupyter Notebooks and RMarkdown for reporting on our projects. It leverages Markdown and Python code chunks to create dynamic HTML content.
 
 
+<!-- section_id: "0baa4681-cbb4-43a9-bba7-7a3d8ef22e65" -->
 ### Markdown
 
 Markdown is a plain text formatting syntax aimed at making writing more accessible. The philosophy behind Markdown is that plain text documents should be readable without tags making a mess, but there should still be ways to add text modifiers like lists, bold, italics, etc. It is an alternative to WYSIWYG (what you see is what you get) editors, which use rich text that later gets converted to proper HTML.
 
 
+<!-- section_id: "33e27d56-30ba-4603-b6ea-96b3206fc94a" -->
 ### Quarto Basics
 
 You will need to install the Quarto CLI and then go through the VS Code directions on using Quarto with Python.
@@ -44,6 +48,7 @@ You will need to install the Quarto CLI and then go through the VS Code directio
 ```
 
 
+<!-- section_id: "142f921f-1b12-4d20-afc4-de8e69e464b7" -->
 ### Quarto Preview Tip
 When clicking on the Preview Icon ![](/images/quarto_preview_icon.png){width=50} in the top right of your `.qmd` file, some students experience the `preview` rendering their entire course website. If this is the case, you can fix it by only opening the `project.qmd` file you are working on in VS-Code instead of opening the entire course folder.
 
@@ -57,6 +62,7 @@ import sys
 !{sys.executable} -m pip install nbformat nbclient
 ``` -->
 <!-- 
+<!-- section_id: "7cd6cdfa-ceb3-475b-bb49-570ca819f635" -->
 ## Class template
 
 We have built a [template](/Templates/ds250_project_template_clean.qmd) to provide an example of you will submit your project reports (for additional details please see the [instructional template](/Templates/ds250_project_template.qmd)). As you use the template, the following items may help you understand how to write your report.
@@ -66,6 +72,7 @@ We have built a [template](/Templates/ds250_project_template_clean.qmd) to provi
 3. You can see examples of the html output [here](/Templates/ds250_project_template_clean.html) and [here](/Templates/template/ds50_project_template.html)
 
 
+<!-- section_id: "ebb11dfb-e667-43bd-a498-f28a1255edef" -->
 ## Markdown Examples
 
 You can read the complete syntax guide [at the daringfireball.net website](https://daringfireball.net/projects/markdown/syntax). The code chunk below highlights the standard syntax[^2]
@@ -119,6 +126,7 @@ Every once in a while, you may want strikethrough.
 
 ~~this~~
 ```
+<!-- section_id: "9f578c21-8b76-4bfa-a62b-5d405a30f82c" -->
 ### Getting tables out of Pandas
 
 You can create tables using Markdown in your reports. You can use the `.to_markdown()` method on your `DataFrame` object. You would use `print(df.to_markdown(index=False))` to get tables from pandas. They would print out in your interactive window as;

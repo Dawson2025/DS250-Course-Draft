@@ -1,4 +1,5 @@
 ---
+resource_id: "01243ccb-656e-493c-b841-01d96739f2c3"
 title: "Client Report - If not now, when?"
 subtitle: "Unit 3 Task 3"
 author: "[STUDENT NAME]"
@@ -42,6 +43,7 @@ LetsPlot.setup_html(isolated_frame=True)
 df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
 ```
 
+<!-- section_id: "425b2b7b-57bb-4636-a720-7287dc2b09f3" -->
 ## QUESTION 1
 
 __What is the best month to fly if you want to avoid delays of any length?__ Describe the metric you chose and why you chose it to calculate your answer. Include one chart to help support your answer, with the x-axis ordered by month.

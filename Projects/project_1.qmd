@@ -1,4 +1,5 @@
 ---
+resource_id: "e9869f36-cf49-4168-bcf6-9eaa6b81bfd6"
 title: "Project 1: What's in a Name?"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,12 +10,14 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "cc62c46d-6aeb-48c8-8c5e-88b9df243930" -->
 ### Walkthrough
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_kyqqr45q&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_c38ogxtt" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W02 - Project 1 Walkthrough"></iframe>
 ```
 
 
+<!-- section_id: "13efaf62-313c-4100-af7c-37ba7bfb26a5" -->
 ### Background
 
 Hello!!!
@@ -33,11 +36,13 @@ With the rise of Christianity, certain trends in naming practices manifested. Ch
 By the Middle Ages, the Christian influence on naming practices was pervasive. Each culture had its pool of names, which were a combination of native names and early Christian names that had been in the language long enough to be considered native. [[ref](https://heraldry.sca.org/names/namehist.html)]
 
 
+<!-- section_id: "ff22d68a-2379-4808-8058-7ff107d1a6f8" -->
 ### Client Request
 
 This csv file contains the number of times a name was given to a child in a specific year. The Client has a passion for names throughout history. They would like to know how the usage of names has changed over time. They are particularly interested in the names Mary, Martha, Peter, and Paul. They would also like to know how the usage of a name from a famous movie has changed over time.
 
 
+<!-- section_id: "898cf435-5e51-4188-91f3-10415558841b" -->
 ### Data
 
 ::: {.callout-note collapse="true"}
@@ -48,6 +53,7 @@ __URL:__ [names_year.csv](https://github.com/byuidatascience/data4names/raw/mast
 __Information:__ [data.md](https://github.com/byuidatascience/data4names/blob/master/data.md)
 
 
+<!-- section_id: "a6fc7bd9-1253-4ea9-a2d2-13a5f6fb24ab" -->
 ### Readings
 
 ::: {.callout-note collapse="true"}
@@ -68,6 +74,7 @@ We recommend reading through the assigned material once for a general understand
 - [Explore Your Data with Lets-Plot](https://lets-plot.org/python/index.html#explore-your-data-with-lets-plot)
 
 
+<!-- section_id: "6eaceadb-827c-42c0-a209-12b4f06eeba3" -->
 ### Questions and Tasks (Core)
 
 ::: {.callout-note collapse="true"}
@@ -84,6 +91,7 @@ __Download this [Project1 Template](../Templates/P1_template.qmd) template. The 
 1. __Think of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?__  
 
 
+<!-- section_id: "29fa1769-11bf-437c-9868-2979454ff27e" -->
 ### Questions and Tasks (Stretch)
 
 Here is an example Stretch question(s) for this project. Your instructor may assign different Stretch question(s). You must comment in Canvas when submitting your project if you completed any of the Stretch questions.  
@@ -93,6 +101,7 @@ Here is an example Stretch question(s) for this project. Your instructor may ass
     ![](/Images/elliot_chart.png)
 
 
+<!-- section_id: "4a942163-b62e-429e-acad-8bfc6db057b7" -->
 ### Submission:
 ::: {.callout-note collapse="false"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -115,6 +124,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "705142b4-52e6-4607-ada7-87f254828fe2" -->
 ### Deliverables:
 
 ::: {.callout-note collapse="true"}
@@ -131,12 +141,14 @@ _Your report should be written in quarto markdown files and rendered to an HTML 
 :::
 
 
+<!-- section_id: "2ef07cb4-9fa7-4548-a8c9-cbf9e6d66fa0" -->
 ### Feedback:
 ::: {.callout-note collapse="false"}
 If you submit before the due date, you will recieve feedback and/or coaching notes. You will need to address the feedback, re-render and resubmit the project.
 :::
 
 
+<!-- section_id: "fb43ebd6-a103-4178-bff1-0337020cfa40" -->
 ### Resubmission:
 ::: {.callout-note collapse="false"}
 _If you submit before the due date_, you will have __one__ opportunity to resubmit the project after you have received feedback. The window for the resubmission will be open through the __Wednesday__ following the due date of the project.

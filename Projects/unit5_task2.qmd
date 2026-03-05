@@ -1,4 +1,5 @@
 ---
+resource_id: "3203f123-0e46-4eb1-8237-26f5b8625ee3"
 title: "Project 5: Recoding Range Variables"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "7049c206-be09-42a4-a66d-a6c2efa703e0" -->
 ### Background
 
 Survey data is notoriously difficult to munge.  Even when the data is recorded cleanly the options for ‘write in questions’, ‘choose from multiple answers’, ‘pick all that are right’, and ‘multiple choice questions’ makes storing the data in a tidy format difficult.
@@ -17,16 +19,19 @@ In 2014, FiveThirtyEight surveyed over 1000 people to write the article titled, 
 For this project, your client would like to use the Star Wars survey data.  
 
 
+<!-- section_id: "efe37be5-bb1c-4b52-9f68-1cca7421219e" -->
 ### Client Request
 
 The Client is who performed the survey but outsourced the analitics to a 3rd party. They want you to clean up the data so you can ultimately run a machine learning model.For this task, complete the items in the Questions section below.
 
+<!-- section_id: "fbc2fcb3-80f0-4d53-bb64-1cf27db28148" -->
 ### Data
 
 __URL:__ [StarWars.csv](https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv)   
 __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorite-star-wars-movies-and-least-favorite-characters/)
 
 
+<!-- section_id: "3c170a5a-9c94-4268-bcb3-a8210302cd80" -->
 ### Readings
 
 No new readings. Review previous readings as needed:
@@ -38,6 +43,7 @@ No new readings. Review previous readings as needed:
 - [P4DS: Ch18 Regular Expressions](https://aeturrell.github.io/python4DS/regex.html)
 
 
+<!-- section_id: "45911e21-0017-481c-8487-e77ec74ffbcb" -->
 ### Questions
 
 1. __Clean and format the data so that it can be used in a machine learning model.__ As you format the data, you should complete each item listed below. In your final report provide an excerpt of the reformatted data with a short description of the changes made.  
@@ -50,6 +56,7 @@ No new readings. Review previous readings as needed:
     a. One-hot encode all remaining categorical columns
 
 
+<!-- section_id: "ce2cb81a-0220-4254-a321-53fc6612d470" -->
 ### Submission / Deliverables:
 
 __Rather than submitting something for each task of this unit, you will submit one client report at the end of the unit that is the culmination of all the tasks.__ Use this [template](../Templates/unit5_task3_template.qmd) to create your Client Report. Answer the questions. Each answer should include a written description of your results, code cells with comments, charts and/or tables.  

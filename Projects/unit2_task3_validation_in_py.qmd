@@ -1,4 +1,5 @@
 ---
+resource_id: "923162e4-eac4-4ba8-83fd-173a3b51ffe0"
 title: "Unit 2 Task 3: Joins"
 date: 2025-04-02T11:02:05+06:00
 lastmod: 2025-04-02T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "d5753be1-f14f-4433-8bad-58ac85e6d610" -->
 ### Background
 
 When you hear the word “relationship” what is the first thing that comes to mind? Probably not baseball. But a relationship is simply a way to describe how two or more objects are connected. There are many relationships in baseball such as those between teams and managers, players and salaries, even stadiums and concession prices. 
@@ -17,11 +19,13 @@ The graphs on [Data Visualizations from Best Tickets](https://web.archive.org/we
 It is rare for an analysis to rely solely on one table. In fact, that is the whole point of a relational database: to quickly and easily tie tables together. Many students have already learned how to join tables using SQL. This assignment gives you practice joining tables using Python Pandas code. Students inevitably ask, "if I can do the same thing in both languages, why/when would I chose one over the other?". [This thread](https://datascience.stackexchange.com/questions/34357/why-do-people-prefer-pandas-to-sql) has some good thoughts on the topic.  
 
 
+<!-- section_id: "1916ab80-8e3d-4577-a480-d9bf144975e1" -->
 ### Client Request
 
 For this project you will use Python pandas code to join (a.k.a. merge) tables and perform additional manipulations. You will still need to connect to the database to pull the data in, but all the filtering, calculating, joining, etc. should be done with Python pandas (or polars). 
 
 
+<!-- section_id: "e5499dce-0050-4700-b386-5a16ea7ceeb1" -->
 ### Data
 
 ::: {.callout-note collapse="false"}
@@ -33,6 +37,7 @@ __Information:__ [Lahman Data Dictionary](/Data/readme2014.txt)
 __Setup Instructions:__ [See SQL Setup](/Setup/sql_setup.qmd)
 
 
+<!-- section_id: "fdf95ee2-67ed-4851-ae77-c51a7b414e4c" -->
 ### Readings
 
 ::: {.callout-note collapse="true"}
@@ -49,6 +54,7 @@ In other words, if an assignment is due on Wednesday, we will cover the material
 - __[P4DS: CH4 Data Transformation]__(https://aeturrell.github.io/python4DS/data-transform.html#) as review
 
 
+<!-- section_id: "8ffaa03f-671e-4180-b9d1-6fea457faa7b" -->
 ### Questions and Tasks
 
 Download the [template for this task](../Templates/unit2_task3_validation_template.qmd).
@@ -58,6 +64,7 @@ Download the [template for this task](../Templates/unit2_task3_validation_templa
 1. __Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Be creative! Write an SQL query to read in the table(s) you need, then use pandas to manipulate the data. Finally, make a graph using Lets-Plot to visualize the comparison. What do you learn?__
 
 
+<!-- section_id: "4d758cc6-1925-4b43-bada-303ff5e71968" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -80,6 +87,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "86f1a2ee-dda2-48df-b6eb-0c6d99cf5524" -->
 ### Deliverables:
 
 _Use this [task's template](../Templates/unit2_task3_validation_template.qmd) to submit your Client Report._

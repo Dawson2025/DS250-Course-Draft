@@ -1,4 +1,5 @@
 ---
+resource_id: "70d427c6-18a1-46aa-988c-f441e38afae0"
 title: "Client Report - Weather Delays"
 subtitle: "Unit 3 Task 2"
 author: "[STUDENT NAME]"
@@ -42,6 +43,7 @@ LetsPlot.setup_html(isolated_frame=True)
 df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
 ```
 
+<!-- section_id: "88169a0b-a4d3-414a-aa60-c5005ab62814" -->
 ## QUESTION 1
 
 1. __Which airport has the worst delays?__ Describe the metric you chose, and why you chose it to determine the “worst” airport. Your answer should include a summary table that lists (for each airport) the total number of flights, total number of delayed flights, proportion of delayed flights, and average delay time in hours. 
@@ -54,6 +56,7 @@ _Describe your results and analysis here_
 
 ```
 
+<!-- section_id: "dfbaeaed-ea7f-4762-b3b2-ff603f53a769" -->
 ## QUESTION 2
 
 According to the BTS website, the “Weather” category only accounts for severe weather delays. Mild weather delays are not counted in the “Weather” category, but are actually included in both the “NAS” and “Late-Arriving Aircraft” categories. __Your job is to create a new column that calculates the total number of flights delayed by weather (both severe and mild).__ You will need to replace all the missing values in the Late Aircraft variable with the mean. Show your work by printing the first 5 rows of data in a table. Use these three rules for your calculations:  
@@ -70,6 +73,7 @@ _Describe your results and analysis here_
 
 ```
 
+<!-- section_id: "ce2746a8-9cdc-4eac-9a93-688a44f09d6a" -->
 ## Question 3
 
 __Using the new weather variable calculated above, create a barplot showing the proportion of all flights that are delayed by weather at each airport. Describe what you learn from this graph.__  

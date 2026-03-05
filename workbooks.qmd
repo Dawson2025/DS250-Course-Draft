@@ -1,7 +1,9 @@
 ---
+resource_id: "0f636f5e-4f3e-42c9-838b-2b41c5a17844"
 title: "Workbooks"
 ---
 
+<!-- section_id: "fc8a1a96-0399-48bc-b824-68d50cb7449d" -->
 ### Published Workbooks
 - [Project 0](/Workbooks/wb0.qmd)  
 - [Project 1](/Workbooks/wb1.qmd)  

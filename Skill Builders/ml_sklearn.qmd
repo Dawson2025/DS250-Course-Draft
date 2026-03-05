@@ -1,4 +1,5 @@
 ---
+resource_id: "85742e11-7259-4e78-a412-b691e89c37b0"
 title: "Machine Learning"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,16 +9,19 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "7b5d27a1-0296-45ae-8113-185f8fd33cfb" -->
 ## Skill Builder
 #### Machine Learning
 
 ---
 
+<!-- section_id: "f2a61170-81c4-4b8f-aaeb-65379eabaae4" -->
 ## Data
 [Link to data](../Data/machine_learning.csv)
 
 ---
 
+<!-- section_id: "a5e04b00-a075-4dbc-b307-af8878d2c825" -->
 ## Intro to Titanic Machine Learning Skill Builder
 
 For this skill builder, we'll be putting our machine learning hats on. We'll be creating a model that predicts whether a passenger survived. With machine learning, there is a lot of jargon! It can be quite overwhelming at times. This skill builder attempts to keep things basic and simple. With that being said, there are some terms that are important to understand. Let's look at the first few
@@ -33,6 +37,7 @@ _The titanic dataset will be used for examples of each definition._
 |          1 |        1 |     0 |    35 |                         1 |                         0 | 53.1    |
 |          0 |        3 |     1 |    35 |                         0 |                         0 |  8.05   |
 
+<!-- section_id: "837fe390-139c-468f-b030-bb61181948f0" -->
 ### __Important Terms:__
 - `features`: measurable property of the object you're trying to predict. We use this information to predict our target of interest. 
     - __Example__: _pclass_, _sex_, _age_, _siblings_spouses_aboard_ , _parents_children_aboard_, _fare_ columns are all examples of different features.
@@ -58,6 +63,7 @@ _```pip install scikit-learn```_
 
 ---
 
+<!-- section_id: "e23d7a6f-ec18-4300-ad68-e22c0482d498" -->
 ### Exercise 1
 #### Imports and Loading in Data
 
@@ -76,6 +82,7 @@ data = pd.read_csv(___)
 
 ---
 
+<!-- section_id: "adc61925-11a0-4b35-95fb-eb8c4eb3708d" -->
 ### Exercise 2 
 
 Create a chart exploring the relationship between _age_ and _survived_ in the titanic dataset. A strip plot, density plot, or boxplot might be useful here. Below is an example of a density plot. Feel free to replicate this chart or create your own.
@@ -86,6 +93,7 @@ The purpose of making this chart is to explore the relationships between a featu
 
 ---
 
+<!-- section_id: "5845e812-b90a-49c7-93ef-d840e081c1c1" -->
 ### Exercise 3
 
 Build a random forest model that is able to predict whether a passenger survived. __This exercise is the bulk of the skill builder and contains several steps.__ 
@@ -141,6 +149,7 @@ accuracy_score(___, ___)
 
 ---
 
+<!-- section_id: "25da582a-d525-439d-82d5-080bf3f48616" -->
 ### Exercise 4 
 
 What is the most important feature in making predictions? Why do you think this is?

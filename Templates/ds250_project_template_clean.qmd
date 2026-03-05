@@ -1,4 +1,5 @@
 ---
+resource_id: "ad6fa15a-b5ef-43e9-bdf9-76f3d68b16ba"
 title: "Client Report - [Insert Project Title]"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -34,6 +35,7 @@ LetsPlot.setup_html(isolated_frame=True)
 ```
 
 
+<!-- section_id: "1f6f8d7c-b7e9-4f0a-aa71-a9169ea82f3d" -->
 ## Elevator pitch
 
 _paste your elevator pitch here_
@@ -48,6 +50,7 @@ df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-
 
 __Highlight the Questions and Tasks__
 
+<!-- section_id: "3045e6cf-f45b-40bc-8e39-c54947bc7ea4" -->
 ## QUESTION|TASK 1
 
 __COPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE__
@@ -84,6 +87,7 @@ display(mydat)
 ```
 
 
+<!-- section_id: "8e98fa1f-48ea-42bd-9c21-5a16d576ecab" -->
 ## QUESTION|TASK 2
 
 __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
@@ -121,6 +125,7 @@ _include figures in chunks and discuss your findings in the figure._
 ```
 
 
+<!-- section_id: "1895fc66-ff4a-4dbc-963c-ee4f10276f04" -->
 ## QUESTION|TASK 3
 
 __COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__

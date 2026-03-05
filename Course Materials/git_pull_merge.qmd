@@ -1,4 +1,5 @@
 ---
+resource_id: "9ca2c22a-46e0-4a3d-bae6-79206e3128ea"
 title: "Pull and Merge Forks on GitHub"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "e1b155c5-4043-4945-8688-42234b65d952" -->
 ### Create Pull Request
 
 > 1. Go the the forked repository in [byuids-resumes](https://github.com/byuids-resumes) and click _Pull request._
@@ -30,6 +32,7 @@ keywords: [""]
 
 ![](/Images/5_prgh.png)
 
+<!-- section_id: "2ed3811a-3163-46b4-8789-cd5d0fedc19d" -->
 ### Merge Request
 
 _If you have admin access of the forked repository where you are doing the pull request, you can finish the next two steps._

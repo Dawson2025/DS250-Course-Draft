@@ -1,4 +1,5 @@
 ---
+resource_id: "4de31490-3de4-4cb7-adcf-169a659b0730"
 title: "Project 4: Can You Predict That?"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,12 +10,14 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "84d30b61-9210-4c9e-ac99-d2d57af09583" -->
 ### Walkthrough
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_ntkyl8mv&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_tn9ykfrp" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W08 - Project 4 Walkthrough"></iframe>
 ```
 
 
+<!-- section_id: "96d44537-4428-4cac-88c8-74c792a4d4c5" -->
 ### Background
 
 The clean air act of 1970 was the beginning of the end for the use of asbestos in home building.  By 1976, the U.S. Environmental Protection Agency (EPA) was given authority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos You can [read more about this ban](https://www.asbestos.com/mesothelioma-lawyer/legislation/ban/).  
@@ -24,11 +27,13 @@ The state of Colorado has a large portion of their residential dwelling data tha
 Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods.
 
 
+<!-- section_id: "4f681e34-1080-4411-bc17-7589a88ec9dd" -->
 ### Client Request
 
 The Client is a state agency in Colorado that is responsible for the health and safety of its residents. They have a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980.
 
 
+<!-- section_id: "ab082e15-4d23-428b-996f-eb91d1adb7f0" -->
 ### Data
 
 __URL:__  [dwellings_ml.csv (ml ready)](https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv)  
@@ -37,6 +42,7 @@ __Informational URL:__  [dwellings_denver.csv (not cleansed)](https://github.com
 __Information:__ [Data description](https://github.com/byuidatascience/data4dwellings/blob/master/data.md)  
 
 
+<!-- section_id: "4dfe4a2f-f5c0-4a1e-b361-4ac7e56ca561" -->
 ### Readings
 
 - [Machine Learning Introduction](/Course%20Materials/ml.qmd) (Skim)
@@ -52,6 +58,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 - [scikit-plot package](https://github.com/reiinakano/scikit-plot)  
  
 
+<!-- section_id: "87449f69-0ef9-4297-8077-852220fa5f84" -->
 ### Questions and Tasks (Core)
 
 1. __Create 2-3 charts that evaluate potential relationships between the home variables and `before1980`.__ Explain what you learn from the charts that could help a machine learning algorithm.  
@@ -63,6 +70,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 1. __Describe the quality of your classification model using 2-3 different evaluation metrics.__ You also need to explain how to interpret each of the evaluation metrics you use.  
 
 
+<!-- section_id: "e54f5112-5141-4896-8401-76e71d643f6a" -->
 ### Questions and Tasks (Stretch)
 ::: {.callout-note collapse="true"}
 This section lists the questions and tasks that need to be completed for the project. Your work on the project must be compiled into a report, rendered to HTML file in a Course Portfolio a link to that project page uploaded in Canvas.
@@ -78,6 +86,7 @@ Here is an example Stretch question(s) for this project. Your instructor may ass
 1. __Can you build a model that predicts the year a house was built?__ Explain the model and the evaluation metrics you would use to determine if the model is good.
 
 
+<!-- section_id: "3bf4f1c0-b191-4a32-9d59-3b6bb7a3f098" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -106,6 +115,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "c2d39ac1-1af8-4e90-86e4-d4aa4059524f" -->
 ### Deliverables:
 
 _Use this [P4_template](../Templates/P4_template.qmd) to submit your Client Report. The template has two sections:_
@@ -115,6 +125,7 @@ _Use this [P4_template](../Templates/P4_template.qmd) to submit your Client Repo
 1. _A short __summary of work must__ be submitted in the comments in Canvas wwhen you submit the URL. Rate your own work on a scale of 1-5. 1 being poor and 5 being excellent. Include a short description of why you rated your work the way you did._
 
 
+<!-- section_id: "2f8a85e2-ee14-4490-9fe2-880bd2c19e7e" -->
 ### Feedback:
 ::: {.callout-note collapse="true"}
 You will recieve feedback and/or coaching notes in the form of a GitHub issue. You will need to address the feedback, re-render and resubmit the project, and mark the GitHub issue as closed.

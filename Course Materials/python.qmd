@@ -1,4 +1,5 @@
 ---
+resource_id: "ae2921da-7b95-49eb-a36c-1f6be2aeefd5"
 title: "Python for Data Science"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -13,5 +14,6 @@ Python for Data Science [python4DS](https://aeturrell.github.io/python4DS/welcom
 This book will teach you how to do data science with Python: You’ll learn how to get your data into Python, get it into the most useful structure, transform it, visualise it and model it. In this book, you will find a practicum of skills for data science. Just as a chemist learns how to clean test tubes and stock a lab, you’ll learn how to clean data and draw plots—and many other things besides. These are the skills that allow data science to happen, and here you will find the best practices for doing each of these things with Python. You’ll learn how to use the grammar of graphics, literate programming, and reproducible research to save time. You’ll also learn how to manage cognitive resources to facilitate discoveries when wrangling, visualising, and exploring data.
 
 
+<!-- section_id: "82e4b71a-35a5-46a3-a6f1-863124125564" -->
 ### Learn How to Setup Python
 [Python](/Setup/python_setup.qmd) 

@@ -1,4 +1,5 @@
 ---
+resource_id: "50555417-51bc-463b-94c0-9a1764371d55"
 title: "Python for Data Science"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "24029c15-60e9-4ea7-b2ea-f675336ce7bb" -->
 ### Install Python Libraries
 
 ```{=html}
@@ -16,6 +18,7 @@ keywords: [""]
 ```
 
 
+<!-- section_id: "6ed9b354-e389-4c53-b6fe-efb4eac92736" -->
 ### Installing and Importing Packages
 
 The Apple Silicon is still more difficult to get installed.  You can use the following links to get it installed - [Link 1](https://scikit-learn.org/stable/install.html#installing-on-apple-silicon-m1-hardware), [Link 2](https://github.com/scikit-learn/scikit-learn/issues/19137), [Link 3](https://github.com/conda-forge/miniforge).
@@ -45,6 +48,7 @@ pip install numpy pandas scikit-learn lets-plot palmerpenguins nbformat nbclient
 {{< video https://www.youtube.com/watch?v=UnkLhsI3ycg&embeds_referring_euri=https%3A%2F%2Fbyuistats.github.io%2F&feature=emb_imp_woyt >}}
 
 
+<!-- section_id: "566317fa-e77e-4fad-865f-1d6a1ebef8b3" -->
 ### Learn More about the Packages you Installed
 
 We want to install the following three packages;

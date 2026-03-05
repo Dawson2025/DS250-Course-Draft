@@ -1,4 +1,5 @@
 ---
+resource_id: "d87e7e5a-07e8-4e8f-a937-1153c56816a0"
 title: "Unit 1 Task 4: Elliot"
 date: 2025-03-31
 lastmod: 2025-03-31
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "fc20d8e5-f199-4ccf-b884-266a221d127f" -->
 ### Background
 
 Early in prehistory, some descriptive names began to be used again and again until they formed a name pool for a particular culture. Parents would choose names from the pool of existing names rather than invent new ones for their children. 
@@ -17,11 +19,13 @@ With the rise of Christianity, certain trends in naming practices manifested. Ch
 By the Middle Ages, the Christian influence on naming practices was pervasive. Each culture had its pool of names, which were a combination of native names and early Christian names that had been in the language long enough to be considered native. [[ref](https://heraldry.sca.org/names/namehist.html)]
 
 
+<!-- section_id: "3fb12ef7-bec8-4625-8d36-0c7d8df7bd14" -->
 ### Client Request
 
 This csv file contains the number of times a name was given to a child in a specific year. The Client has a passion for names throughout history. They would like to know how the usage of names has changed over time. They are particularly interested in the names Mary, Martha, Peter, and Paul. They would also like to know how the usage of a name from a famous movie has changed over time.
 
 
+<!-- section_id: "a88a5e1e-2769-42cc-8d53-604e39fe6585" -->
 ### Data
 
 Every data science project should start with data, and our class projects are no different. Each project will have __'URL'__ and __'Information'__ links like the ones below. Right click the __'URL'__ link and select "Copy Link". You can use that copied URL in your code to read in the data. This is the preferred method to get data into your report as you will be publishing your report to GitHub. If you choose to download the data file to your computer you will need to save it in the same folder as your quarto file for the assignment in order for it to work correclty in GitHub. 
@@ -31,6 +35,7 @@ __URL:__ [names_year.csv](https://github.com/byuidatascience/data4names/raw/mast
 __Information:__ [data.md](https://github.com/byuidatascience/data4names/blob/master/data.md)
 
 
+<!-- section_id: "16be6399-5b9a-4fb6-89b3-c3da952a07dc" -->
 ### Readings
 
 No new readings. Review the previous readings as needed
@@ -49,6 +54,7 @@ __Optional Readings:__
 - [P4DS: Rest of Chapter 14](https://aeturrell.github.io/python4DS/communicate-plots.html#scales)
 
 
+<!-- section_id: "228b5131-8298-4073-87a3-ed6372b846ff" -->
 ### Questions and Tasks
 
 Here is an example Stretch question(s) for this project. You can may propose your own idea for a stretch task that you are interested in that would take a similar level of effort and practice a similar set of skills. If you propose a different task, be sure to get it approved by your instructor first. 
@@ -59,6 +65,7 @@ Here is an example Stretch question(s) for this project. You can may propose you
 
 Note: There is no template for this task. You will have to create a new file from scratch as part of this stretch.
 
+<!-- section_id: "0ab4c4e2-6cff-48de-a371-49775cbf1ae7" -->
 ### Submission:
 
 ::: {.callout-note collapse="false"}
@@ -82,6 +89,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "4b600cf1-1fe2-4a29-804d-2f7b4d13105c" -->
 ### Deliverables:
 
 ::: {.callout-note collapse="true"}

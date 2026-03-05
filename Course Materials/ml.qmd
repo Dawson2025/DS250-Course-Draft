@@ -1,4 +1,5 @@
 ---
+resource_id: "b4d1b11c-17fc-4f62-871a-399f4d4acf48"
 title: "Machine Learning"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "d18064b7-c6f2-40b3-9a08-6b5203b9816b" -->
 ### Introduction
 
 Everyone seems to have a slightly different take on the differences between Artificial Intelligence, Machine Learning, and Data Science. The following four articles cover some of the most common definitions.
@@ -33,6 +35,7 @@ For our purposes in this course, we'll define these terms as follows:
 >
 > **Data Science**: The study and use of the techniques, statistics, algorithms, and tools needed to extract knowledge and insights from data.[^3]
 
+<!-- section_id: "91172e32-f451-4756-884f-fef3c44098d5" -->
 ### MORAVEC'S PARADOX
 
 In the 1980's, Hans Moravec made the following observation, which came to be known as Moravec's Paradox:
@@ -51,6 +54,7 @@ Dr. Fumiya Iida, from the Machine Intelligence Lab at Cambridge, adds:
 
 > “We have hundreds of thousands of muscles in our body, so how can the brain control this? A computer can’t. Every fraction of a second you have to co-ordinate hundreds of muscles just to grab a cup, for example.”[^6]
 
+<!-- section_id: "807c6fcf-1f81-4fb6-a613-1f74bfc5e711" -->
 ### PREDICTION VS. INFERENCE
 
 In machine learning, we are typically interested in doing one of two things: making inferences, or making predictions.
@@ -65,6 +69,7 @@ This example explains the differences between those two goals:
 >
 > **Prediction**: Given some information on a Titanic passenger, you want to choose from the set *{lives,dies}* and be correct as often as possible.[^7]
 
+<!-- section_id: "871367f2-89e3-4702-9372-d87d067204d2" -->
 ### Classification Algorithms
 
 Imagine that you're a big fan of comic books. Over the years, you've read enough Marvel and DC comics that if I asked you to "classify" which universe Superman belonged to, you'd be able to confidently say, "The DC Universe".
@@ -83,6 +88,7 @@ Once an algorithm has been trained, we can see how well it performs by providing
 
 ![img](/Images/test.png)
 
+<!-- section_id: "369c57ed-3a95-41dc-9170-a07c45fc4635" -->
 ### The Iris Dataset
 
 #### ABOUT THE DATA
@@ -101,6 +107,7 @@ The final column in the dataset is the species of the flower. This final column 
 
 ![img](/Images/iris_description.png)
 
+<!-- section_id: "3dfc8569-e1c0-4c1c-962f-d6431fc972cc" -->
 ### Classifiers
 
 Classifier algorithms generally follow the same set of steps. Our goal is to create a classifier that can be provided with the measurements of petals and sepals, and then use that information to predict the species of iris flower we're measuring.
@@ -226,6 +233,7 @@ If our classifier performs poorly, we either need to provide it with more traini
 
 [CSE 450: Machine Learning & Data Mining](https://byui-cs.github.io/cs450-course/) is the class were you can build depth in Machine Learning and it's applications.
 
+<!-- section_id: "b35863ed-b08b-4ea8-9ece-625ad8c6d72e" -->
 ### REFERENCES
 
 [^1]: [Artificial Intelligence: A Modern Approach by Russell and Norvig (Prentice Hall, 2009)](http://aima.cs.berkeley.edu/).[↩](https://byui-cs.github.io/cs450-course/week01/prepare.html#footnote-1-ref)

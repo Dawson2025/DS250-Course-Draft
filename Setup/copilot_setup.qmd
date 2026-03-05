@@ -1,4 +1,5 @@
 ---
+resource_id: "19ee7e12-341a-45d2-8432-5b32b14799a6"
 title: "Getting started with GitHub Copilot"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,11 +10,13 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "55859a1c-44fd-40cf-9a15-122caca0cc30" -->
 ### Getting started with GitHub Copilot
 
 >GitHub Copilot is free to use for verified students, teachers, and maintainers of popular open source projects.
 
 
+<!-- section_id: "fbd7be72-3377-4688-af20-9b9810d1a75f" -->
 ### How to verify your Student GitHub Account
 
 1. Go to the [Access free GitHub Education benefits](https://education.github.com/discount_requests/application) page.
@@ -27,6 +30,7 @@ keywords: [""]
 1. Fill out the form with your information and click the `Submit` button. (Note: using this tool to get a document to submit is the most effective way https://education.github.com/discount_requests/application. Others have had success with a copy of their payment for the current semester.)
 
 
+<!-- section_id: "f5229a5a-449b-46cc-9376-c229f1726d70" -->
 ### How to Install GitHub Copilot Extension ^[1]
 
 To use GitHub Copilot, you must first install the GitHub Copilot extension.
@@ -50,6 +54,7 @@ To use GitHub Copilot, you must first install the GitHub Copilot extension.
 1. To confirm the authentication, in Visual Studio Code, in the "Visual Studio Code" dialog box, click Open.  
 
 
+<!-- section_id: "acf5813b-2e86-48b7-b89b-b0d8ec4512d9" -->
 ### Enabling or disabling GitHub Copilot ^[2]
 
 You can enable or disable GitHub Copilot from within Visual Studio Code. The GitHub Copilot status icon in the bottom panel of the Visual Studio Code window indicates whether GitHub Copilot is enabled or disabled. When enabled, the background color of the icon will match the color of the status bar. When disabled, the background color of the icon will contrast with the color of the status bar.
@@ -74,6 +79,7 @@ You can enable or disable GitHub Copilot from within Visual Studio Code. The Git
     ()![image](/Images/copilot_languages.png)
 
 
+<!-- section_id: "b5ad681a-4f43-4bf7-8fdd-b16fc6eef48c" -->
 ### Next Steps [^3]
 You successfully installed GitHub Copilot and received your first suggestion, but that's just the beginning! Here are some helpful resources for taking your next steps with GitHub Copilot.
 

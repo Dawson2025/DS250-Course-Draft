@@ -1,4 +1,5 @@
 ---
+resource_id: "cd0e15f5-d12f-44ce-92d2-1b3bbc07057e"
 title: "Munging Data"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,16 +9,19 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "46472005-854f-4084-8a0c-a24fe7b7663e" -->
 ## Skill Builder
 #### Munging Data
 
 ---
 
+<!-- section_id: "626a100a-1a50-4222-b825-dcbfedde0eac" -->
 ## Data
 [Link to the data](/Data/munging.csv)
 
 ---
 
+<!-- section_id: "a68133c1-ca07-4a72-91ce-347078e5773f" -->
 ## Intro to cleaning movies data
 
 This skill builder focuses on munging (formatting) data into a machine learning ready dataset.
@@ -36,6 +40,7 @@ Once you've converted all columns to numeric, in an intelligent way, you will be
 
 ---
 
+<!-- section_id: "9be5bf91-c321-405a-86ad-c690ea70726c" -->
 ### Exercise 1
 
 - Grab the high range value for each movie and put it into a new column called `high_range_rev`. 
@@ -56,6 +61,7 @@ The first 5 rows of the resulting dataframe should look like this
 
 ---
 
+<!-- section_id: "cac9e6f2-f8c1-4d76-87ef-94cda8008429" -->
 ### Exercise 2
 
 Convert the `major_hit` column to 1/0's. yes -> 1 and no -> 0. Again, there are several ways to accomplish this. Using our old friend `np.where` is probably the easiest though.
@@ -72,6 +78,7 @@ The first 5 rows of the resulting dataframe should like this
 
 ---
 
+<!-- section_id: "f5947018-db41-4bd0-9648-faea710a2d23" -->
 ### Exercise 3
 
 Convert the `content_rating` column using label encoding. We're using label encoding in this case because the movie ratings already have a natural ordering to them. We will replace each rating with a number in it's natural ascending order.
@@ -98,6 +105,7 @@ The first 5 rows of the resulting dataframe should look like
 
 ---
 
+<!-- section_id: "d85afe8d-c984-4a7a-ab63-3565090800e4" -->
 ### Exercise 4
 
 The last column that we need to take care of is `genre`. We will use one hot encoding for this. 
@@ -117,6 +125,7 @@ The resulting dataframe should look like the following example; don't worry if y
 
 ---
 
+<!-- section_id: "36bc8d73-4b0b-4b8d-a3b5-e950e475176e" -->
 ### Exercise 5
 
 Recreate this graph as best you can. You'll need to use the original data that specifies the actual rating.

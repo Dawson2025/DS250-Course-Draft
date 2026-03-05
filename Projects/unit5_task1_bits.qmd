@@ -1,4 +1,5 @@
 ---
+resource_id: "09e767a7-ceec-4a24-bb74-75fbf1f4c905"
 title: "Project 5: The war with Star Wars"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "7ff04832-5c60-4a4f-836f-e57d6f99ba28" -->
 ### Background
 
 Survey data is notoriously difficult to munge.  Even when the data is recorded cleanly the options for ‘write in questions’, ‘choose from multiple answers’, ‘pick all that are right’, and ‘multiple choice questions’ makes storing the data in a tidy format difficult.
@@ -17,18 +19,21 @@ In 2014, FiveThirtyEight surveyed over 1000 people to write the article titled, 
 For this project, your client would like to use the Star Wars survey data to figure out if they can predict an interviewing job candidate’s current income based on a few responses about Star Wars movies.  
 
 
+<!-- section_id: "73992b3a-6a33-4ca2-9a15-6069b4605bd6" -->
 ### Client Request
 
 The Client is who performed the survey but outsourced the analitics to a 3rd party. They want you to clean up the data so you can: 
     a. Validate the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article
     a. Predict if a person from the survey makes at least $50k
 
+<!-- section_id: "85c16538-6bbd-4ba4-9bc5-bd7b4807e01a" -->
 ### Data
 
 __URL:__ [StarWars.csv](https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv)   
 __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorite-star-wars-movies-and-least-favorite-characters/)
 
 
+<!-- section_id: "3370efd5-73ac-4e51-8c72-11b90a7185fb" -->
 ### Readings
 - [BYUI DS Programming: CH12 Tidy Data](https://byuidatascience.github.io/python4ds/tidy-data.html)
 - [P4DS: CH16 Numbers](https://aeturrell.github.io/python4DS/numbers.html) 
@@ -37,6 +42,7 @@ __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorit
 - [P4DS: Ch18 Regular Expressions](https://aeturrell.github.io/python4DS/regex.html)
 
 
+<!-- section_id: "3ea7ec2e-542f-46c1-ad9d-d8298968216e" -->
 ### Questions
 
 1. __Shorten the column names and clean them up for easier use with pandas.__ Provide a table or list that exemplifies how you fixed the names.  
@@ -46,6 +52,7 @@ __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorit
 1. __Validate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.__  These visuals should be similar, including titles, subtitles, gridlines, order of categories, colors, etc. But, they don't have to be exact. They need to be close enough that we can validate that the values in the dataset match the graphs in the chart. Though their charts were built using a different plotting software, the more you push yourself for an exact replica, the more you will learn. Spend _at least_ a couple of hours on this. 
 
 
+<!-- section_id: "366e53fa-c006-4d93-8caa-92518da1f9bd" -->
 ### Submission / Deliverables:
 
 _Use this [unit5_task1_template](../Templates/unit5_task1_template.qmd) to create your Client Report. Answer the questions. Each answer should include a written description of your results, code cells with comments, charts and/or tables._  

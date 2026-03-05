@@ -1,4 +1,5 @@
 ---
+resource_id: "5e912a85-5652-4945-a4f8-b836797c77c4"
 title: "Project 1 Workbook"
 subtitle: "Course DS 250"
 author: "Brother Clark"
@@ -36,6 +37,7 @@ execute:
 # Project 1 WorkBook
 
 
+<!-- section_id: "b5115c6b-26a4-4d35-bb6c-7b35bdb87a7d" -->
 ## Tutoring Lab Info
 The [data science lab](https://byuidatascience.github.io/lab/) is a resource you can use in person, online, and in Slack.
 
@@ -46,6 +48,7 @@ The [data science lab](https://byuidatascience.github.io/lab/) is a resource you
 ---
 
 ::: {.callout-note collapse="true"}
+<!-- section_id: "6429601d-0af0-4bda-b505-a96239124e89" -->
 ## Expand To See Links to Chapter in the book `Python4DS`
 - [Chapter on Mardown: Text Block Syntax](https://aeturrell.github.io/python4DS/markdown.html)
 - [Additional Resource: Basic Syntax Markdown Guide](https://www.markdownguide.org/basic-syntax/)
@@ -74,7 +77,9 @@ import plotly.express as px
 
 :::
 
+<!-- section_id: "36b8f37b-b6cf-4571-acf8-5d7cc15d82b7" -->
 ## Text Basics
+<!-- section_id: "27709f37-0cc2-4185-873e-c18e5f75d32e" -->
 ### Horizontal Lines
 
 Add horizontal lines with either three `---`, `***`, or `___`
@@ -86,10 +91,13 @@ But you also need blank lines above and below them
 
 :::
 
+<!-- section_id: "401f1ac7-53f6-481f-8595-f3499721a224" -->
 ### Headers
 ````
 # Level 1 Header
+<!-- section_id: "5882ab11-0c5f-47e5-aeb9-051f6da4125f" -->
 ## Level 2 Header
+<!-- section_id: "6dd9b97c-5236-4149-bb93-ee4dd405eded" -->
 ### Level 3 Header
 #### Level 4 Header
 ##### Level 5 Header
@@ -98,15 +106,19 @@ But you also need blank lines above and below them
 Note: only top 3 Levels of Headers will automatically generate a table of contents.<br> Also Level 2 will automatically add a line underneath it. 
 
 ::: {.callout-tip collapse="true"}
+<!-- section_id: "30448038-cd7d-4cde-b354-dd94dd9a119c" -->
 ## Expand To See The Results
 # Level 1 Header
+<!-- section_id: "5fc49e8b-6819-4e1c-a78c-0fee5a1d79b6" -->
 ## Level 2 Header
+<!-- section_id: "49321bab-7a89-4ff1-9c01-2cc375eea4fd" -->
 ### Level 3 Header
 #### Level 4 Header
 ##### Level 5 Header
 ###### Level 6 Header
 :::
 
+<!-- section_id: "791de8e3-2c2b-4541-8f39-9f68ef162e74" -->
 ### Italics and Bold
 ````
 _italics_ use one `_`
@@ -116,6 +128,7 @@ __bold__ use two `__`
 you can also use __mid__ sentence
 ````
 ::: {.callout-tip collapse="true"}
+<!-- section_id: "2efab506-5014-4d42-b7f6-ac62eceef1c0" -->
 ## Expand To See The Results
 _italics_ use one `_`
 you can also use _mid_ sentence
@@ -124,6 +137,7 @@ __bold__ use two `__`
 you can also use __mid__ sentence
 :::
 
+<!-- section_id: "d4e38798-cd20-4fd9-ab5e-74cc42317c4b" -->
 ### Bullet Items
 ````
 - Bulleted items
@@ -133,6 +147,7 @@ you can also use __mid__ sentence
       - I knew you wanted one more
 ````
 ::: {.callout-tip collapse="true"}
+<!-- section_id: "b818eb6e-3cba-4291-bcb3-d086a49d6928" -->
 ## Expand To See The Results
 - Bulleted items
   - Indented bulleted items
@@ -140,6 +155,7 @@ you can also use __mid__ sentence
     - Really as many as you want
       - I knew you wanted one more bullet
 :::
+<!-- section_id: "80840d2a-ab05-4eb6-883d-507626529eb8" -->
 ### Numbered Items
 ````
 1. Numbered items
@@ -148,6 +164,7 @@ you can also use __mid__ sentence
 1. Keep using 1. each time
 ````
 ::: {.callout-tip collapse="true"}
+<!-- section_id: "6ec4526f-1479-4715-a14d-7b69e9580618" -->
 ## Expand To See The Results
 1. Numbered items
 1. Numbered items continued
@@ -161,9 +178,11 @@ you can also use __mid__ sentence
 
 ---
 
+<!-- section_id: "c74fe551-fd98-4d1f-89ee-a27df39a957c" -->
 ## Pandas DataFrame (`df`)
 
 ::: {.callout-note collapse="true"}
+<!-- section_id: "08d56fc8-2753-4b0a-a02d-b3b99a041725" -->
 ## Expand To See Links to Chapter in the book `Python4DS`
 - [Chapter on Pandas: DataFrames](https://aeturrell.github.io/python4DS/data-transform.html)
 :::
@@ -172,6 +191,7 @@ What is a pandas dataFrame? We can read the [official documentation](https://pan
 
 Use the Import Packages and Load df for the Code that follows.
 
+<!-- section_id: "33bc4937-73f7-4105-bd6a-a27e3a8d4477" -->
 ## Import Packages
 ````{}
 import `library` as `alias`
@@ -188,6 +208,7 @@ from IPython.display import Markdown
 from IPython.display import display
 ```
 
+<!-- section_id: "58d2463f-6598-4f5e-9336-d8e1a0c98709" -->
 ## Load Data
 ```{}
 df = pd.read_csv(`url` or `file_path`)
@@ -222,9 +243,11 @@ df.describe()
 ```
 <!---- https://towardsdatascience.com/wrangling-data-with-pandas-27ef828aff01 ----->
 
+<!-- section_id: "7081eaa0-a636-405a-b270-b1841cd4fcba" -->
 ## Pandas Data Transformation
 
 ::: {.callout-note collapse="true"}
+<!-- section_id: "f365aa82-c902-4960-9ea0-ff830cd4c969" -->
 ## Expand To See Links to Chapter in the book `Python4DS`
 - [Chapters Transformation: 15-22](https://aeturrell.github.io/python4DS/boolean-data.html)
 :::
@@ -247,6 +270,7 @@ _Work with a partner to find the answer. You might want to look at this [pandas 
 :::
 
 ::: {.callout-caution collapse="true"}
+<!-- section_id: "67d297d3-5455-40d3-b79d-30c112bcf95e" -->
 ## Expand To See An Example Solution
 ```{.python}
 pd.unique(df.name)
@@ -263,6 +287,7 @@ _Again, work with a partner and use the pandas cheat sheet._
 :::
 
 ::: {.callout-caution collapse="true"}
+<!-- section_id: "907f9957-e604-4f24-a727-9e3fe736b2b7" -->
 ## Expand To See An Example Solution
 ```{.python}
 pd.unique(df.year).min()
@@ -278,6 +303,7 @@ pd.unique(df.year).size
 :::
 
 ::: {.callout-caution collapse="true"}
+<!-- section_id: "dcf0092d-41a5-42ca-8e8a-41431940f192" -->
 ## Expand To See An Example Solution
 ```{.python}
 df.query('name == "John"')
@@ -294,6 +320,7 @@ pd.unique(df.query('name == "John"'))
 :::
 
 :::{.callout-caution collapse="true"}
+<!-- section_id: "00d4f9b8-d323-4425-9002-fd191cf08068" -->
 ## Expand To See An Example Solution
 ```{.python}
 pd.unique(df.query('name == "John"').year).min()
@@ -311,6 +338,7 @@ pd.unique(df.query('name == "John"').year).size
 :::
 
 :::{.callout-caution collapse="true"}
+<!-- section_id: "d411c3f5-fc5c-4a78-9fe5-45a3c3efe270" -->
 ## Expand To See An Example Solution
 ```{.python}
 #note you can not use pd.unique() with multiple names

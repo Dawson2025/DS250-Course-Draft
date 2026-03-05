@@ -1,4 +1,5 @@
 ---
+resource_id: "2979e852-0137-4a90-aa7e-5bc0b8ae3c67"
 title: "Unit 4 Stretch: Regression ML"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "64431252-2825-472c-a08c-2ba85f7d739c" -->
 ### Background
 
 The clean air act of 1970 was the beginning of the end for the use of asbestos in home building.  By 1976, the U.S. Environmental Protection Agency (EPA) was given authority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos You can [read more about this ban](https://www.asbestos.com/mesothelioma-lawyer/legislation/ban/).  
@@ -18,11 +20,13 @@ The state of Colorado has a large portion of their residential dwelling data tha
 Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods.
 
 
+<!-- section_id: "622e9fc1-ac67-4036-9a49-fd7362e5c2e5" -->
 ### Client Request
 
 The Client is a state agency in Colorado that is responsible for the health and safety of its residents. They have a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980.
 
 
+<!-- section_id: "ec976e25-c2c3-4110-978d-98de6cd35700" -->
 ### Data
 
 __URL:__  [dwellings_ml.csv (ml ready)](https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv)  
@@ -31,6 +35,7 @@ __Informational URL:__  [dwellings_denver.csv (not cleansed)](https://github.com
 __Information:__ [Data description](https://github.com/byuidatascience/data4dwellings/blob/master/data.md)  
 
 
+<!-- section_id: "bdc3cade-ee67-471b-aa7f-7e65d260a27a" -->
 ### Readings
 
 
@@ -46,6 +51,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 - [Boosted algorithms in scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#gradient-tree-boosting)
 
  
+<!-- section_id: "5239f05b-36b9-4cb6-81d4-2ecd0f08a6ef" -->
 ### Questions
 
 1. __Repeat the classification model using 3 different algorithms.__ Display their Feature Importance, and Classification Report. Explian the differences between the models and which one you would recommend to the Client.  
@@ -56,6 +62,7 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 
 
 
+<!-- section_id: "043caed8-ec5c-4795-9f4b-c4e03c3e881a" -->
 ### Submission / Deliverables:
 
 _No template is provided for this assignment. You must create your own file as part of the task. Answer the questions in this assignment. Each answer should include a written description of your results, code cells with comments, charts and/or tables._  

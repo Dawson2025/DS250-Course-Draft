@@ -1,4 +1,5 @@
 ---
+resource_id: "3587ca53-3352-4278-9794-74fc89b9c4a9"
 title: "Unit 4, Task 3: Show me"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "ed946202-3a31-48aa-ac79-a6cbfb25f3d9" -->
 ### Background
 
 The clean air act of 1970 was the beginning of the end for the use of asbestos in home building.  By 1976, the U.S. Environmental Protection Agency (EPA) was given authority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos You can [read more about this ban](https://www.asbestos.com/mesothelioma-lawyer/legislation/ban/).  
@@ -18,11 +20,13 @@ The state of Colorado has a large portion of their residential dwelling data tha
 Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods.
 
 
+<!-- section_id: "7979cf0f-acd6-4fab-adea-cd77204f1d59" -->
 ### Client Request
 
 The Client is a state agency in Colorado that is responsible for the health and safety of its residents. They have a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980.
 
 
+<!-- section_id: "e483a697-a069-4835-89e6-0c298e284827" -->
 ### Data
 
 __URL:__  [dwellings_ml.csv (ml ready)](https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv)  
@@ -31,6 +35,7 @@ __Informational URL:__  [dwellings_denver.csv (not cleansed)](https://github.com
 __Information:__ [Data description](https://github.com/byuidatascience/data4dwellings/blob/master/data.md)  
 
 
+<!-- section_id: "f7ba8eb6-799e-40c3-9adf-25cc20e3d14f" -->
 ### Readings
 
 No new readings. Consider reviewing the past readings as needed:
@@ -55,6 +60,7 @@ No new readings. Consider reviewing the past readings as needed:
 
  
 
+<!-- section_id: "1ca3ac86-dd03-434d-9e97-6191d989b57f" -->
 ### Questions
 
 1. __Create 2-3 charts that evaluate the relationships between each of the top 2 or 3 most important variables (as found in Unit 4 Task 2) and the year the home was built.__ Describe what you learn from the charts about how that variable is related to year built. 
@@ -63,6 +69,7 @@ No new readings. Consider reviewing the past readings as needed:
 
 
 
+<!-- section_id: "8d8cf64a-4993-430c-b481-b157f623d177" -->
 ### Submission / Deliverables:
 
 _Use this [unit4_task3_template](../Templates/unit4_task3_template.qmd) to create your Client Report. Answer the questions. Each answer should include a written description of your results, code cells with comments, charts and/or tables._  

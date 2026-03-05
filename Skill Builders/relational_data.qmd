@@ -1,4 +1,5 @@
 ---
+resource_id: "4c10ebba-af49-4657-9fe8-da9a215d9cb9"
 title: "SQL & Databases"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "8b2cefff-1c69-4444-a7aa-067f1e661cba" -->
 ## Skill Builder
 #### Relational Database
 
@@ -17,6 +19,7 @@ This should be able to be finished within 75 minutes. Work through it on your ow
 
 ---
 
+<!-- section_id: "5ea04a39-9d00-4dca-a66e-ccdd2ac75149" -->
 ## Before you start
 
 Make sure you have installed VS-code, pandas, and Plotly Express on your computer.  
@@ -26,6 +29,7 @@ we assume that you have a connection to your data.
 
 ---
 
+<!-- section_id: "ec7bfade-b8e8-4a09-9a96-cae89c7ca0b1" -->
 ### Exercise 1
 
 #### Readme file
@@ -42,6 +46,7 @@ Here is a link to the [readme file of the baseball database](https://data.world/
 
 ---
 
+<!-- section_id: "d753184b-73f7-4d38-bf97-19cb51bb04d0" -->
 ### Excercise 2 
 #### SELECT and FROM
 
@@ -61,6 +66,7 @@ results
 
 ---
 
+<!-- section_id: "c7c413a8-7ba1-4aff-ba6b-5bb983566056" -->
 ### Excercise 3
 #### WHERE 
 
@@ -74,6 +80,7 @@ It goes after `SELECT` and `FROM`.
 
 ---
 
+<!-- section_id: "ea2bf4f4-6972-4b85-bd18-4491ef052c8f" -->
 ### Excercise 4
 #### ORDER BY
 
@@ -83,6 +90,7 @@ It goes after `SELECT` and `FROM`.
 
 ---
 
+<!-- section_id: "66e45985-14a8-40dd-a5af-f38582e6e6e6" -->
 ### Excercise 5
 #### Joins
 
@@ -96,6 +104,7 @@ You should get a dataframe with 306 rows.
 
 ---
 
+<!-- section_id: "d4fc9615-14c2-4337-9754-84164eefdf6c" -->
 ### Exercise 6
 #### Group by
 `Group by` is a keyword we use to lower the level of granularity of a table. Meaning we are combining rows into one by the given column(s). 
@@ -107,7 +116,9 @@ You should get a dataframe with 23 rows.
 
 ---
 
+<!-- section_id: "2af11244-e71a-49ab-b399-9b0e50ddcd47" -->
 ## Because You're Extra
+<!-- section_id: "6bfbe7a7-9b6c-43f5-b1e8-953027a6f76e" -->
 ### Exercise 7
 
 Research the order of operations for SQL and put the following keywords in that order.

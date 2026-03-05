@@ -1,16 +1,20 @@
 ---
+resource_id: "4f30fc2c-5f8f-4fb3-93fc-c9ceaa7f7fac"
 title: "DS 250: Data Science Programming"
 subtitle: "Using pandas, lets-plot, scikit-learn, and NumPy to Program with Data"
 ---
 
+<!-- section_id: "f6e5d9aa-4ad6-43fb-aaa8-ab9b8a3fcf57" -->
 ## How to navigate this course?
 
 Use the top menue to navigate to specific assignments, or use the Setup menu to get your computer ready for the course
 
+<!-- section_id: "c368e607-3b58-431d-9fe6-b5e8f0067924" -->
 ## [Setup](setup.qmd)
 
 This section contains all the needed info to get your computer setup for the course
 
+<!-- section_id: "0d46f575-cd42-4257-87d4-d0a5d7d0967a" -->
 ## [FAQ](faq.qmd)
 
 Look here for common questions on the course

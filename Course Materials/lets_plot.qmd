@@ -1,4 +1,5 @@
 ---
+resource_id: "79d20eb1-825d-4159-bad1-ce6e74e976f5"
 title: "Data Visualization with Lets Plot"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "1fc46ff1-3a76-4c0f-97c0-68e0013daf60" -->
 ### Introduction
 
 > “The simple graph has brought more information to the data analyst’s mind than any other device.” — John Tukey
@@ -15,6 +17,7 @@ keywords: [""]
 This chapter introudces data visualization with the Lets Plot library.  We briefly discus the **grammar of graphics** which is a useful paradigm for understanding the fundamentals of building graphs.  Then we introudce the basics of Lets Plot and provide resources for further development.
 
 
+<!-- section_id: "953acdeb-ab2d-40ac-b533-e39b9852cf0e" -->
 ### Prerequisites
 
 [Lets Plot Install](/Setup/python_lib.qmd.qmd)
@@ -77,6 +80,7 @@ We can also easily change the shape and size of the points in a scatterplot.
 
 Now that's going overboard! But hopefully the basic syntax for using `lets_plot` makes sense.  
 
+<!-- section_id: "224efe1c-844d-4038-9468-eeef7d752c5a" -->
 ### Making Lets-Plot More Presentable
 
 In this section, we look at how to customize charts to be more informative and presentable.  For example, column names in a dataset are rarely a good idea to present to someone not as intimately familiar with the data as you.  We may also wish to highlight certain points, or draw attention to areas on a graph.  
@@ -182,12 +186,14 @@ The code above introduces the `geom_rect` features, it is not always necessary f
 Notice also, that the `geom_` methods actually update `plot`. No need to overwrite the original object or create a new chart object for each modification.
 
 
+<!-- section_id: "181bae6c-6933-4b82-81f0-c79b61c178ab" -->
 ### Other `geom_*`itions
 
 There are several other useful "post hoc" graph modifications that we only mention in this chapter. For further exploration, see [Lets-Plot Documentation](https://lets-plot.org/).
 
 Use `geom_text()` to add text annotations at specific locations. Update axes by using `scale_x_continuous()` or `scale_y_continuous()` which allows you to modify gridlines and add units of measure like "%" or "$". `geom_vline()` and `geom_hline()` allow you to add vertical or horizontal reference lines. The possibilities are almost endless!
 
+<!-- section_id: "0d73a9fc-693d-4822-87f4-f622b0bd7930" -->
 ### Resources
 
 This page has introduced the basics of `lets_plot`, but we have only looked at a scatterplot. For links to further documentation and a whole gallery of `lets_plot` possibilities, see [Lets-Plot Documentation](https://lets-plot.org/).

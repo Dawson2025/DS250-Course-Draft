@@ -1,4 +1,5 @@
 ---
+resource_id: "10dfc1e1-ac6d-4bab-aaef-0b92b38e6979"
 title: "Unit 2 Task 1: Batting Averages"
 date: 2025-04-02T11:02:05+06:00
 lastmod: 2025-04-02T10:42:26+06:00
@@ -9,10 +10,12 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "779f9297-578f-4d70-b879-486b11b2edca" -->
 ### Setup
 [SQL](/Setup/sql_setup.qmd) setup and test
 
 
+<!-- section_id: "da06a634-66ac-458f-8f0e-359f110a646a" -->
 ### Background
 
 When you hear the word “relationship” what is the first thing that comes to mind? Probably not baseball. But a relationship is simply a way to describe how two or more objects are connected. There are many relationships in baseball such as those between teams and managers, players and salaries, even stadiums and concession prices. 
@@ -20,11 +23,13 @@ When you hear the word “relationship” what is the first thing that comes to 
 The graphs on [Data Visualizations from Best Tickets](https://web.archive.org/web/20200804101201/http://www.besttickets.com/blog/mlb-players-census/) show many other relationships that exist in baseball.
 
 
+<!-- section_id: "5ebf4415-ed5e-449b-b001-6c2ddb6afa8f" -->
 ### Client Request
 
 For this project, the Client wants you to use SQL queries called from within Python.
 
 
+<!-- section_id: "03678fbe-0b7b-4d8f-a5b5-b89641a6d345" -->
 ### Data
 
 ::: {.callout-note collapse="false"}
@@ -36,6 +41,7 @@ __Information:__ [Lahman Data Dictionary](/Data/readme2014.txt)
 __Setup Instructions:__ [See SQL Setup](/Setup/sql_setup.qmd)
 
 
+<!-- section_id: "f63ba125-df50-4efb-a4ab-5f856df71927" -->
 ### Readings
 
 ::: {.callout-note collapse="true"}
@@ -80,6 +86,7 @@ The reading for this task are from this excellent [SQL Guide](https://docs.data.
 - [Why SQL is beating NoSQL, and what this means for the future of data](https://blog.timescale.com/blog/why-sql-beating-nosql-what-this-means-for-future-of-data-time-series-database-348b777b847a/)  
 
 
+<!-- section_id: "2e39f708-1d7a-49b7-bda2-db944bb7f878" -->
 ### Questions and Tasks
 
 Download the [Unit 2 Task 1 Template](../Templates/unit2_task1_template.qmd). Note: batting average is number of hits divided by the number of at-bats. It is a number between 0 and 1 that represents what % of the time a player gets a hit (as opposed to getting out, for example).
@@ -91,6 +98,7 @@ Download the [Unit 2 Task 1 Template](../Templates/unit2_task1_template.qmd). No
 1. __Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats over their entire career, and print the top 5 results.__
 
 
+<!-- section_id: "528d5c02-43d0-4a68-99ea-21102d2b5a92" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -113,6 +121,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "46522bbe-c1f3-48a8-b7c0-a754c6b38fcd" -->
 ### Deliverables:
 
 _Use this [unit2_task1_template](../Templates/unit2_task1_template.qmd) to submit your Client Report._

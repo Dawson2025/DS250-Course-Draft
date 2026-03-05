@@ -1,4 +1,5 @@
 ---
+resource_id: "1ea99832-0ddd-4f79-808b-862ebdf5e247"
 title: "Project 2: Finding Relationships in Baseball"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,21 +10,25 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "83e4c5cc-7fce-4eb7-8361-c0964b8d89e5" -->
 ### Walkthrough
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_vorsrvf5&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_yk1gpo38" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W06 - Project 3 Walkthrough"></iframe>
 ```
 
 
+<!-- section_id: "c3364a08-6f3f-4cb4-99d1-b5de286df705" -->
 ### SQL Refresher
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_9t2izp1p&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_bf7e4rqh" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W07 - SQL Intro"></iframe>
 ```
 
+<!-- section_id: "98d801d3-6c48-42b5-aa55-bd44e585a490" -->
 ### Setup
 [SQL](/Setup/sql_setup.qmd) setup and test
 
 
+<!-- section_id: "fbd7ae29-5271-4d34-98a7-6b8687784390" -->
 ### Background
 ::: {.callout-note collapse="true"}
 
@@ -37,11 +42,13 @@ When you hear the word “relationship” what is the first thing that comes to 
 The graphs on [Data Visualizations from Best Tickets](https://web.archive.org/web/20200804101201/http://www.besttickets.com/blog/mlb-players-census/) show many other relationships that exist in baseball.
 
 
+<!-- section_id: "69202ee6-b3c7-47ee-86e1-e82f8ced2a45" -->
 ### Client Request
 
 For this project, the Client wants SQL queries that they can use to retrieve data for use on their website without needing Python. They would also like to see the results in Lets-Plot charts.
 
 
+<!-- section_id: "4cf6b4fd-73c9-4e45-8d37-eb1e2b3726a1" -->
 ### Data
 
 ::: {.callout-note collapse="false"}
@@ -53,6 +60,7 @@ __Information:__ [Lahman Data Dictionary](/Data/readme2014.txt)
 __Setup Instructions:__ [See SQL Setup](/Setup/sql_setup.qmd)
 
 
+<!-- section_id: "8494fac1-f2b2-4884-aec5-6bca83db86b1" -->
 ### Readings
 ::: {.callout-note collapse="true"}
 The Readings section will contain links to reading assignments that are required for each project, as well as optional references. Remember that you are reading this material to build skills. Take the time to comprehend the readings and the skills contained within.  
@@ -69,6 +77,7 @@ We recommend reading through the assigned material once for a general understand
 - [Why SQL is beating NoSQL, and what this means for the future of data](https://blog.timescale.com/blog/why-sql-beating-nosql-what-this-means-for-future-of-data-time-series-database-348b777b847a/)  
 
 
+<!-- section_id: "63c84732-19ed-447e-a4ce-98a9ac538e5a" -->
 ### Questions and Tasks (Core)
 ::: {.callout-note collapse="true"}
 This section lists the questions and tasks that need to be completed for the project. Your work on the project must be compiled into a report, rendered to a HTML file and uploaded in Canvas.
@@ -87,6 +96,7 @@ There are two types of questions: Core and Stretch. Core questions are required 
 1. __Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph using Lets-Plot to visualize the comparison. What do you learn?__  
 
 
+<!-- section_id: "6570af1f-6467-44e9-9ae3-ddd7e7b32a1c" -->
 ### Questions and Tasks (Stretch)
 
 Here is an example Stretch question(s) for this project. Your instructor may assign different Stretch question(s). You must comment in Canvas when submitting your project if you completed any of the Stretch questions.  
@@ -123,6 +133,7 @@ Here is an example Stretch question(s) for this project. Your instructor may ass
     * The career_length should be calculated as the difference between the maximum and minimum yearID for each player.  
 
 
+<!-- section_id: "cde9702f-cc4e-4754-821f-807fb9ad2038" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -145,6 +156,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "bc7ff2ec-8c98-470a-aa19-9cac982262f6" -->
 ### Deliverables:
 
 _Use this [P2_template](../Templates/P2_template.qmd) to submit your Client Report._
@@ -158,6 +170,7 @@ _Your report should be written in quarto markdown files and rendered to an HTML 
 :::
 
 
+<!-- section_id: "846e5b0d-7774-4423-86fb-228e79de05ca" -->
 ### Resubmission:
 ::: {.callout-note collapse="true"}
 _If you submit before the due date_, you will have __one__ opportunity to resubmit the project after you have received feedback. The window for the resubmission will be open through the __Wednesday__ following the due date of the project.

@@ -1,4 +1,5 @@
 ---
+resource_id: "617f16a0-e029-42aa-b0ea-17a51699acbc"
 title: "Client Report - The War with Star Wars"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -45,11 +46,13 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "bb063221-a89f-4a8a-a551-9ee0886c4c50" -->
 ## Elevator pitch
 _A SHORT (2-3 SENTENCES) PARAGRAPH THAT `DESCRIBES KEY INSIGHTS` TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS._ (Note: this is not a summary of the project, but a summary of the results.)
 
 _A Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client._
 
+<!-- section_id: "29ea4bc8-ce8d-4ddc-a078-6d14db2cf6af" -->
 ## QUESTION|TASK 1
 
 __Shorten the column names and clean them up for easier use with pandas.__ Provide a table or list that exemplifies how you fixed the names. 
@@ -63,6 +66,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "5591e6d1-235e-482f-85c4-260dfe5decea" -->
 ## QUESTION|TASK 2
 
 __Clean and format the data so that it can be used in a machine learning model.__ As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.  
@@ -111,6 +115,7 @@ _type your results and analysis here_
 
 ```
 
+<!-- section_id: "f98a1729-ad08-42bb-9a76-a8750b3b070b" -->
 ## QUESTION|TASK 3
 
 __Validate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.__  
@@ -127,6 +132,7 @@ _type your results and analysis here_
 
 ```
 
+<!-- section_id: "6dfd5ae3-ea28-4f94-993b-3a6b18d0d9ee" -->
 ## QUESTION|TASK 4
 
 __Build a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.__ 
@@ -140,6 +146,7 @@ _type your results and analysis here_
 
 ---
 
+<!-- section_id: "d9e9ac18-0cc0-412e-a100-879b54005df2" -->
 ## STRETCH QUESTION|TASK 1
 
 __Build a machine learning model that predicts whether a person makes more than $50k. With accuracy of at least 65%. Describe your model and report the accuracy.__
@@ -153,6 +160,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "1ae564b4-5572-497d-aa56-59873735a303" -->
 ## STRETCH QUESTION|TASK 2
 
 __Validate the data provided on GitHub lines up with the article by recreating a 3rd visual from the article.__
@@ -166,6 +174,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "e3b57d33-cbce-49b7-b7c7-e51917c9688a" -->
 ## STRETCH QUESTION|TASK 3
 
 __Create a new column that converts the location groupings to a single number. Drop the location categorical column.__  

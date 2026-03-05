@@ -1,4 +1,5 @@
 ---
+resource_id: "39e3afb1-4acb-435f-83d6-f73016bb839c"
 title: "Project 0: Introduction"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "444bece1-74f2-4958-925e-679b523d10e4" -->
 ### Walkthrough
 
 ```{=html}
@@ -16,6 +18,7 @@ keywords: [""]
 ```
 
 
+<!-- section_id: "ee653ea4-6e41-4574-96a8-ffc8881c274a" -->
 ### Background
 
 ::: {.callout-note collapse="false"}
@@ -28,6 +31,7 @@ This first Background section provides context for the project. Make sure you re
 Python and VS Code are tools commonly used in the field of data science. During our first two days of class we will get VS Code prepped for data science programming. Completing Project 0 will set you up for success the rest of the semester.
 
 
+<!-- section_id: "bf617b39-70df-4368-80c9-640d4307f096" -->
 ### Data
 
 ::: {.callout-note collapse="false"}
@@ -41,6 +45,7 @@ penguins = load_penguins()
 penguins
 ```
 
+<!-- section_id: "0f9efc9b-516e-4271-8486-e7c6b6e18fed" -->
 ### Readings
 
 ::: {.callout-note collapse="false"}
@@ -67,6 +72,7 @@ The readings listed below are required for the first two days of class.
 - [Reading Technical Documentation](https://byui-cse.github.io/cse450-course/course/reading-technical-documentation.html)
 
 
+<!-- section_id: "3a613a93-e49d-4e4c-afc8-992f23a2bcdc" -->
 ### Questions and Tasks
 
 ::: {.callout-note collapse="false"}
@@ -79,6 +85,7 @@ This section lists the questions and tasks that need to be completed for the pro
     3. __Follow the instructions in the submission section below to submit your work__
 
 
+<!-- section_id: "db347f69-ceda-440a-b9cd-eb563c95632c" -->
 ### Submission:
 ::: {.callout-note collapse="false"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -101,6 +108,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "3446dd71-ffe0-41a1-a818-1dd74b4aed8b" -->
 ### Deliverables:
 
 ::: {.callout-note collapse="false"}
@@ -117,12 +125,14 @@ _Your report should be written in quarto markdown files and rendered to an HTML 
 :::
 
 
+<!-- section_id: "bbc71909-d908-4119-92b4-1cfa37379f7c" -->
 ### Feedback:
 ::: {.callout-note collapse="false"}
 If you submit before the due date, you will recieve feedback and/or coaching notes. You will need to address the feedback, re-render and resubmit the project.
 :::
 
 
+<!-- section_id: "d1a89940-2aee-4bc7-bb2b-c33487eff947" -->
 ### Resubmission:
 ::: {.callout-note collapse="false"}
 _If you submit before the due date_, you will have __one__ opportunity to resubmit the project after you have received feedback. The window for the resubmission will be open through the __Wednesday__ following the due date of the project.

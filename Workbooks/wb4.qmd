@@ -1,4 +1,5 @@
 ---
+resource_id: "e4346a33-0b73-46fb-bbf2-1aae3f82f485"
 title: "Project 4 Workbook"
 subtitle: "Course DS 250"
 author: "Brother Clark"
@@ -36,6 +37,7 @@ execute:
 # Project 4 WorkBook
 
 
+<!-- section_id: "4daa02f8-f66e-44a5-8d05-154cf3e18f7a" -->
 ## Tutoring Lab Info
 The [data science lab](https://byuidatascience.github.io/lab/) is a resource you can use in person, online, and in Slack.
 
@@ -47,6 +49,7 @@ The [data science lab](https://byuidatascience.github.io/lab/) is a resource you
 
 
 
+<!-- section_id: "d93cc809-842d-4fd8-a055-b71545cf8e91" -->
 ### 1. ` Importing Data`
 
 :::{.callout-tip collapse="true" title="Importing Data"}
@@ -74,6 +77,7 @@ dwellings_ml = pd.read_csv(url)
 
 
 
+<!-- section_id: "b93e7851-c969-488f-a24c-fdf6d4c8df68" -->
 ### 1. ` pip3/pip install -m`
 
 :::{.callout-tip collapse="true" title="Install Packages"}
@@ -103,6 +107,7 @@ python/path/ pip -m  install pandas plotly numpy seaborn scikit-learn
 
 
 
+<!-- section_id: "e1982958-a024-4e35-87b7-5f2f01b6d62d" -->
 ### 2. ` Metrics Machine Learning `
 
 

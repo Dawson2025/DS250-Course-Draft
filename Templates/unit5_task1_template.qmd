@@ -1,4 +1,5 @@
 ---
+resource_id: "23f85691-c079-445f-a04b-442b64621ce4"
 title: "Client Report - The War with Star Wars"
 subtitle: "Unit 5 Task 1"
 author: "[STUDENT NAME]"
@@ -41,6 +42,7 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "c2d5a18a-543b-4772-8e5a-5bd0bcb4620b" -->
 ## QUESTION 1
 
 __Shorten the column names and clean them up for easier use with pandas.__ Provide a table or list that exemplifies how you fixed the names.  
@@ -54,6 +56,7 @@ _type your write-up and analysis here_
 ```
 
 
+<!-- section_id: "26b80309-345c-4cf0-a0d0-045f837acc9f" -->
 ## QUESTION 2
 
 __Filter the dataset to 835 respondents that have seen at least one film__ (Hint: Don't use the column `Have you seen any of the 6 films in the Star Wars franchise?`) Not much to show here by way of output. Print the shape (i.e. number of rows and number of columns) of the filtered dataset.
@@ -66,6 +69,7 @@ _type your write-up and analysis here_
 
 ```
 
+<!-- section_id: "4a041b8e-c108-426f-aa57-83a08aa7da03" -->
 ## QUESTION 3
 
 __Validate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.__  These visuals should be similar, but don't have to be exact. They need to be close enough that we can validate that the values in the dataset match the graphs in the chart. Though their charts were built using a different plotting software, the more you push yourself for an exact replica, the more you will learn. Spend at least a couple of hours on this. 

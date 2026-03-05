@@ -1,4 +1,5 @@
 ---
+resource_id: "52e9dbeb-d7dd-4227-9b5f-4ce8b3f00e50"
 title: "Client Report - What's in a Name?"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -34,6 +35,7 @@ LetsPlot.setup_html(isolated_frame=True)
 ```
 
 
+<!-- section_id: "9d62997d-5ecc-4f63-9211-05141f24b103" -->
 ## Project Notes
 
 __For Project 1 the answer to each question should include a chart **and** a written response. The years labels on your charts should not include a comma. At least **two** of your charts must include reference marks.__  
@@ -45,6 +47,7 @@ __For Project 1 the answer to each question should include a chart **and** a wri
 df = pd.read_csv("https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv")
 ```
 
+<!-- section_id: "b58e8f12-4690-416e-a359-d0a649f4604e" -->
 ## QUESTION|TASK 1
 
 __How does your name at your birth year compare to its use historically?__
@@ -58,6 +61,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "0b1af7d7-37c2-4912-940c-85b3ab9b4c46" -->
 ## QUESTION|TASK 2
 
 __If you talked to someone named Brittany on the phone, what is your guess of his or her age? What ages would you not guess?__
@@ -71,6 +75,7 @@ _type your results and analysis here_
 ```
 
 
+<!-- section_id: "ac7bc3d6-4c29-403e-ac0a-7610abac80dc" -->
 ## QUESTION|TASK 3
 
 __Mary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names in a single chart. What trends do you notice?__
@@ -84,6 +89,7 @@ _type your results and analysis here_
 
 
 
+<!-- section_id: "5e147b39-5e31-46c7-a216-422ba61b5d40" -->
 ## QUESTION|TASK 4
 
 __Think of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?__  
@@ -98,6 +104,7 @@ _type your results and analysis here_
 
 ---
 
+<!-- section_id: "29ddb1d6-b1bc-41af-9a2b-767f57578a6a" -->
 ## STRETCH QUESTION|TASK 1
 
 __Reproduce the chart Elliot using the data from the `names_year.csv` file.__ 

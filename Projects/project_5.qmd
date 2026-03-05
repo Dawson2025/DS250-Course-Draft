@@ -1,4 +1,5 @@
 ---
+resource_id: "83a5799e-ada3-41a2-9cc5-e892a810aa93"
 title: "Project 5: The War with Star Wars"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,12 +10,14 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "493cf2e6-86f3-4058-864f-891ea82fc9b8" -->
 ### Walkthrough
 ```{=html}
 <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1157612/sp/115761200/embedIframeJs/uiconf_id/41338032/partner_id/1157612?iframeembed=true&playerId=kaltura_player&entry_id=1_c8g905uj&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_8dqp37xp" width="608" height="402" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="W10 - Project 5 Walkthrough"></iframe>
 ```
 
 
+<!-- section_id: "65a5a6ae-2720-47fc-9698-6ca9d87b4346" -->
 ### Background
 
 Survey data is notoriously difficult to munge.  Even when the data is recorded cleanly the options for ‘write in questions’, ‘choose from multiple answers’, ‘pick all that are right’, and ‘multiple choice questions’ makes storing the data in a tidy format difficult.
@@ -24,18 +27,21 @@ In 2014, FiveThirtyEight surveyed over 1000 people to write the article titled, 
 For this project, your client would like to use the Star Wars survey data to figure out if they can predict an interviewing job candidate’s current income based on a few responses about Star Wars movies.  
 
 
+<!-- section_id: "84ba0386-110b-4f06-87ac-3470e836cf6a" -->
 ### Client Request
 
 The Client is who performed the survey but outsourced the analitics to a 3rd party. They want you to clean up the data so you can: 
     a. Validate the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article
     a. Determine if you predict if a person from the survey makes more than $50k
 
+<!-- section_id: "e1d0af44-eb29-4ecf-90ed-74335fbe4000" -->
 ### Data
 
 __URL:__ [StarWars.csv](https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv)   
 __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorite-star-wars-movies-and-least-favorite-characters/)
 
 
+<!-- section_id: "5cf3fce8-58b3-4a47-9246-c6dcc4b34ece" -->
 ### Readings
 - [P4DS: CH6 Tidy Data](https://byuidatascience.github.io/python4ds/tidy-data.html) (Skim)
 - [P4DS: CH14 Graphics for Communication](https://aeturrell.github.io/python4DS/communicate-plots.html) (Skim)
@@ -49,6 +55,7 @@ __Information:__ [Article](https://fivethirtyeight.com/features/americas-favorit
 - [Why to not use get_dummies](https://digestize.medium.com/why-is-using-get-dummies-a-bad-idea-for-your-ml-project-bcfd2683d2e4)
 
 
+<!-- section_id: "82850004-b790-4cbf-a003-fe55d28a2f9d" -->
 ### Questions and Tasks (Core)
 ::: {.callout-note collapse="true"}
 This section lists the questions and tasks that need to be completed for the project. Your work on the project must be compiled into a report, rendered to HTML file in a Course Portfolio a link to that project page uploaded in Canvas.
@@ -71,6 +78,7 @@ There are two types of questions: Core and Stretch. Core questions are required 
 1. __Build a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.__
 
 
+<!-- section_id: "258621f8-133a-40cd-a9bb-14291010db71" -->
 ### Questions and Tasks (Stretch)
 
 Here is an example Stretch question(s) for this project. Your instructor may assign different Stretch question(s). You must comment in Canvas when submitting your project if you completed any of the Stretch questions.  
@@ -82,6 +90,7 @@ Here is an example Stretch question(s) for this project. Your instructor may ass
 1. __Create a new column that converts the location groupings to a single number. Drop the location categorical column.__
 
 
+<!-- section_id: "f2a5cd83-db9e-4bfe-8a92-e8a0e00fdccf" -->
 ### Submission:
 ::: {.callout-note collapse="true"}
 When you have completed the report, you will need to follow this process to submit your work:
@@ -110,6 +119,7 @@ When you have completed the report, you will need to follow this process to subm
 :::
 
 
+<!-- section_id: "712983c3-0f62-4631-b8fb-efceb1faef99" -->
 ### Deliverables:
 
 _Use this [P5_template](../Templates/P5_template.qmd) to submit your Client Report. The template has two sections:_
@@ -119,6 +129,7 @@ _Use this [P5_template](../Templates/P5_template.qmd) to submit your Client Repo
 1. _A short __summary of work must__ be submitted in the comments in Canvas wwhen you submit the URL. Rate your own work on a scale of 1-5. 1 being poor and 5 being excellent. Include a short description of why you rated your work the way you did._
 
 
+<!-- section_id: "5b5e9876-f495-4a20-a65f-976afea8de58" -->
 ### Feedback:
 ::: {.callout-note collapse="true"}
 You will recieve feedback and/or coaching notes in the form of a GitHub issue. You will need to address the feedback, re-render and resubmit the project, and mark the GitHub issue as closed.

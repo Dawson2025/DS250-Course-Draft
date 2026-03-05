@@ -1,4 +1,5 @@
 ---
+resource_id: "a346f7c4-1ad0-4215-af8c-f3a0809d2e2e"
 title: "JSONs & Missing"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,16 +9,19 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "3caae302-c719-4da3-8c57-1d9d6a2ffe5e" -->
 ## Skill Builder
 #### JSONs & Missiong
 
 ---
 
+<!-- section_id: "55de13e7-9450-4540-89ed-d956a34d7155" -->
 ### Data
 [Link to json file](json_missing.json)
 
 ---
 
+<!-- section_id: "99b98e9b-4fef-4d27-9cfd-613b5d6bd665" -->
 ### Exercise 1 
 
 Read in the json file as a pandas dataframe. After reading in the data, you'll want to explore it and gain some intuition. Exploring data is a very important step &mdash; the more you know about your data the better! Answer the following questions to gain some insight into this dataset.
@@ -44,6 +48,7 @@ df.isna().sum()  # Creates boolean dataframe and sums each column
 
 ---
 
+<!-- section_id: "34439eaa-ea64-4830-b456-fc26bc74d341" -->
 ### Exercise 2
 
 After learning different ways our data encodes missing values, now we will neatly manage them. There are many techniques we can use to handle missing values; for example, we can drop all rows that contain a missing value, impute with mean or median, or replace missing values with a new `missing` category. We will use some of these techniques in this exercise.
@@ -77,6 +82,7 @@ df.column_name.fillna(..., inplace=True)
 
 ---
 
+<!-- section_id: "d7ffda66-2dd4-4d59-bf1c-819618e6abd1" -->
 ### Exercise 3 
 Create a table that contains the following summary statistics.
 - median estimated size by shape
@@ -113,6 +119,7 @@ Your table should look like this:
 
 ---
 
+<!-- section_id: "4e2a3504-81d9-4016-ac00-b404ccf08695" -->
 ### Exercise 4 
 
 The cities listed below reported their estimated size in square inches, not square feet. Create a new column named `estimated_size_sqft` in the dataframe, that has all the estimated sizes reported as sqft. (Hint: divide by 144 to go from sqin -> sqft)

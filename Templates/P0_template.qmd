@@ -1,4 +1,5 @@
 ---
+resource_id: "5046dbda-1589-4f99-ab2b-3c2a574f0569"
 title: "Client Report - Project 0: Introduction"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"
@@ -42,6 +43,7 @@ from palmerpenguins import load_penguins
 df = load_penguins()
 ```
 
+<!-- section_id: "c3283927-3562-424d-8026-a4f8f0066a79" -->
 ## QUESTION|TASK 1
 
 __Include the tables created from [PY4DS: CH2 Data Visualization](https://aeturrell.github.io/python4DS/data-visualise.html) used to create the above chart (Hint: copy the code from 2.2.1. The penguins data frame and paste each in the cells below)__
@@ -62,6 +64,7 @@ _include figures in chunks and discuss your findings in the figure._
 ```
 
 
+<!-- section_id: "ad2072ec-3683-4726-aefe-ecac88191a01" -->
 ## QUESTION|TASK 2
 
 __Recreate the example charts from [PY4DS: CH2 Data Visualization](https://aeturrell.github.io/python4DS/data-visualise.html) of the textbook. (Hint: copy the chart code from 2.2.3. Creating a plot, one plot for each cell below)__

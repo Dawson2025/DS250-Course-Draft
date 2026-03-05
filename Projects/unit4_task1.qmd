@@ -1,4 +1,5 @@
 ---
+resource_id: "b3f7a778-ffaa-4a14-a775-8d039ac1d99f"
 title: "Unit 4, Task 1:  Can You Predict That?"
 date: 2025-04-08T11:02:05+06:00
 lastmod: 2025-04-08T10:42:26+06:00
@@ -9,6 +10,7 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "0de18851-2caf-4802-8243-636f93a08a48" -->
 ### Background
 
 The clean air act of 1970 was the beginning of the end for the use of asbestos in home building.  By 1976, the U.S. Environmental Protection Agency (EPA) was given authority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos You can [read more about this ban](https://www.asbestos.com/mesothelioma-lawyer/legislation/ban/).  
@@ -18,11 +20,13 @@ The state of Colorado has a large portion of their residential dwelling data tha
 Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods.
 
 
+<!-- section_id: "24b599f6-01d7-4e27-90ab-6a417b73b422" -->
 ### Client Request
 
 The Client is a state agency in Colorado that is responsible for the health and safety of its residents. They have a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980.
 
 
+<!-- section_id: "e564374f-b717-45a9-91b4-c198f788c4e1" -->
 ### Data
 
 __URL:__  [dwellings_ml.csv (ml ready)](https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv)  
@@ -31,6 +35,7 @@ __Informational URL:__  [dwellings_denver.csv (not cleansed)](https://github.com
 __Information:__ [Data description](https://github.com/byuidatascience/data4dwellings/blob/master/data.md)  
 
 
+<!-- section_id: "95561277-21a2-4332-acff-5b13e29ab086" -->
 ### Readings
 
 - [Machine Learning Introduction](/Course%20Materials/ml.qmd)
@@ -46,10 +51,12 @@ __Information:__ [Data description](https://github.com/byuidatascience/data4dwel
 - [scikit-plot package](https://github.com/reiinakano/scikit-plot)  
  
 
+<!-- section_id: "cc015a64-01a7-4151-8f4a-03241005a8bc" -->
 ### Questions
 
 __Build a classification model labeling houses as being built “before 1980” or “during or after 1980”.__ Your goal is to reach or exceed 90% accuracy. Report your final model choice and any other model parameters you may have tweaked (train-test split ratio, tuning parameters, etc).  
 
+<!-- section_id: "a1dfba68-e201-4868-a9bd-d3c9b267bc01" -->
 ### Submission / Deliverables:
 
 _Use this [unit4_task1_template](../Templates/unit4_task1_template.qmd) to create your Client Report. Answer the questions. Each answer should include a written description of your results, code cells with comments, charts and/or tables._  

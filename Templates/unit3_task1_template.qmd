@@ -1,4 +1,5 @@
 ---
+resource_id: "559040a4-6cd6-4670-a068-23a8d8f60df1"
 title: "Client Report - Missing Data and JSON"
 subtitle: "Unit 3 Task 1"
 author: "[STUDENT NAME]"
@@ -42,6 +43,7 @@ LetsPlot.setup_html(isolated_frame=True)
 df = pd.read_json("https://github.com/byuidatascience/data4missing/raw/master/data-raw/flights_missing/flights_missing.json")
 ```
 
+<!-- section_id: "ea378ee1-56a6-40d1-b407-9af97ba4b275" -->
 ## QUESTION 1
 
 __Fix all of the varied missing data types in the data to be consistent: use np.nan to represent missing value.__ In your report include one record example (one row) from your clean data, in the raw JSON format. Your example should display at least one missing value so that we can verify it was done correctly. (Note: JSON will convert NaN's to "null"). Describe your process for finding values that needed to be changed, and how you changed them.__ 

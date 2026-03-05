@@ -1,4 +1,5 @@
 ---
+resource_id: "90751fb0-62c8-4385-b6df-4e42289fd327"
 title: "Client Report - Show me!"
 subtitle: "Unit 4 Task 3"
 author: "[STUDENT NAME]"
@@ -41,6 +42,7 @@ LetsPlot.setup_html(isolated_frame=True)
 
 ```
 
+<!-- section_id: "de5bb2c2-ec0c-46b6-8248-12dfc6b1c9c5" -->
 ## QUESTION 1
 
 __Create 2-3 charts that evaluate the relationships between each of the top 2 or 3 most important variables (as found in Unit 4 Task 2) and the year the home was built.__ Describe what you learn from the charts about how that variable is related to year built.   
@@ -54,6 +56,7 @@ _type your write-up and analysis here_
 ```
 
 
+<!-- section_id: "d01faa88-b687-4aab-9a40-f4521fb6ae36" -->
 ## QUESTION 2
 
 __Create at least one other chart to examine a variable(s) you thought might be important but apparently was not. The chart should show its relationship to the year built.__ Describe what you learn from the chart about how that variable is related to year built. Explain why you think it was not (very) important in the model.

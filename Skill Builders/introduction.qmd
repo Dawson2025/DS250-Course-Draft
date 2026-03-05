@@ -1,4 +1,5 @@
 ---
+resource_id: "4b7df7ad-10e9-4c54-8f80-d3b0b012c480"
 title: "Introduction"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -8,6 +9,7 @@ draft: false
 keywords: [""]
 ---
 
+<!-- section_id: "b2b5c2fe-c664-4753-b494-c9515fbb99ee" -->
 ## Skill Builder
 #### Introduction
 
@@ -15,6 +17,7 @@ This should be able to be finished within 60 minutes. You should work through it
 
 ---
 
+<!-- section_id: "7eef3e11-9bce-4a2e-a2af-820969135ace" -->
 ## Before You Start
 
 Make sure you have installed VS-code, pandas, and plotly express on your computer. You can install these package by typing this line in the terminal. 
@@ -29,12 +32,14 @@ _```pip3.10 install pandas plotly.express```_
 
 ---
 
+<!-- section_id: "9a331583-5d01-424e-933e-b12ff7f5e599" -->
 ### Get Familiar With Your Tools
 
 Programming involves a lot of **research**. Unlike subjects like Mathematics or History, we are not required to remember every single function and its usage. It is natural for experienced programmers to look for answers on the internet, books, even from other people's code. Programming will be extremely frustrating if we are not allowed to do web searches, so please get familiar with the tools you have and use them often.
 
 ---
 
+<!-- section_id: "62e30995-090b-4886-bcf2-6163d1839331" -->
 ### Offical Documentation
 
 This should be your first resort for understanding any code/function. Scanning the documentation of a function will allow you to get an overview of its usage.  
@@ -55,6 +60,7 @@ Here is a link to the documentation of the `assign()` function:
 
 ---
 
+<!-- section_id: "cfc6b5b2-13d4-465f-8126-e202f8bf18b6" -->
 ### Exercise 1
 After reading the documentation for `assign()`, write a short paragraph to explain `assign()` as if you were talking to someone with zero programming experience (use the example above to help you explain `assign()`). 
 
@@ -68,6 +74,7 @@ link to the textbook:
 
 ---
 
+<!-- section_id: "7e055408-ecc0-408e-ae10-5bcaca3ad8ec" -->
 ### Exercise 2
 Locate the section where the textbook talks about `query()` and answer these questions.
 
@@ -84,6 +91,7 @@ Google is a programmer's friend. Get used to googling thing, in fact, you want t
 
 ---
 
+<!-- section_id: "c1f9cf99-148e-4510-968b-71d3e4f13e32" -->
 ### Exercise 3
 Provide at least 2 extra resources you could find about the pandas function `drop()` on the internet.
 
@@ -105,6 +113,7 @@ We want to help you with your work; we want to answer your questions; but most i
 
 ---
 
+<!-- section_id: "2cd159a2-1729-48c7-bbdc-837c352c2a30" -->
 ### Exercise 4
 
 _Using the code and tools mentioned above, finish question 4 and 5 under 3.2.4 in the textbook.(use the data in mpg for your plot):_

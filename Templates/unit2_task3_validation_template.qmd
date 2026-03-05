@@ -1,4 +1,5 @@
 ---
+resource_id: "b6a07b49-4d96-4cb0-a10d-50fe9462d394"
 title: "Client Report - Longevity of Baseball Players"
 subtitle: "Unit 2 Task 3"
 author: "[STUDENT NAME]"
@@ -45,6 +46,7 @@ con = sqlite3.connect(sqlite_file)
 ```
 
 
+<!-- section_id: "ac9167bb-6f64-4f6d-ba49-33292c91db6c" -->
 ## Question 1
 
 __Write an SQL query that pulls in the the salaries table and the collegeplaying table (and any other tables you might need) and store them in pandas dataframes. Combine the dataframes to create a list of baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Print out the table in your report.__
@@ -69,6 +71,7 @@ college = pd.read_sql_query(q2, con)
 
 ```
 
+<!-- section_id: "b46fafca-3c5f-4f48-ba85-07d4006be659" -->
 ## Question 2
 
 __Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Be creative! Write an SQL query to read in the tables you need (similar to the tasks above), then use pandas to manipulate the data. Finally, make a graph using Lets-Plot to visualize the comparison. What do you learn?__

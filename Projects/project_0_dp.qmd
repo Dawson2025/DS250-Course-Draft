@@ -1,4 +1,5 @@
 ---
+resource_id: "a5c52650-02b1-4ebe-bae3-04a8b96fe05d"
 title: "Project 0: Introduction"
 date: 2020-05-01T11:02:05+06:00
 lastmod: 2020-09-15T10:42:26+06:00
@@ -9,12 +10,14 @@ keywords: [""]
 ---
 
 
+<!-- section_id: "36606205-8d8f-40a0-bc1a-08a13c68a3e2" -->
 ### Background
 
 Each assignment will have a Background section that provides context for the project. Make sure you read the background carefully to see the big picture needs and purpose of the project.
 
 Python and VS Code are tools commonly used in the field of data science. During our first two days of class we will primarily be installing software, libraries, extensions, etc. Completing Project 0 will set you up for success the rest of the semester. Since this project is strictly about software installation, there is no contextual background for this project.
 
+<!-- section_id: "25e730df-35fb-45d3-92af-09a3300c28a2" -->
 ### Data
 
 This project will use the Palmer Penguins data set. This dataset is embedded in a library we will load, so there is no need to read it in from the link below. But in future assignments, data for the assignment can be found in this section.
@@ -22,6 +25,7 @@ This project will use the Palmer Penguins data set. This dataset is embedded in 
 __URL:__ [penguins data](https://aeturrell.github.io/python4DS/data-visualise.html#the-penguins-data-frame)   
 
 
+<!-- section_id: "01be3662-3294-4d39-946b-ec5343e98fa3" -->
 ### Readings
 
 Please do the assigned **before coming to class**!
@@ -44,6 +48,7 @@ Many people have different levels of experience with Python, VS Code, and progra
 - [Reading Technical Documentation](https://byui-cse.github.io/cse450-course/course/reading-technical-documentation.html)
 
 
+<!-- section_id: "a6055b95-cf94-43df-bc2e-84011cf0b548" -->
 ### Questions and Tasks
 
 1. __Download this [Project0 Template](../Templates/P0_template.qmd). The template has working code for the Penguine data set. You need to finish the project by adding code to recreate charts from the book. More specifically, copy and paste code from the book into this template quarto file to:__
@@ -53,6 +58,7 @@ Many people have different levels of experience with Python, VS Code, and progra
 
 The main purpose of this project is to ensure your set-up and installations are done correctly. You will know this is the case if you can create an html file with those graphs and table in it.
 
+<!-- section_id: "d8c2de25-f524-4749-8d78-f7c7325a0d5b" -->
 ### Submission:
 
 When you have completed the report, you will need to follow this process to submit your work:
@@ -75,6 +81,7 @@ When you have completed the report, you will need to follow this process to subm
 
 
 
+<!-- section_id: "f8b9944f-fe81-41b7-b8a8-8007d05c932a" -->
 ### Deliverables:
 
 _Use this [P0_template](../Templates/P0_template.qmd) to submit your Client Report._
