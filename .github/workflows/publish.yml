@@ -1,3 +1,4 @@
+# resource_id: bdc50b47-e760-488f-a27f-c30f6e410afb
 on:
   workflow_dispatch:
   push:
